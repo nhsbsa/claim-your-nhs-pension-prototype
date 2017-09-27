@@ -1,0 +1,121 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  Prepay for NHS prescriptions
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  {% include "includes/phase_banner_beta.html" %}
+  <div class="grid-row">
+    <div class="column-two-thirds">
+  <br>
+   <a href="/" class="link-back">Back</a>
+
+   <div class="heading-group">
+     <p>MVP Prototype</p>
+     <h1 class="heading-xlarge">
+      Page by page breakdown
+     </h1>
+   </div>
+
+   <table  id="review-table-one" class="check-table">
+     <thead>
+       <tr>
+         <th>Page</th>
+         <th class="right">JIRA ticket number</th>
+       </tr>
+     </thead>
+     <tbody>
+       <tr>
+         <td><a href="ppc/start-page">Start</a></td>
+         <td class="right"><a href="https://bsa2468.atlassian.net/browse/BP313-174">BP313-174</a></td>
+       </tr>
+       <tr>
+         <td><a href="ppc/dob">What is your date of birth?</a></td>
+         <td class="right"><a href="https://bsa2468.atlassian.net/browse/BP313-176">BP313-176</a></td>
+       </tr>
+       <tr>
+         <td><a href="ppc/name">What is your name?</a></td>
+         <td class="right"><a href="https://bsa2468.atlassian.net/browse/BP313-178">BP313-178</a></td>
+       </tr>
+       <tr>
+         <td><a href="ppc/post-address">What is your address?</a></td>
+         <td class="right"><a href="https://bsa2468.atlassian.net/browse/BP313-180">BP313-180</a></td>
+       </tr>
+       <tr>
+         <td><a href="ppc/nhsno">Do you know your NHS number?</a></td>
+         <td class="right"><a href="https://bsa2468.atlassian.net/browse/BP313-182">BP313-182</a></td>
+       </tr>
+       <tr>
+         <td><a href="ppc/duraction">How long do you want your prepayment to last?</a></td>
+         <td class="right"><a href="https://bsa2468.atlassian.net/browse/BP313-184">BP313-184</a></td>
+       </tr>
+       <tr>
+         <td><a href="ppc/cover_date">prepayment to start?</a></td>
+         <td class="right"><a href="https://bsa2468.atlassian.net/browse/">BP313</a></td>
+       </tr>
+       <tr>
+         <td><a href="ppc/copy">Would you like your prepayment details sent by text and email?</a></td>
+         <td class="right"><a href="https://bsa2468.atlassian.net/browse/">BP313</a></td>
+       </tr>
+
+       <tr>
+         <td><a href="ppc/mobile-number">What is your mobile telephone number?</a></td>
+         <td class="right"><a href="https://bsa2468.atlassian.net/browse/">BP313</a></td>
+       </tr>
+       <tr>
+         <td><a href="ppc/email-address">What is your email address?</a></td>
+         <td class="right"><a href="https://bsa2468.atlassian.net/browse/">BP313</a></td>
+       </tr>
+       <tr>
+         <td><a href="ppc/check">Check your answers</a></td>
+         <td class="right"><a href="https://bsa2468.atlassian.net/browse/">BP313</a></td>
+       </tr>
+       <tr>
+         <td><a href="ppc/ppcprivacy">How we use your information</a></td>
+         <td class="right"><a href="https://bsa2468.atlassian.net/browse/">BP313</a></td>
+       </tr>
+       <tr class="breakheader">
+         <td class="strong">Card payment</td>
+         <td></td>
+       </tr>
+       <tr>
+         <td><a href="ppc/payment-details">Enter card details</a></td>
+         <td class="right">CAPTIRE</td>
+       </tr>
+       <tr>
+         <td><a href="ppc/cp-confirm">Confirm your payment</a></td>
+         <td class="right">CAPTIRE</td>
+       </tr>
+       <tr class="breakheader">
+         <td class="strong">Direct Debit</td>
+         <td></td>
+       </tr>
+       <tr>
+         <td><a href="ppc/payment-details">Enter bank details</a></td>
+         <td class="right"><a href="https://bsa2468.atlassian.net/browse/">BP313</a></td>
+       </tr>
+       <tr>
+         <td><a href="ppc/ddv2-confirm">Check your direct debit details</a></td>
+         <td class="right"><a href="https://bsa2468.atlassian.net/browse/">BP313</a></td>
+       </tr>
+       <tr>
+         <td><a href="ppc/dddec">Confirm and submit</a></td>
+         <td class="right"><a href="https://bsa2468.atlassian.net/browse/">BP313</a></td>
+       </tr>
+       <tr class="breakheader">
+         <td class="strong">Done pages</td>
+         <td></td>
+       </tr>
+       <tr>
+         <td><a href="ppc/done-v3">You have prepaid for 3 months of prescriptions.</a></td>
+         <td class="right"><a href="https://bsa2468.atlassian.net/browse/">BP313</a></td>
+       </tr>
+     </tbody>
+   </table>
+
+</main>
+
+{% endblock %}
