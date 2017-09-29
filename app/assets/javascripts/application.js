@@ -63,6 +63,14 @@ if (document.getElementById("has_dd")) {
   }
 }
 
+if (document.getElementById("3month")) {
+  var ddContent = document.getElementById("dd_content");
+  var hasDD = document.getElementById("has_dd").innerHTML;
+  if (hasDD != "dd") {
+    ddContent.className += " hidden";
+  }
+}
+
 $(document).ready(function () {
   // Use GOV.UK shim-links-with-button-role.js to trigger a link styled to look like a button,
   // with role="button" when the space key is pressed.

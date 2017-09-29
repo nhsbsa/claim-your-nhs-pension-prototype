@@ -549,7 +549,8 @@ router.get(/dddec/,  function (req, res) {
 router.get(/done-v3/, function (req, res) {
   console.log(applicant.hasMobile);
   console.log(applicant.hasEmail);
-  if (applicant.hasMobile == false || applicant.reminderMobile == false && applicant.hasEmail == false || applicant.reminderEmail == false) {
+  console.log(ppc.duration);
+  if (ppc.duration == 'three') {
      textHelper.reminderText  = 'You will not receive a reminder to renew your prescription prepayment. Make a note of your prepayment expiry date.'
   } else {
       textHelper.reminderText  = 'We will send you a reminder when your prepayment is due to end.'
