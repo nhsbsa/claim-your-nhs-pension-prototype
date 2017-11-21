@@ -163,9 +163,19 @@ router.get(/child-handler/, function (req, res) {
   if (req.query.child == "Yes") {
   res.redirect('list-children');
 } else {
-  res.redirect('contactpref');
+  res.redirect('checkyouranswers');
 }
 });
+
+router.get(/working-handler/, function (req, res) {
+  if (req.query.work == "Yes") {
+  res.redirect('wheredoyouwork');
+} else {
+  res.redirect('lastnhsemployer');
+}
+});
+
+
 router.get(/contact-handler/, function (req, res) {
 
 if (req.query.emailntext == 'Yes') {

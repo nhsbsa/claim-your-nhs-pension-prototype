@@ -1,7 +1,7 @@
 {% extends "layout_bsa.html" %}
 
 {% block page_title %}
-  Do you want an aditional lump sum by giving up part of your pension? - Transfers, Estimate and Awards
+  Are you working in the NHS now? - Transfers, Estimate and Awards
 {% endblock %}
 
 {% block content %}
@@ -15,21 +15,23 @@
 
       <div class="heading-group">
         <p>Transfers, Estimate and Awards<p>
-        <h1 class="heading-large">Do you want an lump sum by giving up part of your pension?</h1>
+        <h1 class="heading-large">Are you working in the NHS now?</h1>
       </div>
 
-      <form action="lumpsum-handler" method="post-address" class="form">
+      <form action="working-handler" method="post-address" class="form">
 
         <div class="form-group">
 
           <fieldset class="inline">
 
+
             <div class="multiple-choice">
-              <input id="yes" type="radio" name="lumpsum" value="Yes">
+              <input id="yes" type="radio" name="work" value="Yes">
               <label for="yes">Yes</label>
             </div>
+
             <div class="multiple-choice">
-              <input id="no" type="radio" name="lumpsum" value="No">
+              <input id="no" type="radio" name="work" value="No">
               <label for="no">No</label>
             </div>
         </fieldset>
