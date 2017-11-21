@@ -92,7 +92,7 @@ function capitaliseFirst(string) {
 
 router.get(/schemenumber-handler/, function (req, res) {
   applicant.schemenumber= req.query.schemenumber;
-  res.redirect('AW8P');
+  res.redirect('../AW8P');
 });
 
 
@@ -117,13 +117,13 @@ router.get(/birth-handler/, function (req, res) {
     applicant.dobYear = req.query.year;
     applicant.age = (2016 - applicant.dobYear);
   }
-   res.redirect('schemenumber');
+   res.redirect('nino');
   });
 
 
   router.get(/nino-handler/, function (req, res) {
     applicant.nino = req.query.nino;
-    res.redirect('post-address');
+    res.redirect('schemenumber');
   });
 
   //address
@@ -145,16 +145,33 @@ router.get(/address-c-handler/, function (req, res) {
     tempAddress = tempAddress + " " + req.query.postcode;
   }
 
- res.redirect('contactpref');
+ res.redirect('relationshipstatus');
 });
 
 
+router.get(/relationship-handler/, function (req, res) {
+  if (req.query.rcg == "single") {
+  res.redirect('children');
+} else {
+  res.redirect('spousedetails');
+}
+});
+
+
+
+router.get(/child-handler/, function (req, res) {
+  if (req.query.child == "Yes") {
+  res.redirect('list-children');
+} else {
+  res.redirect('contactpref');
+}
+});
 router.get(/contact-handler/, function (req, res) {
 
 if (req.query.emailntext == 'Yes') {
   res.redirect('emailaddress')
 } else {
-  res.redirect('relationshipstatus')
+  res.redirect('checkyouranswers')
 }
 
 });
