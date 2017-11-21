@@ -175,3 +175,30 @@ if (req.query.emailntext == 'Yes') {
 }
 
 });
+
+router.get(/scheme-handler/, function (req, res) {
+  if (req.query.scheme == "1995") {
+    res.redirect('why')
+  } else if (req.query.scheme == "2008") {
+      res.redirect('why')
+    } else {
+      res.redirect('why')
+    }
+});
+
+router.get(/benefits-handler/, function (req, res) {
+  if (req.query.benefit == "early") {
+     res.redirect('earlypaymentdate')
+   } else {
+        res.redirect('lumpsum')
+   }
+});
+
+
+router.get(/lumpsum-handler/, function (req, res) {
+  if (req.query.lumpsum == "Yes") {
+     res.redirect('typeoflumpsum')
+   } else {
+        res.redirect('checkyouranswers')
+   }
+});
