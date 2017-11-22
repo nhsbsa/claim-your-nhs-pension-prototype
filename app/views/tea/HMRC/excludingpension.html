@@ -1,7 +1,7 @@
 {% extends "layout_bsa.html" %}
 
 {% block page_title %}
-Do you have any valid HMRC LTA protection? - Transfers, Estimate and Awards
+  Do you want to be contact about your pension by text and email? - Transfers, Estimate and Awards
 {% endblock %}
 
 {% block content %}
@@ -15,10 +15,10 @@ Do you have any valid HMRC LTA protection? - Transfers, Estimate and Awards
 
       <div class="heading-group">
         <p>Transfers, Estimate and Awards<p>
-        <h1 class="heading-large">Do you have any valid HMRC Lifetime Allowance Charge protection?</h1>
+        <h1 class="heading-large">Excluding your main NHS pension benefits were any of your separate pension benefits in payment
+on or after 6 April 2006?
       </div>
-      <p>For example,  Enhanced, Primary, Fixed (2012, 2014 or 2016),
-or Individual (2014 or 2016)</p>
+
       <form action="contact-handler" method="post-address" class="form">
 
         <div class="form-group">
@@ -26,7 +26,7 @@ or Individual (2014 or 2016)</p>
           <fieldset class="inline">
 
             <div class="multiple-choice">
-              <input id="yes" type="radio" name="emailntext" value="Yes" data-target="vaild">
+              <input id="yes" type="radio" name="emailntext" value="Yes" data-target="gross-annaul">
               <label for="yes">Yes</label>
             </div>
 
@@ -35,23 +35,25 @@ or Individual (2014 or 2016)</p>
               <input id="no" type="radio" name="emailntext" value="No">
               <label for="no">No</label>
             </div>
-
-            <div class="panel panel-border-narrow js-hidden" id="vaild">
+            <div class="panel panel-border-narrow js-hidden" id="gross-annaul">
               <div class="form-group currency-input">
                         <label class="form-label" for="employer-contributions" id="employer-contributions-label">
-                          Certificate or reference number
+                            <span> total combined percentage of LTA</span>
+                            <span class="currency-input__unit">%</span>
+                        </label>
+                        <input class="form-control form-control-1-3 validate-numeric" id="employer-contributions" name="employer-contributions" type="number" aria-label="Enter amount in pounds" required="" aria-required="true">
+                        <label class="form-label" for="employer-contributions" id="employer-contributions-label">
+                            <span>Date of first Benefit Crystallisation </span>
                         </label>
                         <input class="form-control form-control-1-3 validate-numeric" id="employer-contributions" name="employer-contributions" type="number" aria-label="Enter amount in pounds" required="" aria-required="true">
                     </div>
-                  </div>
-
-
+      </div>
         </fieldset>
 
         </div>
 
         <div class="form-group">
-          <a href="checkyouranswers" class="button" type="submit"  value="Next">Next</a>
+          <a href="vaild" class="button" type="submit"  value="Next">Next</a>
         </div>
 
         <p class="navigation"><a class="cancel" href="start">Cancel</a></p>

@@ -212,3 +212,21 @@ router.get(/lumpsum-handler/, function (req, res) {
         res.redirect('checkyouranswers')
    }
 });
+
+
+
+router.get(/pensionarrangement-handler/, function (req, res) {
+  if (req.query.pensionarrangement == "Yes") {
+     res.redirect('annualpension')
+   } else {
+        res.redirect('vaild')
+   }
+});
+
+router.get(/flex-handler/, function (req, res) {
+  if (req.query.flex == "Yes") {
+     res.redirect('excludingpension')
+   } else {
+        res.redirect('beforeapril06')
+   }
+});
