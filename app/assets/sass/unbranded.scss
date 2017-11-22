@@ -28,3 +28,29 @@ $toolkit-font-stack: $helvetica-regular;
     background: $white;
   }
 }
+
+.currency-input {
+  position: relative;
+
+  &__unit {
+    position: absolute;
+    z-index: 1;
+    bottom: 6px;
+    left: 10px;
+    font-weight: bold;
+  }
+
+  .form-control {
+    padding-left: 25px;
+  }
+}
+
+.service-status {
+    display: block;
+    padding: 3px 6px;
+    white-space: nowrap;
+    background: #ffffff;
+    text-align: center;
+    border: 2px solid #b9d2dc;
+    border-radius: 5px;
+}

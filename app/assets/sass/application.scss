@@ -39,4 +39,20 @@ $path: "/public/images/";
       cursor:pointer;
 }
 
+.currency-input {
+  position: relative;
+
+  &__unit {
+    position: absolute;
+    z-index: 1;
+    bottom: 6px;
+    left: 10px;
+    font-weight: bold;
+  }
+
+  .form-control {
+    padding-left: 25px;
+  }
+}
+
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you

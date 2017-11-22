@@ -20,3 +20,19 @@ main.area {
   clear: none;
   min-height: 6em;
 }
+
+.currency-input {
+  position: relative;
+
+  &__unit {
+    position: absolute;
+    z-index: 1;
+    bottom: 6px;
+    left: 10px;
+    font-weight: bold;
+  }
+
+  .form-control {
+    padding-left: 25px;
+  }
+}

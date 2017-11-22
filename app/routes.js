@@ -117,13 +117,13 @@ router.get(/birth-handler/, function (req, res) {
     applicant.dobYear = req.query.year;
     applicant.age = (2016 - applicant.dobYear);
   }
-   res.redirect('nino');
+   res.redirect('match');
   });
 
 
   router.get(/nino-handler/, function (req, res) {
     applicant.nino = req.query.nino;
-    res.redirect('schemenumber');
+    res.redirect('dob');
   });
 
   //address
