@@ -19,23 +19,26 @@
 before 6 April 2006?
       </div>
 
-      <form action="contact-handler" method="post-address" class="form">
+      <form action="nhs-handler" method="post-address" class="form">
 
         <div class="form-group">
 
           <fieldset class="inline">
+            <legend class="visually-hidden">
+            What date will you be returning work?
+            </legend>
 
-            <div class="multiple-choice">
-              <input id="yes" type="radio" name="emailntext" value="Yes" data-target="gross-annaul">
+            <div class="multiple-choice" data-target="getnhsno">
+              <input id="yes" type="radio" name="hasnhsno" value="Yes">
               <label for="yes">Yes</label>
             </div>
 
-
             <div class="multiple-choice">
-              <input id="no" type="radio" name="emailntext" value="No">
+              <input id="no" type="radio" name="hasnhsno" value="No">
               <label for="no">No</label>
             </div>
-            <div class="panel panel-border-narrow js-hidden" id="gross-annaul">
+
+          <div class="panel panel-border-narrow js-hidden" id="getnhsno">
               <div class="form-group currency-input">
                         <label class="form-label" for="employer-contributions" id="employer-contributions-label">
                             <span> Gross annual rate before deduction of income tax from your your separate
@@ -44,10 +47,9 @@ before 6 April 2006?
                         </label>
                         <input class="form-control form-control-1-3 validate-numeric" id="employer-contributions" name="employer-contributions" type="number" aria-label="Enter amount in pounds" required="" aria-required="true">
                     </div>
-      </div>
+            </div>
+          </div>
         </fieldset>
-
-        </div>
 
         <div class="form-group">
           <a href="vaild" class="button" type="submit"  value="Next">Next</a>

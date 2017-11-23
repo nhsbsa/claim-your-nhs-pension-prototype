@@ -1,7 +1,7 @@
 {% extends "layout_bsa.html" %}
 
 {% block page_title %}
- What is your National Insurance number? - Transfers, Estimate and Awards
+ What is your spouse's or civil partners name?- Transfers, Estimate and Awards
 {% endblock %}
 
 {% block content %}
@@ -17,23 +17,32 @@
 
       <div class="heading-group">
         <p>Transfers, Estimate and Awards
-        <h1 class="heading-large">What is your National Insurance number?</h1>
+        <h1 class="heading-large">What is your spouse's or civil partners name?</h1>
       </div>
 
 
 
 
 
-        <form action="nino-handler" method="get" class="form">
-            <p class="form-hint">For example, 'QQ 12 34 56 C'</p>
-          <div class="form-group">
+        <form action="name-handler" method="get" class="form">
 
+          <div class="form-group">
+            <label class="form-label" for="firstname">
+              First name
+            </label>
             <input class="form-control" id="firstname" name="firstname" type="text">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="lastname">
+              Last name
+            </label>
+            <input class="form-control" id="lastname" name="lastname" type="text">
           </div>
 
           <div class="form-item-wrapper">
             <div class="form-group">
-              <input class="button" type="submit" value="Next">
+              <a href="spousedob" class="button" type="submit" value="Next">Next</a>
             </div>
           </div>
 

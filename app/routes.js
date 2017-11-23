@@ -153,7 +153,7 @@ router.get(/relationship-handler/, function (req, res) {
   if (req.query.rcg == "single") {
   res.redirect('children');
 } else {
-  res.redirect('spousedetails');
+  res.redirect('spousename');
 }
 });
 
@@ -227,6 +227,6 @@ router.get(/flex-handler/, function (req, res) {
   if (req.query.flex == "Yes") {
      res.redirect('excludingpension')
    } else {
-        res.redirect('beforeapril06')
+        res.redirect('vaild')
    }
 });

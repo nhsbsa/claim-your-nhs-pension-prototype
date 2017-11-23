@@ -19,44 +19,43 @@ Do you have any valid HMRC LTA protection? - Transfers, Estimate and Awards
       </div>
       <p>For example,  Enhanced, Primary, Fixed (2012, 2014 or 2016),
 or Individual (2014 or 2016)</p>
-      <form action="contact-handler" method="post-address" class="form">
+<form action="nhs-handler" method="post-address" class="form">
 
-        <div class="form-group">
+  <div class="form-group">
 
-          <fieldset class="inline">
+    <fieldset class="inline">
+      <legend class="visually-hidden">
+      What date will you be returning work?
+      </legend>
 
-            <div class="multiple-choice">
-              <input id="yes" type="radio" name="emailntext" value="Yes" data-target="vaild">
-              <label for="yes">Yes</label>
-            </div>
+      <div class="multiple-choice" data-target="getnhsno">
+        <input id="yes" type="radio" name="hasnhsno" value="Yes">
+        <label for="yes">Yes</label>
+      </div>
 
+      <div class="multiple-choice">
+        <input id="no" type="radio" name="hasnhsno" value="No">
+        <label for="no">No</label>
+      </div>
 
-            <div class="multiple-choice">
-              <input id="no" type="radio" name="emailntext" value="No">
-              <label for="no">No</label>
-            </div>
+    <div class="panel panel-border-narrow js-hidden" id="getnhsno">
+        <div class="form-group ">
+                  <label class="form-label" for="employer-contributions" id="employer-contributions-label">
+                      <span>Certificate or reference number</span>
+                  </label>
+                  <input class="form-control form-control-1-3 validate-numeric" id="employer-contributions" name="employer-contributions" type="number" aria-label="Enter amount in pounds" required="" aria-required="true">
+              </div>
+      </div>
+    </div>
+  </fieldset>
 
-            <div class="panel panel-border-narrow js-hidden" id="vaild">
-              <div class="form-group currency-input">
-                        <label class="form-label" for="employer-contributions" id="employer-contributions-label">
-                          Certificate or reference number
-                        </label>
-                        <input class="form-control form-control-1-3 validate-numeric" id="employer-contributions" name="employer-contributions" type="number" aria-label="Enter amount in pounds" required="" aria-required="true">
-                    </div>
-                  </div>
+  <div class="form-group">
+    <a href="checkyouranswers" class="button" type="submit"  value="Next">Next</a>
+  </div>
 
+  <p class="navigation"><a class="cancel" href="start">Cancel</a></p>
 
-        </fieldset>
-
-        </div>
-
-        <div class="form-group">
-          <a href="checkyouranswers" class="button" type="submit"  value="Next">Next</a>
-        </div>
-
-        <p class="navigation"><a class="cancel" href="start">Cancel</a></p>
-
-      </form>
+</form>
 
     </div>
 
