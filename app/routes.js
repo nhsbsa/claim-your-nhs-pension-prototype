@@ -117,13 +117,13 @@ router.get(/birth-handler/, function (req, res) {
     applicant.dobYear = req.query.year;
     applicant.age = (2016 - applicant.dobYear);
   }
-   res.redirect('match');
+   res.redirect('post-address');
   });
 
 
   router.get(/nino-handler/, function (req, res) {
     applicant.nino = req.query.nino;
-    res.redirect('dob');
+    res.redirect('../AW8P');
   });
 
   //address
@@ -145,7 +145,7 @@ router.get(/address-c-handler/, function (req, res) {
     tempAddress = tempAddress + " " + req.query.postcode;
   }
 
- res.redirect('relationshipstatus');
+ res.redirect('nino');
 });
 
 
