@@ -1,7 +1,7 @@
 {% extends "layout_bsa.html" %}
 
 {% block page_title %}
-Application progress - Transfers, Estimate and Awards
+Application - Transfers, Estimate and Awards
 {% endblock %}
 
 {% block content %}
@@ -17,45 +17,55 @@ Application progress - Transfers, Estimate and Awards
 
       <div class="heading-group">
         <p>Transfers, Estimate and Awards</p>
-        <h1 class="heading-xlarge">Application progress</h1>
+        <h1 class="heading-xlarge">Application</h1>
       </div>
-
-
-
+      <br>
+      <h2 class="task-list-section">About you</h2>
       <table class="check-table">
   <thead>
     <tr>
-      <th scope="col">Section</th>
-      <th scope="col">Status</th>
-      <th class="numeric" scope="col">Action</th>
+      <th>
+      <th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td scope="row">Relationship details</td>
-      <td>not started</td>
-      <td><a href="about-you/relationshipstatus">Give an answer</a></td>
+      <td scope="row"><a href="about-you/relationshipstatus">Relationship details</a></td>
+      <td class="numeric"><strong class="phase-tag">Completed</strong></td>
     </tr>
     <tr>
-      <td scope="row">Employment details</td>
-      <td>not started</td>
-      <td class="numeric"><a href="employment/details">Give an answer</a></td>
+      <td scope="row"><a href="employment/details">Employment details</a></td>
+      <td></td>
     </tr>
     <tr>
-      <td scope="row">Pension details</td>
-      <td>not started</td>
-      <td class="numeric"><a href="about-your-pension/whichscheme">Give an answer</a></td>
+      <td scope="row"><a href="contact/contactpref">Contact details</a></td>
+      <td></td>
     </tr>
     <tr>
-      <td scope="row">HM Revence and Customs</td>
-      <td>not started</td>
-      <td class="numeric"><a href="HMRC/pensionarrangement">Give an answer</a></td>
+      <td scope="row"><a href="payment/ddpay">Payment details</a></td>
+      <td></td>
+    </tr>
+    </tbody>
+    </table>
+    <br>
+    <br>
+      <h2 class="task-list-section">About pension</h2>
+    <table class="check-table">
+<thead>
+  <tr>
+    <th></th>
+    <th></th>
+  </tr>
+</thead>
+    <tr>
+      <td scope="row"><a href="about-your-pension/whichscheme">Pension details</a></td>
+      <td></td>
     </tr>
     <tr>
-      <td scope="row">Payment details</td>
-      <td>not started</td>
-      <td class="numeric"><a href="payment/ddpay">Give an answer</a></td>
+      <td scope="row"><a href="HMRC/pensionarrangement">HM Revence and Customs</a></td>
+      <td class="numeric"><strong class="phase-tag">Completed</strong></td>
     </tr>
+
   </tbody>
 </table>
 
