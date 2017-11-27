@@ -28,6 +28,7 @@ applicant.dobYear = null;
 applicant.dob = null;
 applicant.hasNhsno = null;
 applicant.nhsno = null;
+applicant.nino = null;
 applicant.postCode = null;
 applicant.addresslineone = null;
 applicant.addresslinetwo = null;
@@ -102,6 +103,7 @@ router.get(/name-handler/, function (req, res) {
   applicant.firstName = req.query.firstname;
   applicant.lastName = req.query.lastname;
   applicant.setFullName();
+  console.log(applicant.fullName)
   res.redirect('dob');
 });
 
@@ -117,14 +119,12 @@ router.get(/birth-handler/, function (req, res) {
     applicant.dobYear = req.query.year;
     applicant.age = (2016 - applicant.dobYear);
   }
+  console.log(applicant.dobDay)
+  console.log(applicant.dobMonth)
+  console.log(applicant.dobYear)
    res.redirect('post-address');
   });
 
-
-  router.get(/nino-handler/, function (req, res) {
-    applicant.nino = req.query.nino;
-    res.redirect('../AW8P');
-  });
 
   //address
 router.get(/address-c-handler/, function (req, res) {
@@ -138,15 +138,19 @@ router.get(/address-c-handler/, function (req, res) {
   if (req.query.town != '') {
     tempAddress = tempAddress + " " + req.query.town;
   }
-//  if (req.query.county != '') {
-//    tempAddress = tempAddress + " " + req.query.county;
-//  }
   if (req.query.postcode != '') {
     tempAddress = tempAddress + " " + req.query.postcode;
   }
-
  res.redirect('nino');
+ console.log(applicant.address)
 });
+
+router.get(/nino-handler/, function (req, res) {
+  applicant.nino = req.query.nino;
+  console.log(applicant.nino)
+  res.redirect('../AW8P');
+});
+
 
 
 router.get(/relationship-handler/, function (req, res) {
