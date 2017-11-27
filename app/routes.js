@@ -163,7 +163,7 @@ router.get(/child-handler/, function (req, res) {
   if (req.query.child == "Yes") {
   res.redirect('list-children');
 } else {
-  res.redirect('checkyouranswers');
+  res.redirect('allocating');
 }
 });
 
