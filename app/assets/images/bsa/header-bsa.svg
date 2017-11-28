@@ -1,1 +1,24 @@
-<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1211.95 66"><defs><style>.cls-1{fill:url(#New_Gradient_Swatch_3);}.cls-2{fill:url(#New_Gradient_Swatch_8);}</style><linearGradient id="New_Gradient_Swatch_3" y1="27.5" x2="517.86" y2="27.5" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#007ac7"/><stop offset="0.22" stop-color="#1b84cb"/><stop offset="0.55" stop-color="#3f91d0"/><stop offset="0.83" stop-color="#5599d3"/><stop offset="1" stop-color="#5d9cd4"/></linearGradient><linearGradient id="New_Gradient_Swatch_8" y1="32.68" x2="1212" y2="32.68" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#0f76b6"/><stop offset="0.42" stop-color="#0f76b6"/><stop offset="0.52" stop-color="#1679b8"/><stop offset="0.66" stop-color="#2880bc"/><stop offset="0.82" stop-color="#478bc4"/><stop offset="1" stop-color="#709bce"/></linearGradient></defs><title>Artboard 1</title><polygon class="cls-1" points="517.86 17.55 211.63 7.99 0 18.78 0 47.01 517.86 17.55"/><polyline class="cls-2" points="0 0 0 27.92 513.84 18.79 1212 65.37 1212 32.11"/></svg>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 21.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 1211.9 66" style="enable-background:new 0 0 1211.9 66;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:url(#SVGID_1_);}
+	.st1{fill:url(#SVGID_2_);}
+</style>
+<title>Artboard 1</title>
+<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="0" y1="39.78" x2="517.86" y2="39.78" gradientTransform="matrix(1 0 0 -1 0 67.28)">
+	<stop  offset="0.14" style="stop-color:#009639"/>
+	<stop  offset="0.83" style="stop-color:#5EC384"/>
+</linearGradient>
+<polygon class="st0" points="517.9,17.5 211.6,8 0,18.8 0,47 "/>
+<linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="0" y1="34.595" x2="1212" y2="34.595" gradientTransform="matrix(1 0 0 -1 0 67.28)">
+	<stop  offset="0" style="stop-color:#0F76B6"/>
+	<stop  offset="0.42" style="stop-color:#0F76B6"/>
+	<stop  offset="0.52" style="stop-color:#1679B8"/>
+	<stop  offset="0.66" style="stop-color:#2880BC"/>
+	<stop  offset="0.82" style="stop-color:#478BC4"/>
+	<stop  offset="1" style="stop-color:#709BCE"/>
+</linearGradient>
+<polyline class="st1" points="0,0 0,27.9 513.8,18.8 1212,65.4 1212,32.1 "/>
+</svg>
