@@ -156,6 +156,10 @@ router.get(/nino-handler/, function (req, res) {
 router.get(/relationship-handler/, function (req, res) {
   if (req.query.rcg == "single") {
   res.redirect('children');
+} else if (req.query.rcg == "windowed"){
+  res.redirect('children');
+} else if (req.query.rcg == "divorced"){
+  res.redirect('children');
 } else {
   res.redirect('spousename');
 }
