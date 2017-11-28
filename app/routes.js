@@ -169,10 +169,18 @@ router.get(/relationship-handler/, function (req, res) {
 
 router.get(/child-handler/, function (req, res) {
   if (req.query.child == "Yes") {
-  res.redirect('list-children');
+  res.redirect('childname');
 } else {
   res.redirect('allocating');
 }
+});
+
+router.get(/childn-handler/, function (req, res) {
+  res.redirect('childdob');
+});
+
+router.get(/childdob-handler/, function (req, res) {
+  res.redirect('secondchildren');
 });
 
 router.get(/working-handler/, function (req, res) {
