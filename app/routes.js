@@ -21,6 +21,7 @@ applicant.title = null;
 applicant.firstName = null ;
 applicant.lastName = null ;
 applicant.schemenumber = null ;
+applicant.relationship = null ;
 applicant.fullName = null ;
 applicant.dobDay = null;
 applicant.dobMonth = null;
@@ -154,6 +155,7 @@ router.get(/nino-handler/, function (req, res) {
 
 
 router.get(/relationship-handler/, function (req, res) {
+  applicant.relationship = req.query.rcg;
   if (req.query.rcg == "single") {
   res.redirect('children');
 } else if (req.query.rcg == "windowed"){
@@ -162,7 +164,8 @@ router.get(/relationship-handler/, function (req, res) {
   res.redirect('children');
 } else {
   res.redirect('spousename');
-}
+  console.log(applicant.relationship)
+ }
 });
 
 
