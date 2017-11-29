@@ -246,3 +246,11 @@ router.get(/flex-handler/, function (req, res) {
         res.redirect('vaild')
    }
 });
+
+router.get(/isthisfile-handler/, function (req, res) {
+  if (req.query.file == "Yes") {
+     res.redirect('uploadfile')
+   } else {
+        res.redirect('done')
+   }
+});
