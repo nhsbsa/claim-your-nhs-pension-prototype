@@ -18,21 +18,21 @@ var pensioncomplete = document.getElementById("pensioncomplete");
 var hmrccomplete = document.getElementById("hmrccomplete");
 
 
-if (document.location.href == "http://localhost:3000/tea/about-you/checkyouranswers") {
+if (document.location.href == "https://tea-prototype.herokuapp.com/tea/about-you/checkyouranswers") {
   // set a new cookie
   expiry = new Date();
   expiry.setTime(expiry.getTime()+(60*60*1000)); // Sixty minutes
 
   // Date()'s toGMTSting() method will format the date correctly for a cookie
   document.cookie = "visited1=yes; path=/; expires=" + expiry.toGMTString();
-} else if (document.location.href == "http://localhost:3000/tea/employment/checkyouranswers") {
+} else if (document.location.href == "https://tea-prototype.herokuapp.com/tea/employment/checkyouranswers") {
   // set a new cookie
   expiry = new Date();
   expiry.setTime(expiry.getTime()+(60*60*1000)); // Sixty minutes
 
   // Date()'s toGMTSting() method will format the date correctly for a cookie
   document.cookie = "visited2=yes; path=/; expires=" + expiry.toGMTString();
-} else if (document.location.href == "http://localhost:3000/tea/contact/checkyouranswers") {
+} else if (document.location.href == "https://tea-prototype.herokuapp.com/tea/contact/checkyouranswers") {
   // set a new cookie
   expiry = new Date();
   expiry.setTime(expiry.getTime()+(60*60*1000)); // Sixty minutes
@@ -40,7 +40,7 @@ if (document.location.href == "http://localhost:3000/tea/about-you/checkyouransw
   // Date()'s toGMTSting() method will format the date correctly for a cookie
   document.cookie = "visited3=yes; path=/; expires=" + expiry.toGMTString();
 }
-else if (document.location.href == "http://localhost:3000/tea/payment/ddv2-confirm") {
+else if (document.location.href == "https://tea-prototype.herokuapp.com/tea/payment/ddv2-confirm") {
   // set a new cookie
   expiry = new Date();
   expiry.setTime(expiry.getTime()+(60*60*1000)); // Sixty minutes
@@ -48,7 +48,7 @@ else if (document.location.href == "http://localhost:3000/tea/payment/ddv2-confi
   // Date()'s toGMTSting() method will format the date correctly for a cookie
   document.cookie = "visited4=yes; path=/; expires=" + expiry.toGMTString();
 }
-else if (document.location.href == "http://localhost:3000/tea/about-your-pension/checkyouranswers") {
+else if (document.location.href == "https://tea-prototype.herokuapp.com/tea/about-your-pension/checkyouranswers") {
   // set a new cookie
   expiry = new Date();
   expiry.setTime(expiry.getTime()+(60*60*1000)); // Sixty minutes
@@ -57,7 +57,7 @@ else if (document.location.href == "http://localhost:3000/tea/about-your-pension
   document.cookie = "visited5=yes; path=/; expires=" + expiry.toGMTString();
 }
 
-else if (document.location.href == "http://localhost:3000/tea/HMRC/checkyouranswers") {
+else if (document.location.href == "https://tea-prototype.herokuapp.com/tea/HMRC/checkyouranswers") {
   // set a new cookie
   expiry = new Date();
   expiry.setTime(expiry.getTime()+(60*60*1000)); // Sixty minutes
