@@ -106,3 +106,29 @@ $(document).ready(function () {
 
 
 })
+
+var relationshipcomplete = document.getElementById("relationshipcomplete");
+var employmentcomplete = document.getElementById("employmentcomplete");
+var contactcomplete = document.getElementById("contactcomplete");
+var paymentcomplete = document.getElementById("paymentcomplete");
+var pensioncomplete = document.getElementById("pensioncomplete");
+var hmrccomplete = document.getElementById("hmrccomplete");
+
+if(document.referrer.includes("/about-you/checkyouranswers", true)) {
+  relationshipcomplete.classList.remove("js-hidden");
+}
+if (document.referrer.includes("/employment/checkyouranswers", true)) {
+  employmentcomplete.classList.remove("js-hidden");
+}
+ if (document.referrer.includes("/contact/checkyouranswers", true)) {
+  contactcomplete.classList.remove("js-hidden");
+}
+if (document.referrer.includes("/payment/ddv2-confirm", true)) {
+  paymentcomplete.classList.remove("js-hidden");
+}
+if (document.referrer.includes("/HMRC/checkyouranswers", true)) {
+  hmrccomplete.classList.remove("js-hidden");
+}
+if (document.referrer.includes("/pension/checkyouranswers", true)) {
+  pensioncomplete.classList.remove("js-hidden");
+}
