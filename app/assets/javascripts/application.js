@@ -10,50 +10,146 @@ if (
   window.sessionStorage.setItem('prototypeWarning', true)
 }
 
+var relationshipcomplete = document.getElementById("relationshipcomplete");
+var employmentcomplete = document.getElementById("employmentcomplete");
+var contactcomplete = document.getElementById("contactcomplete");
+var paymentcomplete = document.getElementById("paymentcomplete");
+var pensioncomplete = document.getElementById("pensioncomplete");
+var hmrccomplete = document.getElementById("hmrccomplete");
+
+
+if (document.location.href == "http://localhost:3000/tea/about-you/checkyouranswers") {
+  // set a new cookie
+  expiry = new Date();
+  expiry.setTime(expiry.getTime()+(60*60*1000)); // Sixty minutes
+
+  // Date()'s toGMTSting() method will format the date correctly for a cookie
+  document.cookie = "visited1=yes; path=/; expires=" + expiry.toGMTString();
+} else if (document.location.href == "http://localhost:3000/tea/employment/checkyouranswers") {
+  // set a new cookie
+  expiry = new Date();
+  expiry.setTime(expiry.getTime()+(60*60*1000)); // Sixty minutes
+
+  // Date()'s toGMTSting() method will format the date correctly for a cookie
+  document.cookie = "visited2=yes; path=/; expires=" + expiry.toGMTString();
+} else if (document.location.href == "http://localhost:3000/tea/contact/checkyouranswers") {
+  // set a new cookie
+  expiry = new Date();
+  expiry.setTime(expiry.getTime()+(60*60*1000)); // Sixty minutes
+
+  // Date()'s toGMTSting() method will format the date correctly for a cookie
+  document.cookie = "visited3=yes; path=/; expires=" + expiry.toGMTString();
+}
+else if (document.location.href == "http://localhost:3000/tea/payment/ddv2-confirm") {
+  // set a new cookie
+  expiry = new Date();
+  expiry.setTime(expiry.getTime()+(60*60*1000)); // Sixty minutes
+
+  // Date()'s toGMTSting() method will format the date correctly for a cookie
+  document.cookie = "visited4=yes; path=/; expires=" + expiry.toGMTString();
+}
+else if (document.location.href == "http://localhost:3000/tea/about-your-pension/checkyouranswers") {
+  // set a new cookie
+  expiry = new Date();
+  expiry.setTime(expiry.getTime()+(60*60*1000)); // Sixty minutes
+
+  // Date()'s toGMTSting() method will format the date correctly for a cookie
+  document.cookie = "visited5=yes; path=/; expires=" + expiry.toGMTString();
+}
+
+else if (document.location.href == "http://localhost:3000/tea/HMRC/checkyouranswers") {
+  // set a new cookie
+  expiry = new Date();
+  expiry.setTime(expiry.getTime()+(60*60*1000)); // Sixty minutes
+
+  // Date()'s toGMTSting() method will format the date correctly for a cookie
+  document.cookie = "visited6=yes; path=/; expires=" + expiry.toGMTString();
+}
+
+if (document.location.href.includes("/tea/AW8P") && document.cookie.indexOf("visited1=") >= 0) {
+  // They've been here before
+  document.getElementById("relationshipcomplete").classList.remove("js-hidden");
+}
+
+if (document.location.href.includes("/tea/AW8P") && document.cookie.indexOf("visited2=") >= 0) {
+  // They've been here before
+  document.getElementById("employmentcomplete").classList.remove("js-hidden");
+}
+
+if (document.location.href.includes("/tea/AW8P") && document.cookie.indexOf("visited3=") >= 0) {
+  // They've been here before
+  document.getElementById("contactcomplete").classList.remove("js-hidden");
+}
+
+if (document.location.href.includes("/tea/AW8P") && document.cookie.indexOf("visited4=") >= 0) {
+  // They've been here before
+  document.getElementById("paymentcomplete").classList.remove("js-hidden");
+}
+
+if (document.location.href.includes("/tea/AW8P") && document.cookie.indexOf("visited5=") >= 0) {
+  // They've been here before
+  document.getElementById("pensioncomplete").classList.remove("js-hidden");
+}
+
+if (document.location.href.includes("/tea/AW8P") && document.cookie.indexOf("visited6=") >= 0) {
+  // They've been here before
+  document.getElementById("hmrccomplete").classList.remove("js-hidden");
+}
+
+if (document.cookie.indexOf("visited1=") >= 0 &&
+    document.cookie.indexOf("visited2=") >= 0 &&
+    document.cookie.indexOf("visited3=") >= 0 &&
+    document.cookie.indexOf("visited4=") >= 0 &&
+    document.cookie.indexOf("visited5=") >= 0 &&
+    document.cookie.indexOf("visited6=") >= 0){
+      document.getElementById("application").removeAttribute("disabled");
+    }
+
+
 //ppc
 
 //review table one
-  if(document.getElementById("review-table-one")) {
-    var runout = document.getElementById("runout");
-    var hasNhsno = document.getElementById("has-nhsno").innerHTML;
-    var nhsno = document.getElementById("nhsno");
-    var codeRow = document.getElementById("postcode-row");
-    var contactRow = document.getElementById("contact-row");
-    var hasMobile = document.getElementById("has-mobile").innerHTML;
-    var hasEmail = document.getElementById("has-email").innerHTML;
-    var mobileValue = document.getElementById("mobile-value");
-    var emailValue = document.getElementById("email-value");
-    //payments
-    var method = document.getElementById("method").innerHTML;
-    var paymentRow = document.getElementById("payments");
-    var amountRow = document.getElementById("amount");
-    var firstPayRow = document.getElementById("fp");
-    var lastPayRow = document.getElementById("lp");
-
-    var changemobile = document.getElementById("changemobile").innerHTML;
-    var addorchange = document.getElementById("addorchange");
-    //hide contact where none given
-    if (hasMobile === 'No') {
-      mobileValue.className += " hidden";
-    }
-    if (hasNhsno === 'No') {
-      nhsno.className += " hidden";
-    }
-    if (hasEmail === 'No') {
-      emailValue.className += " hidden";
-    }
-    if (changemobile === '') {
-      addorchange += "Add";
-    }
-
-    //if card payment hide dd details
-    if(method === 'Card payment') {
-      paymentRow.className += " hidden";
-      amountRow.className += " hidden";
-      firstPayRow.className += " hidden";
-      lastPayRow.className += " hidden";
-    }
-  }
+  // if(document.getElementById("review-table-one")) {
+  //   var runout = document.getElementById("runout");
+  //   var hasNhsno = document.getElementById("has-nhsno").innerHTML;
+  //   var nhsno = document.getElementById("nhsno");
+  //   var codeRow = document.getElementById("postcode-row");
+  //   var contactRow = document.getElementById("contact-row");
+  //   var hasMobile = document.getElementById("has-mobile").innerHTML;
+  //   var hasEmail = document.getElementById("has-email").innerHTML;
+  //   var mobileValue = document.getElementById("mobile-value");
+  //   var emailValue = document.getElementById("email-value");
+  //   //payments
+  //   var method = document.getElementById("method").innerHTML;
+  //   var paymentRow = document.getElementById("payments");
+  //   var amountRow = document.getElementById("amount");
+  //   var firstPayRow = document.getElementById("fp");
+  //   var lastPayRow = document.getElementById("lp");
+  //
+  //   var changemobile = document.getElementById("changemobile").innerHTML;
+  //   var addorchange = document.getElementById("addorchange");
+  //   //hide contact where none given
+  //   if (hasMobile === 'No') {
+  //     mobileValue.className += " hidden";
+  //   }
+  //   if (hasNhsno === 'No') {
+  //     nhsno.className += " hidden";
+  //   }
+  //   if (hasEmail === 'No') {
+  //     emailValue.className += " hidden";
+  //   }
+  //   if (changemobile === '') {
+  //     addorchange += "Add";
+  //   }
+  //
+  //   //if card payment hide dd details
+  //   if(method === 'Card payment') {
+  //     paymentRow.className += " hidden";
+  //     amountRow.className += " hidden";
+  //     firstPayRow.className += " hidden";
+  //     lastPayRow.className += " hidden";
+  //   }
+  // }
 
 if (document.getElementById("has_dd")) {
   var ddContent = document.getElementById("dd_content");
@@ -103,32 +199,4 @@ $(document).ready(function () {
 
     };
   }
-
-
 })
-
-var relationshipcomplete = document.getElementById("relationshipcomplete");
-var employmentcomplete = document.getElementById("employmentcomplete");
-var contactcomplete = document.getElementById("contactcomplete");
-var paymentcomplete = document.getElementById("paymentcomplete");
-var pensioncomplete = document.getElementById("pensioncomplete");
-var hmrccomplete = document.getElementById("hmrccomplete");
-
-if(document.referrer.includes("/about-you/checkyouranswers", true)) {
-  relationshipcomplete.classList.remove("js-hidden");
-}
-if (document.referrer.includes("/employment/checkyouranswers", true)) {
-  employmentcomplete.classList.remove("js-hidden");
-}
- if (document.referrer.includes("/contact/checkyouranswers", true)) {
-  contactcomplete.classList.remove("js-hidden");
-}
-if (document.referrer.includes("/payment/ddv2-confirm", true)) {
-  paymentcomplete.classList.remove("js-hidden");
-}
-if (document.referrer.includes("/HMRC/checkyouranswers", true)) {
-  hmrccomplete.classList.remove("js-hidden");
-}
-if (document.referrer.includes("/pension/checkyouranswers", true)) {
-  pensioncomplete.classList.remove("js-hidden");
-}
