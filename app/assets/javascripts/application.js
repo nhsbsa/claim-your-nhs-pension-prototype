@@ -115,5 +115,5 @@ if (document.cookie.indexOf("visited1=") >= 0 &&
         document.cookie = "visited4=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
         document.cookie = "visited5=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
         document.cookie = "visited6=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-        // repeat
+        location.reload();
     };
