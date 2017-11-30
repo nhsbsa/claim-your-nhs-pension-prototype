@@ -156,6 +156,10 @@ router.get(/nino-handler/, function (req, res) {
   res.redirect('../AW8P');
 });
 
+router.get(/AW8P-handler/, function (req, res) {
+  res.redirect('file-upload/uploadfile');
+});
+
 
 
 router.get(/relationship-handler/, function (req, res) {
