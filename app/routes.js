@@ -213,6 +213,18 @@ if (req.query.emailntext == 'Yes') {
 
 });
 
+router.get(/allocating-handler/, function (req, res) {
+
+if (req.query.allocating == 'Yes') {
+  res.redirect('allocating/allocatename')
+} else {
+  res.redirect('checkyouranswers')
+}
+
+});
+
+
+
 router.get(/scheme-handler/, function (req, res) {
   if (req.query.scheme == "1995") {
     res.redirect('why')

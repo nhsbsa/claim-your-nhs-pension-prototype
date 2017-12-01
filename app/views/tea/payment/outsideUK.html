@@ -1,7 +1,8 @@
 {% extends "layout_bsa.html" %}
 
 {% block page_title %}
-  Do you want to be contact about your pension by text and email? - Claim your NHS Pension
+ave you accessed your benefits with another pension scheme using
+pension flexibilities? - Claim your NHS Pension
 {% endblock %}
 
 {% block content %}
@@ -15,36 +16,31 @@
 
       <div class="heading-group">
         <p>Claim your NHS Pension<p>
-        <h1 class="heading-large">Do you want to allocate part of your pension?
+        <h1 class="heading-large">Is your bank outside the UK?
       </div>
 
-      <form action="allocating-handler" method="post-address" class="form">
+      <form action="outsideUK-handler" method="post-address" class="form">
 
         <div class="form-group">
 
           <fieldset class="inline">
             <legend></legend>
 
-            <legend class="visually-hidden">
-            Do you want to allocate part of your pension?
-            </legend>
-
-            <div class="multiple-choice" data-target="getnhsno">
-              <input id="yes" type="radio" name="allocating" value="Yes">
+            <div class="multiple-choice">
+              <input id="yes" type="radio" name="flex" value="Yes">
               <label for="yes">Yes</label>
             </div>
 
             <div class="multiple-choice">
-              <input id="no" type="radio" name="allocating" value="No">
+              <input id="no" type="radio" name="flex" value="No">
               <label for="no">No</label>
             </div>
-
-
         </fieldset>
-        <br>
+
+        </div>
 
         <div class="form-group">
-        <input class="button" id="application" type="submit" value="Next">
+          <input class="button" type="submit"  value="Next">
         </div>
 
         <p class="navigation"><a class="cancel" href="../AW8P">Cancel</a></p>
