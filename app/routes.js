@@ -277,3 +277,13 @@ router.get(/isthisfile-handler/, function (req, res) {
         res.redirect('done')
    }
 });
+
+router.get(/outsideUK-handler/, function (req, res) {
+
+if (req.query.outside == 'Yes') {
+  res.redirect('outsideuk/nameofbank')
+} else {
+  res.redirect('ddpay')
+}
+
+});
