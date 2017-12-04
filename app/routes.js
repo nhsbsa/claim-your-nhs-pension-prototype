@@ -287,3 +287,15 @@ if (req.query.outside == 'Yes') {
 }
 
 });
+
+
+
+router.get(/LTA-handler/, function (req, res) {
+
+if (req.query.outside == 'Yes') {
+  res.redirect('vaild')
+} else {
+  res.redirect('../start/start')
+}
+
+});
