@@ -15,10 +15,10 @@ Will your annual pension be more than £30,000? - Claim your NHS Pension
 
       <div class="heading-group">
         <p>Claim your NHS Pension<p>
-        <h1 class="heading-large">Will your annual pension be more than £30,000?
+        <h1 class="heading-large">Will your annual pension from all your pension arrangements, including the NHS Scheme, be more than £30,000 per year? Or have you accessed your bene ts with another pension scheme using pension  exibilities?
       </div>
 
-      <form action="contact-handler" method="post-address" class="form">
+      <form action="flex-handler" method="post-address" class="form">
 
         <div class="form-group">
 
@@ -26,12 +26,17 @@ Will your annual pension be more than £30,000? - Claim your NHS Pension
             <legend></legend>
 
             <div class="multiple-choice">
-              <input id="yes" type="radio" name="emailntext" value="Yes">
+              <input id="yes" type="radio" name="flex" value="Yes">
               <label for="yes">Yes</label>
             </div>
 
             <div class="multiple-choice">
-              <input id="no" type="radio" name="emailntext" value="No">
+              <input id="yes" type="radio" name="flex" value="Yes">
+              <label for="yes">Don't know</label>
+            </div>
+
+            <div class="multiple-choice">
+              <input id="no" type="radio" name="flex" value="No">
               <label for="no">No</label>
             </div>
         </fieldset>
@@ -39,7 +44,7 @@ Will your annual pension be more than £30,000? - Claim your NHS Pension
         </div>
 
         <div class="form-group">
-          <a href="pensionflex" class="button" type="submit"  value="Next">Next</a>
+          <input class="button" type="submit"  value="Next">
         </div>
 
         <p class="navigation"><a class="cancel" href="../AW8P">Cancel</a></p>
