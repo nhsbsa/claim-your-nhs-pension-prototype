@@ -119,7 +119,7 @@ if (document.cookie.indexOf("visited1=") >= 0 &&
     };
 
 
-  
+
       if(document.getElementById("review-table-one")) {
         var runout = document.getElementById("runout");
         var hasNhsno = document.getElementById("has-nhsno").innerHTML;
@@ -211,5 +211,5 @@ if (document.cookie.indexOf("visited1=") >= 0 &&
         };
       }
 
-
+  
     })

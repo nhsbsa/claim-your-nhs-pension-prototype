@@ -25,26 +25,36 @@
     <table id="review-table-one" class="check-table">
           <!-- about you -->
           <tr>
-            <td>Are you working in the NHS now?</td>
-            <td></td>
+            <td>Do you have any pension arrangements which includes money purchase Additional Voluntary Contributions, which are not part of your NHS Pension?</td>
+            <td>{{address}}</td>
             <td><a href="post-address">Change</a></td>
           </tr>
           <tr>
-            <td>What was the name of your last NHS employer?</td>
+            <td>Will your annual pension be more than £30,000?</td>
             <td id="has-mobile">{{hasmobile}}</td>
             <td><a href="mobile-question">Change</a></td>
           </tr>
           <tr>
-            <td>What date did you leave?</td>
+            <td>Have you accessed your benefits with another pension scheme using pension flexibilities?</td>
             <td id="has-mobile">{{hasmobile}}</td>
             <td><a href="mobile-question">Change</a></td>
           </tr>
           <tr>
-            <td>Do you intend to work in the NHS after you get your pension?</td>
+            <td>Excluding your main NHS pension benefits were any of your separate pension benefits in payment on or after 6 April 2006?</td>
             <td id="has-mobile">{{hasmobile}}</td>
             <td><a href="mobile-question">Change</a></td>
           </tr>
-
+          <tr id="mobile-value">
+            <td>Excluding your main NHS pension benefits were any of your separate pension benefits in payment before 6 April 2006?</td>
+            <td>{{mobilenumber}}</td>
+            <td><a href="mobile-number">Change</a></td>
+          </tr>
+          <tr id="email-value">
+            <td>Do you have any valid HMRC Lifetime Allowance Charge protection?</td>
+            <td>{{emailaddress}}</td>
+            <td><a href="email-address">Change</a></td>
+          </tr>
+          <!-- about your prepayment -->
       </table>
 
     <br>

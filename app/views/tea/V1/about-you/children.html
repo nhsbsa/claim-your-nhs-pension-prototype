@@ -1,7 +1,7 @@
 {% extends "layout_bsa.html" %}
 
 {% block page_title %}
-Will your annual pension be more than £30,000? - Claim your NHS Pension
+  Do you want to be contact about your pension by text and email? - Claim your NHS Pension
 {% endblock %}
 
 {% block content %}
@@ -15,27 +15,26 @@ Will your annual pension be more than £30,000? - Claim your NHS Pension
 
       <div class="heading-group">
         <p>Claim your NHS Pension<p>
-        <h1 class="heading-large">Will your annual pension from all your pension arrangements, including the NHS Scheme, be more than £30,000 per year? Or have you accessed your bene ts with another pension scheme using pension exibilities?
+        <h1 class="heading-large">Do you have any dependant children?</h1>
       </div>
 
-      <form action="flex-handler" method="post-address" class="form">
+      <form action="child-handler" method="post-address" class="form">
 
         <div class="form-group">
 
-          <fieldset>
-            <legend></legend>
+          <fieldset class="inline">
+            <legend class="visually-hidden">
+            Do you have any depenant children?
+            </legend>
 
             <div class="multiple-choice">
-              <input id="yes" type="radio" name="flex" value="Yes">
+              <input id="yes" type="radio" name="child" value="Yes">
               <label for="yes">Yes</label>
             </div>
+
             <div class="multiple-choice">
-              <input id="no" type="radio" name="flex" value="No">
+              <input id="no" type="radio" name="child" value="No">
               <label for="no">No</label>
-            </div>
-            <div class="multiple-choice">
-              <input id="yes" type="radio" name="flex" value="Yes">
-              <label for="yes">Not sure</label>
             </div>
         </fieldset>
 

@@ -1,0 +1,67 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  Why are you claiming your deferred benefits? - Claim your NHS Pension
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  {% include "includes/phase_banner_beta.html" %}
+
+  <div class="grid-row">
+
+    <div class="column-two-thirds">
+
+      <div class="heading-group">
+        <p>Claim your NHS Pension</p>
+        <h1 class="heading-large">
+          Why are you claiming your deferred benefits?
+        </h1>
+      </div>
+
+
+
+      <form class="form" action="benefits-handler" method="get">
+        <div class="form-group">
+          <fieldset>
+
+            <div class="multiple-choice multiple-radio" data-target="contact-by-email">
+              <input id="age" type="checkbox" name="benefit" value="age">
+              <label class="single-line" for="age">Retirement based on your age</label>
+            </div>
+            <div class="multiple-choice multiple-radio" data-target="contact-by-email">
+              <input id="benefit" type="checkbox" name="benefit" value="early">
+              <label class="single-line" for="benefit">Early payment of deferred pension benefit.</label>
+            </div>
+            <div class="multiple-choice multiple-radio" data-target="contact-by-email">
+              <input id="ill" type="checkbox" name="benefit" value="ill">
+              <label class="single-line" for="ill">Early payment of deferred benefits because of ill health</label>
+            </div>
+            <div class="multiple-choice multiple-radio" data-target="contact-by-email">
+              <input id="commuted" type="checkbox" name="benefit" value="commuted">
+              <label class="single-line" for="commuted">Commuted early payment of pension benefits based on ill health</label>
+            </div>
+
+
+
+
+
+            </div>
+          </fieldset>
+
+        <div class="form-group">
+          <input class="button" type="submit" value="Next">
+        </div>
+
+        <p class="navigation"><a class="cancel" href="../AW8P">Cancel</a></p>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</main>
+
+{% endblock %}
