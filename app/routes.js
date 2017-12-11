@@ -295,7 +295,7 @@ router.get(/LTA-handler/, function (req, res) {
 if (req.query.outside == 'Yes') {
   res.redirect('vaild')
 } else {
-  res.redirect('../start/start')
+  res.redirect('checkyouranswers')
 }
 
 });
