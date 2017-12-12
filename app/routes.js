@@ -195,7 +195,7 @@ router.get(/childdob-handler/, function (req, res) {
 });
 
 router.get(/working-handler/, function (req, res) {
-  if (req.query.work == "Yes") {
+  if (req.query.work == "yes") {
   res.redirect('wheredoyouwork');
 } else {
   res.redirect('lastnhsemployer');
