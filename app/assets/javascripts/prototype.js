@@ -360,7 +360,7 @@ $(document).ready(function() {
     }
 
     if (document.location.href.includes("/payment/ddv2-confirm", true)) {
-        $("td#has-mobile")[0].innerHTML = sessionStorage.getItem("nameofbank") || $("td#has-mobile")[].innerHTML = sessionStorage.getItem("holdername");
+        $("td#has-mobile")[0].innerHTML = sessionStorage.getItem("nameofbank");
         $("td#has-mobile")[1].innerHTML = sessionStorage.getItem("holderaddress");
     }
     
