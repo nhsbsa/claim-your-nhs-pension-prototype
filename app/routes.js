@@ -322,3 +322,17 @@ if (req.query.excesslta == 'Yes') {
 }
 
 });
+
+
+//ESTIMATES//
+
+
+router.get(/TRS-handler/, function (req, res) {
+
+if (req.query.TRS == 'Yes') {
+  res.redirect('https://www.totalrewardstatements.nhs.uk/login')
+} else {
+  res.redirect('behalf')
+}
+
+});
