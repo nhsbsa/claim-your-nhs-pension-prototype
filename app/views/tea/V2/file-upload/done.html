@@ -1,0 +1,58 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  Done - claim your NHS Pension
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  {% include "includes/phase_banner_beta.html" %}
+
+  <div class="grid-row">
+    <!--div class="column-two-thirds">
+
+    <div class="details">
+      <h2 class="heading-medium">Pre-paymentetails</h2>
+      <p class="valid">Valid dates</p>
+      <h2 class="heading-medium bignumbers"><span>from:</span> 20 June 2016</h2>
+      <h2 class="heading-medium bignumbers"><span>to:</span> 21 June 2017</h2>
+    </div>
+    </div-->
+
+    <div class="column-two-thirds">
+      <div class="done-panel">
+        <h1 class="heading-large"><span id="done-tick"> </span>Application submitted</h1>
+        <p class="lede" style="margin-bottom:0px;">Your reference number is:</p>
+        <p class="lede bold">343N7</p>
+      </div>
+
+    <h2 class="heading-medium">What you need to do next</h2>
+  <p>Along with you reference number, you need to send us the following:</p>
+    <ul class="bullet list">
+      <ul class="list list-bullet">
+        <li>Birth certificate</li>
+        <li>Marriage certificate</li>
+      </ul>
+
+  <h2 class="heading-medium">Save or print</h2>
+  <ul class="list options-list">
+        <li><a class="icon print-icon" href="javascript:window.print();">Print this page</a></li>
+        <li><a class="icon download-icon" href="../public/images/bsa/cert.pdf" target="_blank">Save this page (PDF 55k)</a></li>
+      </ul>
+      <br>
+
+
+
+
+
+  <p>
+    <a class="button" href="../start/start">Finished</a>
+  </p>
+
+</div>
+
+
+</main>
+
+{% endblock %}

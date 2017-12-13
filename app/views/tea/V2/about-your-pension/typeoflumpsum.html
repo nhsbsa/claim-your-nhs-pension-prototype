@@ -1,0 +1,67 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+        Which pension scheme or section? - Claim your NHS Pension
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  {% include "includes/phase_banner_beta.html" %}
+
+  <div class="grid-row">
+
+    <div class="column-two-thirds">
+
+      <div class="heading-group">
+        <p>Claim your NHS Pension</p>
+        <h1 class="heading-large">
+        How would you like your lump sum?
+        </h1>
+      </div>
+
+
+
+      <form class="form" action="scheme-handler" method="get">
+        <div class="form-group">
+          <fieldset>
+
+            <div class="multiple-choice" data-target="contact-by-email">
+              <input id="1995" type="radio" name="scheme" value="1995">
+              <label class="single-line" for="1995">Maximum tax free amount</label>
+            </div>
+            <div class="multiple-choice" data-target="amount">
+              <input id="2008" type="radio" name="scheme" value="2008">
+              <label class="single-line" for="2008">Amount less than the maximum amount permitted</label>
+            </div>
+            <div class="panel panel-border-narrow js-hidden" id="amount">
+              <div class="form-group currency-input">
+                      <label class="form-label" for="employer-contributions" id="employer-contributions-label">
+                          <span class="currency-input__unit">£</span>
+                          <!-- <span class="error-message display-none" id="error-message-employer-contributions">Amount you have entered is incorrect</span> -->
+                      </label>
+                      <input class="form-control form-control-1-3 validate-numeric" id="employer-contributions" name="employer-contributions" type="number" aria-label="Enter amount in pounds" required="" aria-required="true">
+                  </div>
+           </div>
+            <div class="multiple-choice" data-target="contact-by-email">
+              <input id="2015" type="radio" name="scheme" value="2015">
+              <label class="single-line" for="2015">Maximum lump sum which may have a tax charge</label>
+            </div>
+            </div>
+          </fieldset>
+
+        <div class="form-group">
+          <a href="checkyouranswers" class="button" type="submit" value="Next">Next</a>
+        </div>
+
+        <p class="navigation"><a class="cancel" href="../AW8P">Cancel</a></p>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</main>
+
+{% endblock %}

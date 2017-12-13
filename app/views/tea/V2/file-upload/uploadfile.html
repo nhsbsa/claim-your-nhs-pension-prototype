@@ -1,0 +1,50 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+    Upload your documents - Claim your NHS Pension
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  {% include "includes/phase_banner_beta.html" %}
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+  <div class="text">
+
+    <div class="heading-group">
+      <p>Claim your NHS Pension</p>
+      <h1 class="heading-large">
+        Upload your documents
+      </h1>
+    </div>
+    <p>You need to upload a scan copy of the following documents:
+      <ul class="list list-bullet">
+        <li>Birth certificate</li>
+        <li>Marriage certificate</li>
+      </ul>
+
+
+    <form action="c-handler" method="get" class="form">
+      <div class="form-item-wrapper">
+        <div class="form-group">
+          <a href="isthisfile" class="button" type="submit" value="Submit">Choose a file</a>
+        </div>
+      </div>
+    </form>
+
+
+
+
+
+    <p class="navigation"><a class="cancel" href="../AW8P">Cancel</a></p>
+
+  </div>
+  </div>
+  </div>
+
+</main>
+
+{% endblock %}

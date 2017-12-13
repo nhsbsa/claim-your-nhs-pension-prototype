@@ -204,15 +204,38 @@ router.get(/working-handler/, function (req, res) {
 
 
 router.get(/contact-handler/, function (req, res) {
+  if (req.query.text == 'true') {
+    applicant.hasMobile = true;
+    console.log("applicant.hasMobile = true");
+  } else {
+    applicant.hasMobile = false;
+    console.log("applicant.hasMobile = false");
+  }
+  if (req.query.email == 'true') {
+    applicant.hasEmail = true;
+    console.log("applicant.hasEmail = true");
+  } else {
+    applicant.hasEmail = false;
+    console.log("applicant.hasEmail = false");
+  }
+  if (applicant.hasMobile) {
+    res.redirect('mobilenumber');
+  } if (applicant.hasEmail) {
+       res.redirect('emailaddress');
+  } else {
+        res.redirect('checkyouranswers');
 
-if (req.query.emailntext == 'Yes') {
-  res.redirect('emailaddress')
-} else {
-  res.redirect('checkyouranswers')
 }
 
 });
+router.get(/mobile-handler/, function (req, res) {
+  if (applicant.hasEmail) {
+       res.redirect('emailaddress');
+    }   else {
+   res.redirect('checkyouranswers');
+ }
 
+});
 router.get(/allocating-handler/, function (req, res) {
 
 if (req.query.allocating == 'Yes') {

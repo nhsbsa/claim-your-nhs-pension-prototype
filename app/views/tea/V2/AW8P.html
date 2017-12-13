@@ -1,0 +1,96 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+Application - Claim your NHS Pension
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  {% include "includes/phase_banner_beta.html" %}
+
+  <div class="grid-row">
+
+
+
+    <div class="column-two-thirds">
+
+      <div class="heading-group">
+        <p>Claim your NHS Pension</p>
+        <h1 class="heading-xlarge">Application</h1>
+      </div>
+      <br>
+      <h2 class="task-list-section">About you</h2>
+      <table class="check-table">
+  <thead>
+    <tr>
+      <th>
+      <th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td scope="row"><a href="about-you/relationshipstatus">Relationship details</a></td>
+      <td class="numeric"><strong id="relationshipcomplete" class="phase-tag js-hidden">Completed</strong></td>
+    </tr>
+    <tr>
+      <td scope="row"><a href="employment/details">Employment details</a></td>
+      <td class="numeric" ><strong id="employmentcomplete" class="phase-tag js-hidden">Completed</strong></td>
+    </tr>
+    <tr>
+      <td scope="row"><a href="contact/contactpref">Contact details</a></td>
+      <td class="numeric"><strong id="contactcomplete" class="phase-tag js-hidden">Completed</strong></td>
+    </tr>
+    <tr>
+      <td scope="row"><a href="payment/outsideUK">Payment details</a></td>
+      <td class="numeric"><strong id="paymentcomplete" class="phase-tag js-hidden">Completed</strong></td>
+    </tr>
+    </tbody>
+    </table>
+    <br>
+    <br>
+      <h2 class="task-list-section">About your pension</h2>
+    <table class="check-table">
+<thead>
+  <tr>
+    <th></th>
+    <th></th>
+  </tr>
+</thead>
+    <tr>
+      <td scope="row"><a href="about-your-pension/whichscheme">Pension details</a></td>
+      <td class="numeric"><strong id="pensioncomplete" class="phase-tag  js-hidden">Completed</strong></td>
+    </tr>
+    <tr>
+      <td scope="row"><a href="HMRC/pensionarrangement">HM Revenue and Customs</a></td>
+      <td class="numeric"><strong id="hmrccomplete" class="phase-tag js-hidden">Completed</strong></td>
+    </tr>
+
+  </tbody>
+</table>
+
+
+
+
+      <form action="AW8P-handler">
+      <h2 class="heading-medium">Submit application</h2>
+      <p>You can’t finish the application until you've completed all the sections.</p>
+      <input class="button" id="application" type="submit" value="Submit" disabled="disabled" aria-disabled="true">
+      <br>
+      <br>
+      <p><a href="start/start">Cancel</a></p>
+    </form>
+
+
+
+
+
+      </div>
+
+    </div>
+
+  </div>
+
+</main>
+
+{% endblock %}

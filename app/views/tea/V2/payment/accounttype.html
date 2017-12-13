@@ -1,0 +1,55 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+        Which pension scheme or section? - Claim your NHS Pension
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  {% include "includes/phase_banner_beta.html" %}
+
+  <div class="grid-row">
+
+    <div class="column-two-thirds">
+
+      <div class="heading-group">
+        <p>Claim your NHS Pension</p>
+        <h1 class="heading-large">
+        What type of account are we making the payment too?
+        </h1>
+      </div>
+
+
+
+      <form class="form" action="scheme-handler" method="get">
+        <div class="form-group">
+          <fieldset>
+
+            <div class="multiple-choice" data-target="contact-by-email">
+              <input id="1995" type="radio" name="scheme" value="1995">
+              <label class="single-line" for="1995">Current Account</label>
+            </div>
+
+            <div class="multiple-choice" data-target="contact-by-email">
+              <input id="2015" type="radio" name="scheme" value="2015">
+              <label class="single-line" for="2015">Deposit Account</label>
+            </div>
+            </div>
+          </fieldset>
+
+        <div class="form-group">
+          <a href="ddpay" class="button" type="submit" value="Next">Next</a>
+        </div>
+
+        <p class="navigation"><a class="cancel" href="../AW8P">Cancel</a></p>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</main>
+
+{% endblock %}

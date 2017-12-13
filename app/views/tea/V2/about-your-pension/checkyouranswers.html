@@ -1,0 +1,69 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  Check your answers - Claim your NHS Pension
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  {% include "includes/phase_banner_beta.html" %}
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+  <div class="text">
+
+    <div class="heading-group">
+      <p>Claim your NHS Pension</p>
+      <h1 class="heading-large">
+        Check your answers
+      </h1>
+    </div>
+
+
+    <table id="review-table-one" class="check-table">
+          <!-- about you -->
+          <tr>
+            <td>Which pension scheme or section?</td>
+            <td id="has-mobile">{{address}}</td>
+            <td><a href="post-address">Change</a></td>
+          </tr>
+          <tr>
+            <td>Why are you claiming your deferred benefits?</td>
+            <td id="has-mobile">{{hasmobile}}</td>
+            <td><a href="mobile-question">Change</a></td>
+          </tr>
+          <tr>
+            <td>Do you want an lump sum by giving up part of your pension?</td>
+            <td id="has-mobile">{{hasmobile}}</td>
+            <td><a href="mobile-question">Change</a></td>
+          </tr>
+          <tr>
+            <td>How would you like your lump sum?</td>
+            <td id="has-mobile">{{hasmobile}}</td>
+            <td><a href="mobile-question">Change</a></td>
+          </tr>
+
+          <!-- about your prepayment -->
+      </table>
+
+    <br>
+
+    <form action="c-handler" method="get" class="form">
+      <div class="form-item-wrapper">
+        <div class="form-group">
+          <a href="../AW8P" class="button" type="submit" value="Submit">Submit</a>
+        </div>
+      </div>
+    </form>
+
+    <p class="navigation"><a class="cancel" href="../AW8P">Cancel</a></p>
+
+  </div>
+  </div>
+  </div>
+
+</main>
+
+{% endblock %}

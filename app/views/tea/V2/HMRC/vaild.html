@@ -1,0 +1,66 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+Do you have any valid HMRC Lifetime Allowance protection? - Claim your NHS Pension
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  {% include "includes/phase_banner_beta.html" %}
+
+  <div class="grid-row">
+
+    <div class="column-two-thirds">
+
+      <div class="heading-group">
+        <p>Claim your NHS Pension<p>
+        <h1 class="heading-large">Do you have any valid HMRC Lifetime Allowance protection? </h1>
+      </div>
+      <p>For example,  Enhanced, Primary, Fixed (2012, 2014 or 2016),
+or Individual (2014 or 2016) If so, you must give the paper certi cate(s) or a copy of HMRC's noti cation con rming 2016 protection reference number, or your bene ts may be delayed. Your pensions of ce will send a copy to HMRC.</p>
+<form action="nhs-handler" method="post-address" class="form">
+
+  <div class="form-group">
+
+    <fieldset class="inline">
+      <legend class="visually-hidden">
+      What date will you be returning work?
+      </legend>
+
+      <div class="multiple-choice" data-target="getnhsno">
+        <input id="yes" type="radio" name="hasnhsno" value="Yes">
+        <label for="yes">Yes</label>
+      </div>
+
+      <div class="multiple-choice">
+        <input id="no" type="radio" name="hasnhsno" value="No">
+        <label for="no">No</label>
+      </div>
+
+    <div class="panel panel-border-narrow js-hidden" id="getnhsno">
+        <div class="form-group ">
+                  <label class="form-label" for="employer-contributions" id="employer-contributions-label">
+                      <span>Certificate or reference number</span>
+                  </label>
+                  <input class="form-control form-control-1-3 validate-numeric" id="employer-contributions" name="employer-contributions" type="number" aria-label="Enter amount in pounds" required="" aria-required="true">
+              </div>
+      </div>
+    </div>
+  </fieldset>
+
+  <div class="form-group">
+    <a href="checkyouranswers" class="button" type="submit"  value="Next">Next</a>
+  </div>
+
+  <p class="navigation"><a class="cancel" href="../AW8P">Cancel</a></p>
+
+</form>
+
+    </div>
+
+  </div>
+
+</main>
+
+{% endblock %}
