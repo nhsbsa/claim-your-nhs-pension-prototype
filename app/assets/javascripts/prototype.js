@@ -363,12 +363,16 @@ $(document).ready(function() {
         $("td#has-mobile")[0].innerHTML = sessionStorage.getItem("nameofbank");
         $("td#has-mobile")[1].innerHTML = sessionStorage.getItem("holderaddress");
     }
-    
+
     if (document.location.href.includes("/about-your-pension/checkyouranswers", true)) {
         $("td#has-mobile")[0].innerHTML = sessionStorage.getItem("whichScheme");
         $("td#has-mobile")[1].innerHTML = sessionStorage.getItem("whyBenefits");
         $("td#has-mobile")[2].innerHTML = sessionStorage.getItem("lumpSum");
         $("td#has-mobile")[3].innerHTML = sessionStorage.getItem("typeOfLumpSum");
+
+    }
+      if (document.location.href.includes("/about-your-pension/why", true)) {
+      $("h1.heading-large")[0].innerHTML = `Why are you claiming your deferred benefits for ${sessionStorage.getItem("whichScheme")}?`;
     }
 
     if (document.location.href.includes("/HMRC/checkyouranswers", true)) {
