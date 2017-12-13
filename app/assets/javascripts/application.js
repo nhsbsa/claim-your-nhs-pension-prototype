@@ -18,21 +18,21 @@ var pensioncomplete = document.getElementById("pensioncomplete");
 var hmrccomplete = document.getElementById("hmrccomplete");
 
 
-if (document.location.href == "https://tea-prototype.herokuapp.com/tea/about-you/checkyouranswers") {
+if (document.location.href == "https://tea-prototype.herokuapp.com/awards/about-you/checkyouranswers") {
   // set a new cookie
   expiry = new Date();
   expiry.setTime(expiry.getTime()+(60*60*1000)); // Sixty minutes
 
   // Date()'s toGMTSting() method will format the date correctly for a cookie
   document.cookie = "visited1=yes; path=/; expires=" + expiry.toGMTString();
-} else if (document.location.href == "https://tea-prototype.herokuapp.com/tea/employment/checkyouranswers") {
+} else if (document.location.href == "https://tea-prototype.herokuapp.com/awards/employment/checkyouranswers") {
   // set a new cookie
   expiry = new Date();
   expiry.setTime(expiry.getTime()+(60*60*1000)); // Sixty minutes
 
   // Date()'s toGMTSting() method will format the date correctly for a cookie
   document.cookie = "visited2=yes; path=/; expires=" + expiry.toGMTString();
-} else if (document.location.href == "https://tea-prototype.herokuapp.com/tea/contact/checkyouranswers") {
+} else if (document.location.href == "https://tea-prototype.herokuapp.com/awards/contact/checkyouranswers") {
   // set a new cookie
   expiry = new Date();
   expiry.setTime(expiry.getTime()+(60*60*1000)); // Sixty minutes
@@ -40,7 +40,7 @@ if (document.location.href == "https://tea-prototype.herokuapp.com/tea/about-you
   // Date()'s toGMTSting() method will format the date correctly for a cookie
   document.cookie = "visited3=yes; path=/; expires=" + expiry.toGMTString();
 }
-else if (document.location.href == "https://tea-prototype.herokuapp.com/tea/payment/ddv2-confirm") {
+else if (document.location.href == "https://tea-prototype.herokuapp.com/awards/payment/ddv2-confirm") {
   // set a new cookie
   expiry = new Date();
   expiry.setTime(expiry.getTime()+(60*60*1000)); // Sixty minutes
@@ -48,7 +48,7 @@ else if (document.location.href == "https://tea-prototype.herokuapp.com/tea/paym
   // Date()'s toGMTSting() method will format the date correctly for a cookie
   document.cookie = "visited4=yes; path=/; expires=" + expiry.toGMTString();
 }
-else if (document.location.href == "https://tea-prototype.herokuapp.com/tea/about-your-pension/checkyouranswers") {
+else if (document.location.href == "https://tea-prototype.herokuapp.com/awards/about-your-pension/checkyouranswers") {
   // set a new cookie
   expiry = new Date();
   expiry.setTime(expiry.getTime()+(60*60*1000)); // Sixty minutes
@@ -57,7 +57,7 @@ else if (document.location.href == "https://tea-prototype.herokuapp.com/tea/abou
   document.cookie = "visited5=yes; path=/; expires=" + expiry.toGMTString();
 }
 
-else if (document.location.href == "https://tea-prototype.herokuapp.com/tea/HMRC/checkyouranswers") {
+else if (document.location.href == "https://tea-prototype.herokuapp.com/awards/HMRC/checkyouranswers") {
   // set a new cookie
   expiry = new Date();
   expiry.setTime(expiry.getTime()+(60*60*1000)); // Sixty minutes
@@ -66,32 +66,32 @@ else if (document.location.href == "https://tea-prototype.herokuapp.com/tea/HMRC
   document.cookie = "visited6=yes; path=/; expires=" + expiry.toGMTString();
 }
 
-if (document.location.href.includes("/tea/AW8P") && document.cookie.indexOf("visited1=") >= 0) {
+if (document.location.href.includes("/awards/AW8P") && document.cookie.indexOf("visited1=") >= 0) {
   // They've been here before
   document.getElementById("relationshipcomplete").classList.remove("js-hidden");
 }
 
-if (document.location.href.includes("/tea/AW8P") && document.cookie.indexOf("visited2=") >= 0) {
+if (document.location.href.includes("/awards/AW8P") && document.cookie.indexOf("visited2=") >= 0) {
   // They've been here before
   document.getElementById("employmentcomplete").classList.remove("js-hidden");
 }
 
-if (document.location.href.includes("/tea/AW8P") && document.cookie.indexOf("visited3=") >= 0) {
+if (document.location.href.includes("/awards/AW8P") && document.cookie.indexOf("visited3=") >= 0) {
   // They've been here before
   document.getElementById("contactcomplete").classList.remove("js-hidden");
 }
 
-if (document.location.href.includes("/tea/AW8P") && document.cookie.indexOf("visited4=") >= 0) {
+if (document.location.href.includes("/awards/AW8P") && document.cookie.indexOf("visited4=") >= 0) {
   // They've been here before
   document.getElementById("paymentcomplete").classList.remove("js-hidden");
 }
 
-if (document.location.href.includes("/tea/AW8P") && document.cookie.indexOf("visited5=") >= 0) {
+if (document.location.href.includes("/awards/AW8P") && document.cookie.indexOf("visited5=") >= 0) {
   // They've been here before
   document.getElementById("pensioncomplete").classList.remove("js-hidden");
 }
 
-if (document.location.href.includes("/tea/AW8P") && document.cookie.indexOf("visited6=") >= 0) {
+if (document.location.href.includes("/awards/AW8P") && document.cookie.indexOf("visited6=") >= 0) {
   // They've been here before
   document.getElementById("hmrccomplete").classList.remove("js-hidden");
 }
@@ -211,5 +211,5 @@ if (document.cookie.indexOf("visited1=") >= 0 &&
         };
       }
 
-  
+
     })
