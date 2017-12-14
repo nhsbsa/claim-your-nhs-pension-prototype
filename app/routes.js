@@ -342,7 +342,7 @@ router.get(/behalf-handler/, function (req, res) {
 if (req.query.behalf == 'Yes') {
   res.redirect('typeofactingbody')
 } else {
-  res.redirect('personal-details')
+  res.redirect('your-details/name')
 }
 
 });
