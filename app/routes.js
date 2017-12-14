@@ -336,3 +336,23 @@ if (req.query.TRS == 'Yes') {
 }
 
 });
+
+router.get(/behalf-handler/, function (req, res) {
+
+if (req.query.behalf == 'Yes') {
+  res.redirect('typeofactingbody')
+} else {
+  res.redirect('personal-details')
+}
+
+});
+
+router.get(/type-handler/, function (req, res) {
+
+if (req.query.type == 'adviser') {
+  res.redirect('actingbody-name')
+} else {
+  res.redirect('actingbody-company')
+}
+
+});
