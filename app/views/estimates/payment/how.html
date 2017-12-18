@@ -1,7 +1,7 @@
 {% extends "layout_bsa.html" %}
 
 {% block page_title %}
-What is your child's gender? - Claim your NHS Pension
+How would you like to pay for your estimate? - Claim your NHS Pension
 {% endblock %}
 {% block content %}
 
@@ -16,22 +16,22 @@ What is your child's gender? - Claim your NHS Pension
           <h1 class="heading-large">How would you like to pay for your estimate?</h1>
         </div>
 
-        <form class="form" action="type-handler" method="get">
+        <form class="form" action="bank-handler" method="get">
           <div class="form-group">
             <fieldset>
               <div class="multiple-choice" data-target="contact-by-email">
-                <input id="today" type="radio" name="type" value="adviser">
-                <label class="single-line" for="today">Financial adviser</label>
+                <input id="today" type="radio" name="bank" value="banktransfer">
+                <label class="single-line" for="today">Bank Transfer</label>
               </div>
               <div class="multiple-choice" data-target="contact-by-email">
-                <input id="today" type="radio" name="type" value="employing">
-                <label class="single-line" for="today">Employing authority</label>
+                <input id="today" type="radio" name="bank" value="cheque">
+                <label class="single-line" for="today">Cheque</label>
               </div>
             </fieldset>
           </div>
 
         <div class="form-group">
-         <input class="button" type="submit"  value="Next">
+                <input class="button" type="submit"  value="Next">
         </div>
 
         <p class="navigation"><a class="cancel" href="../AW8P">Cancel</a></p>

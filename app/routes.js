@@ -356,3 +356,14 @@ if (req.query.type == 'adviser') {
 }
 
 });
+
+
+router.get(/bank-handler/, function (req, res) {
+
+if (req.query.bank == 'banktransfer') {
+  res.redirect('../checkyouranswersbank')
+} else {
+  res.redirect('../checkyouranswerscheque')
+}
+
+});

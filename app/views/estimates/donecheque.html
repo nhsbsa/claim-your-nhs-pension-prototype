@@ -1,0 +1,52 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  Done - claim your NHS Pension
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  {% include "includes/phase_banner_beta.html" %}
+
+  <div class="grid-row">
+    <!--div class="column-two-thirds">
+
+    <div class="details">
+      <h2 class="heading-medium">Pre-paymentetails</h2>
+      <p class="valid">Valid dates</p>
+      <h2 class="heading-medium bignumbers"><span>from:</span> 20 June 2016</h2>
+      <h2 class="heading-medium bignumbers"><span>to:</span> 21 June 2017</h2>
+    </div>
+    </div-->
+
+    <div class="column-two-thirds">
+      <div class="done-panel">
+        <h1 class="heading-large"><span id="done-tick"> </span>Application submitted</h1>
+        <h2 class="heading-medium">Amount to pay: £120</h2>
+        <br>
+      </div>
+
+    <h2 class="heading-medium">What you need to do next</h2>
+  <p>You need to send a cheque made payable to ‘NHS Business Services Authority', To: </p>
+    <ul class="bullet list">
+      <ul class="list">
+        <li>NHS Pensions</li>
+        <li>PO Box 2269</li>
+        <li>Bolton</li>
+        <li>BL6 9JS</li>
+      </ul>
+    <p>You should get your estimate within 8 weeks after the payment has been made.</p>
+
+<br>
+
+  <p>
+    <a class="button" href="../start/start">Finished</a>
+  </p>
+
+</div>
+
+
+</main>
+
+{% endblock %}
