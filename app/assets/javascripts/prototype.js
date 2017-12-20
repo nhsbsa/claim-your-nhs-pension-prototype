@@ -59,6 +59,18 @@ $(document).ready(function() {
             }
         }
 
+        if (document.location.href.includes("/childname", true)) {
+            var firstName = toTitleCase(document.getElementById("firstname").value);
+            var lastName = toTitleCase(document.getElementById("lastname").value);
+            var childrenVal = sessionStorage.getItem("childName");
+
+            if (childrenVal === null && firstName !== "" && lastName !== "") {
+                sessionStorage.childName = `${firstName} ${lastName}`; // only-child
+            } else if (firstName !== "" && lastName !== "") {
+                sessionStorage.childName = sessionStorage.childName + ", " + `${firstName} ${lastName}`;
+            }
+        }
+
         if (document.location.href.includes("/allocating", true)) {
             var allocatePension = $("input[name=allocating]:checked")[0];
 
@@ -338,6 +350,15 @@ $(document).ready(function() {
         // end of #2 HM Revenue and Customs - about your pension //
     });
 
+    if (document.location.href.includes("/about-you/secondchildren", true)) {
+        var sessionStorageChildren = sessionStorage.getItem("childName").split(", ");
+
+        for(var l = 0; l < sessionStorageChildren.length; l++) {
+            $("ul#children")[0].append(sessionStorageChildren[l]);
+            $("<br>").appendTo("ul#children");
+        }
+    }
+
     if (document.location.href.includes("/about-you/checkyouranswers", true)) {
         $("td#has-mobile")[0].innerHTML = sessionStorage.getItem("relationshipStatus");
         $("td#has-mobile")[1].innerHTML = sessionStorage.getItem("spouseName");
@@ -369,10 +390,10 @@ $(document).ready(function() {
         $("td#has-mobile")[1].innerHTML = sessionStorage.getItem("whyBenefits");
         $("td#has-mobile")[2].innerHTML = sessionStorage.getItem("lumpSum");
         $("td#has-mobile")[3].innerHTML = sessionStorage.getItem("typeOfLumpSum");
-
     }
-      if (document.location.href.includes("/about-your-pension/why", true)) {
-      $("h1.heading-large")[0].innerHTML = `Why are you claiming your deferred benefits for ${sessionStorage.getItem("whichScheme")}?`;
+
+    if (document.location.href.includes("/about-your-pension/why", true)) {
+        $("h1.heading-large")[0].innerHTML = `Why are you claiming your deferred benefits for ${sessionStorage.getItem("whichScheme")}?`;
     }
 
     if (document.location.href.includes("/HMRC/checkyouranswers", true)) {
