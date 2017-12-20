@@ -68,6 +68,8 @@ $(document).ready(function() {
                 sessionStorage.childName = `${firstName} ${lastName}`; // only-child
             } else if (firstName !== "" && lastName !== "") {
                 sessionStorage.childName = sessionStorage.childName + ", " + `${firstName} ${lastName}`;
+            } else {
+                return;
             }
         }
 
@@ -351,11 +353,18 @@ $(document).ready(function() {
     });
 
     if (document.location.href.includes("/about-you/secondchildren", true)) {
-        var sessionStorageChildren = sessionStorage.getItem("childName").split(", ");
+        var sessionStorageChildren = sessionStorage.getItem("childName");
 
-        for(var l = 0; l < sessionStorageChildren.length; l++) {
-            $("ul#children")[0].append(sessionStorageChildren[l]);
-            $("<br>").appendTo("ul#children");
+        if (sessionStorageChildren !== null && sessionStorageChildren.includes(",")) {
+            sessionStorageChildren = sessionStorageChildren.split(", ");
+            for(var l = 0; l < sessionStorageChildren.length; l++) {
+                $("ul#children")[0].append(sessionStorageChildren[l]);
+                $("<br>").appendTo("ul#children");
+            }
+        } else if (sessionStorageChildren !== null) {
+            $("ul#children")[0].innerHTML = sessionStorageChildren; // only-child
+        } else {
+            return;            
         }
     }
 
