@@ -60,14 +60,14 @@ $(document).ready(function() {
         }
 
         if (document.location.href.includes("/childname", true)) {
-            var firstName = toTitleCase(document.getElementById("firstname").value);
-            var lastName = toTitleCase(document.getElementById("lastname").value);
+            var firstName1 = toTitleCase(document.getElementById("firstname").value);
+            var lastName1 = toTitleCase(document.getElementById("lastname").value);
             var childrenVal = sessionStorage.getItem("childName");
 
-            if (childrenVal === null && firstName !== "" && lastName !== "") {
-                sessionStorage.childName = `${firstName} ${lastName}`; // only-child
-            } else if (firstName !== "" && lastName !== "") {
-                sessionStorage.childName = sessionStorage.childName + ", " + `${firstName} ${lastName}`;
+            if (childrenVal === null && firstName1 !== "" && lastName1 !== "") {
+                sessionStorage.childName = `${firstName1} ${lastName1}`; // only-child
+            } else if (firstName1 !== "" && lastName1 !== "") {
+                sessionStorage.childName = sessionStorage.childName + ", " + `${firstName1} ${lastName1}`;
             } else {
                 return;
             }
@@ -83,11 +83,11 @@ $(document).ready(function() {
         }
 
         if (document.location.href.includes("/spousename", true)) {
-            var firstName = toTitleCase(document.getElementById("firstname").value) || "Firstname";
-            var lastName = toTitleCase(document.getElementById("lastname").value) || "Lastname";
+            var firstName2 = toTitleCase(document.getElementById("firstname").value) || "Firstname";
+            var lastName2 = toTitleCase(document.getElementById("lastname").value) || "Lastname";
 
             // what is your spouse's or civil partners name?
-            sessionStorage.spouseName = `${firstName} ${lastName}`;
+            sessionStorage.spouseName = `${firstName2} ${lastName2}`;
         }
 
         if (document.location.href.includes("/spousedob", true)) {
@@ -117,30 +117,30 @@ $(document).ready(function() {
         }
 
         if (document.location.href.includes("/date-leave", true)) {
-            var day = document.getElementById("day").value || "01";
-            var month = document.getElementById("month").value || "01";
-            var year = document.getElementById("year").value || "1970";
+            var day1 = document.getElementById("day").value || "01";
+            var month1 = document.getElementById("month").value || "01";
+            var year1 = document.getElementById("year").value || "1970";
 
             // what date did you leave?
-            sessionStorage.dateLeave = `${day}/${month}/${year}`;
+            sessionStorage.dateLeave = `${day1}/${month1}/${year1}`;
         }
 
         if (document.location.href.includes("/doyouintend", true)) {
             var workNHS = $("input[name=hasnhsno]:checked")[0];
-            var day,
-                month,
-                year;
+            var day2,
+                month2,
+                year2;
 
             // do you intend to work in the NHS after you get your pension?
             if (workNHS !== undefined) {
                 sessionStorage.doYouIntend = workNHS.value;
 
                 if (workNHS.value == "Yes") {
-                    day = document.getElementById("day").value || "01";
-                    month = document.getElementById("month").value || "01";
-                    year = document.getElementById("year").value || "1970";
+                    day2 = document.getElementById("day").value || "01";
+                    month2 = document.getElementById("month").value || "01";
+                    year2 = document.getElementById("year").value || "1970";
 
-                    sessionStorage.returnToWork = `${day}/${month}/${year}`;
+                    sessionStorage.returnToWork = `${day2}/${month2}/${year2}`;
                 }
             }
         }
@@ -297,13 +297,13 @@ $(document).ready(function() {
             if (excludingPensionChecked !== undefined) {
                 if (excludingPensionChecked.value == "Yes") {
                     var totalCombinedPercentage = document.getElementById("employer-contributions").value || "100";
-                    var day = document.getElementById("day").value || "06";
-                    var month = document.getElementById("month").value || "04";
-                    var year = document.getElementById("year").value || "2006";
+                    var day3 = document.getElementById("day").value || "06";
+                    var month3 = document.getElementById("month").value || "04";
+                    var year3 = document.getElementById("year").value || "2006";
 
                     sessionStorage.excludingPension = excludingPensionChecked.value;
                     sessionStorage.totalCombinedPercentageLTA = `${totalCombinedPercentage}%`;
-                    sessionStorage.dateFirstBenefitCrystallisation = `${day}/${month}/${year}`;
+                    sessionStorage.dateFirstBenefitCrystallisation = `${day3}/${month3}/${year3}`;
                 } else {
                     sessionStorage.excludingPension = excludingPensionChecked.value;
                 }
@@ -381,7 +381,7 @@ $(document).ready(function() {
         $("td#has-mobile")[1].innerHTML = sessionStorage.getItem("lastNHSEmployer");
         $("td#has-mobile")[2].innerHTML = sessionStorage.getItem("dateLeave");
         $("td#has-mobile")[3].innerHTML = sessionStorage.getItem("doYouIntend");
-    };
+    }
 
     if (document.location.href.includes("/contact/checkyouranswers", true)) {
         $("td#has-mobile")[0].innerHTML = sessionStorage.getItem("contactpref");
