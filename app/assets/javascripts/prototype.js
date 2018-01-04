@@ -364,7 +364,7 @@ $(document).ready(function() {
         } else if (sessionStorageChildren !== null) {
             $("ul#children")[0].innerHTML = sessionStorageChildren; // only-child
         } else {
-            return;            
+            return;
         }
     }
 
@@ -401,9 +401,9 @@ $(document).ready(function() {
         $("td#has-mobile")[3].innerHTML = sessionStorage.getItem("typeOfLumpSum");
     }
 
-    if (document.location.href.includes("/about-your-pension/why", true)) {
-        $("h1.heading-large")[0].innerHTML = `Why are you claiming your deferred benefits for ${sessionStorage.getItem("whichScheme")}?`;
-    }
+    // if (document.location.href.includes("/about-your-pension/why", true)) {
+    //     $("h1.heading-large")[0].innerHTML = `Why are you claiming your deferred benefits for ${sessionStorage.getItem("whichScheme")}?`;
+    // }
 
     if (document.location.href.includes("/HMRC/checkyouranswers", true)) {
         $("td#has-mobile")[0].innerHTML = sessionStorage.getItem("pensionArrangement");

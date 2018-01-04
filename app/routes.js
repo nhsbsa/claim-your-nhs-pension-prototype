@@ -36,6 +36,9 @@ applicant.addresslinetwo = null;
 applicant.town = null;
 applicant.hasMobile = false;
 applicant.hasEmail = false;
+applicant.s1995 = false;
+applicant.s2008 = false;
+applicant.s2015 = false;
 applicant.reminderEmail = false;
 applicant.reminderEmail = false;
 applicant.mobile = null;
@@ -246,26 +249,58 @@ if (req.query.allocating == 'Yes') {
 
 });
 
-
-
 router.get(/scheme-handler/, function (req, res) {
-  if (req.query.scheme == "1995") {
-    res.redirect('why')
-  } else if (req.query.scheme == "2008") {
-      res.redirect('why')
-    } else {
-      res.redirect('why')
-    }
+  if (req.query.s1995 == 'true') {
+    applicant.s1995 = true;
+    console.log("applicant.s1995 = true;");
+  } else {
+    applicant.s1995 = false;
+    console.log("applicant.s1995 = false;");
+  }
+
+  if (req.query.s2008 == 'true') {
+    applicant.s2008 = true;
+    console.log("applicant.s2008 = true");
+  } else {
+    applicant.s2008 = false;
+    console.log("applicant.s2008 = false");
+  }
+
+  if (req.query.s2015 == 'true') {
+    applicant.s2015  = true;
+    console.log("applicant.s2015 = true");
+  } else {
+    applicant.s2015 = false;
+    console.log("applicant.s2015 = false");
+  }
+
+  if (applicant.s1995 == true) {
+    res.redirect('why1995');
+  } if (applicant.s2008  == true) {
+       res.redirect('why2008');
+  } if (applicant.s2015  == true) {
+        res.redirect('why2015');
+  }
 });
 
+
+
 router.get(/benefits-handler/, function (req, res) {
-  if (req.query.benefit == "early") {
-     res.redirect('earlypaymentdate')
-   } else if (req.query.benefit == "commuted") {
-     res.redirect('commutedill')
-   } else {
-       res.redirect('lumpsum')
-   }
+
+   if (applicant.s1995 == true) {
+       res.redirect('why1995');
+     } if (applicant.s2008  == true) {
+          res.redirect('why2008');
+     } if (applicant.s2015  == true) {
+           res.redirect('why2015');
+     } else {
+          res.redirect('lumpsum');
+     }
+     // if (req.query.benefit == "early") {
+     //    res.redirect('earlypaymentdate')
+     //  } else if (req.query.benefit == "commuted") {
+     //    res.redirect('commutedill')
+     //  }
 });
 
 
