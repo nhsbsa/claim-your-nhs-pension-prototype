@@ -1,0 +1,63 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  Do you want to be contact about your pension by text and email? - Claim your NHS Pension
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  {% include "includes/phase_banner_beta.html" %}
+
+  <div class="grid-row">
+
+    <div class="column-two-thirds">
+
+      <div class="heading-group">
+        <p>Claim your NHS Pension<p>
+        <h1 class="heading-large">Do you have any other dependant children?</h1>
+      </div>
+      <div class="panel">
+      <p class="bold">
+        You have told us about:
+        <ul id="children" class="list list-bullet"></ul>
+      <p>
+    </div>
+
+      <form action="child-handler" method="post-address" class="form">
+
+        <div class="form-group">
+
+          <fieldset class="inline">
+            <legend class="visually-hidden">
+            Do you have any depenant children?
+            </legend>
+
+            <div class="multiple-choice">
+              <input id="yes" type="radio" name="child" value="Yes">
+              <label for="yes">Yes</label>
+            </div>
+
+            <div class="multiple-choice">
+              <input id="no" type="radio" name="child" value="No">
+              <label for="no">No</label>
+            </div>
+        </fieldset>
+
+        </div>
+
+        <div class="form-group">
+          <input class="button" type="submit"  value="Next">
+        </div>
+
+        <p class="navigation"><a class="cancel" href="../AW8P">Cancel</a></p>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</main>
+
+{% endblock %}

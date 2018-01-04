@@ -1,0 +1,55 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+Claim your NHS Pension
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  {% include "includes/phase_banner_beta.html" %}
+
+  <div class="grid-row">
+
+
+
+      <div class="column-two-thirds left-floater">
+
+      <h1 class="heading-large">What is the full name of the bank or financial institution?</h1>
+
+
+                <div class="form-group form-group-month">
+
+                  <input class="form-control" name="exyear" >
+
+              </div>
+
+
+          </div>
+          </fieldset>
+
+        </div>
+
+
+
+
+        <br>
+        <div class="form-item-wrapper">
+          <div class="form-group">
+            <a href="bankaddress" class="button" type="submit" >Next</a>
+          </div>
+        </div>
+        <div class="form-item-wrapper">
+          <a href="../AW8P">Cancel</a>
+        </div>
+
+
+              </form>
+
+    </div>
+
+  </div>
+
+</main>
+
+{% endblock %}

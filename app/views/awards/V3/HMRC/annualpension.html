@@ -1,0 +1,58 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+Will your annual pension be more than £30,000? - Claim your NHS Pension
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  {% include "includes/phase_banner_beta.html" %}
+
+  <div class="grid-row">
+
+    <div class="column-two-thirds">
+
+      <div class="heading-group">
+        <p>Claim your NHS Pension<p>
+        <h1 class="heading-large">Will your annual pension be more than £30,000 per year?
+      </div>
+
+      <form action="flex-handler" method="post-address" class="form">
+
+        <div class="form-group">
+
+          <fieldset>
+            <legend></legend>
+
+            <div class="multiple-choice">
+              <input id="yes" type="radio" name="flex" value="Yes">
+              <label for="yes">Yes</label>
+            </div>
+            <div class="multiple-choice">
+              <input id="no" type="radio" name="flex" value="No">
+              <label for="no">No</label>
+            </div>
+            <div class="multiple-choice">
+              <input id="yes" type="radio" name="flex" value="Yes">
+              <label for="yes">Not sure</label>
+            </div>
+        </fieldset>
+
+        </div>
+
+        <div class="form-group">
+          <input class="button" type="submit"  value="Next">
+        </div>
+
+        <p class="navigation"><a class="cancel" href="../AW8P">Cancel</a></p>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</main>
+
+{% endblock %}

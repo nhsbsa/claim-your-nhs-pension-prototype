@@ -1,0 +1,56 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+ave you accessed your benefits with another pension scheme using
+pension flexibilities? - Claim your NHS Pension
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  {% include "includes/phase_banner_beta.html" %}
+
+  <div class="grid-row">
+
+    <div class="column-two-thirds">
+
+      <div class="heading-group">
+        <p>Claim your NHS Pension<p>
+        <h1 class="heading-large">Is your bank outside the UK?
+      </div>
+
+      <form action="outsideUK-handler" method="post-address" class="form">
+
+        <div class="form-group">
+
+          <fieldset class="inline">
+            <legend></legend>
+
+            <div class="multiple-choice">
+              <input id="yes" type="radio" name="outside" value="Yes">
+              <label for="yes">Yes</label>
+            </div>
+
+            <div class="multiple-choice">
+              <input id="no" type="radio" name="outside" value="No">
+              <label for="no">No</label>
+            </div>
+        </fieldset>
+
+        </div>
+
+        <div class="form-group">
+          <input class="button" type="submit"  value="Next">
+        </div>
+
+        <p class="navigation"><a class="cancel" href="../AW8P">Cancel</a></p>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</main>
+
+{% endblock %}

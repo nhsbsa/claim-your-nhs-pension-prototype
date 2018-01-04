@@ -261,8 +261,10 @@ router.get(/scheme-handler/, function (req, res) {
 router.get(/benefits-handler/, function (req, res) {
   if (req.query.benefit == "early") {
      res.redirect('earlypaymentdate')
+   } else if (req.query.benefit == "commuted") {
+     res.redirect('commutedill')
    } else {
-        res.redirect('lumpsum')
+       res.redirect('lumpsum')
    }
 });
 
