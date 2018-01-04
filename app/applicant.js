@@ -14,6 +14,9 @@ function Applicant (
   town,
   hasMobile,
   hasEmail,
+  s1995,
+  s2008,
+  s2015,
   mobile,
   contactPref,
   contactValue,
@@ -36,6 +39,9 @@ function Applicant (
     this.town = town;
     this.hasMobile = hasMobile;
     this.hasEmail = hasEmail;
+    this.s1995 = s1995;
+    this.s2008 = s2008;
+    this.s2015 = s2015;
     this.mobile = mobile;
     this.contactPref = contactPref;
     this.contactValue = contactValue;

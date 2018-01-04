@@ -285,34 +285,92 @@ router.get(/scheme-handler/, function (req, res) {
 
 
 
-router.get(/benefits-handler/, function (req, res) {
+router.get(/1995-handler/, function (req, res) {
+      if (req.query.benefit == "early") {
+        res.redirect('earlypaymentdate')
+      } else if (req.query.benefit == "commuted") {
+         res.redirect('commutedill')
+      } else {
+        res.redirect('lumpsum1995')
+      }
+});
 
-   if (applicant.s1995 == true) {
-       res.redirect('why1995');
-     } if (applicant.s2008  == true) {
-          res.redirect('why2008');
-     } if (applicant.s2015  == true) {
-           res.redirect('why2015');
-     } else {
-          res.redirect('lumpsum');
-     }
-     // if (req.query.benefit == "early") {
-     //    res.redirect('earlypaymentdate')
-     //  } else if (req.query.benefit == "commuted") {
-     //    res.redirect('commutedill')
-     //  }
+router.get(/2008-handler/, function (req, res) {
+      if (req.query.benefit == "early") {
+        res.redirect('earlypaymentdate')
+      } else if (req.query.benefit == "commuted") {
+         res.redirect('commutedill')
+      } else {
+        res.redirect('lumpsum2008')
+      }
+});
+
+router.get(/2015-handler/, function (req, res) {
+      if (req.query.benefit == "early") {
+        res.redirect('earlypaymentdate')
+      } else if (req.query.benefit == "commuted") {
+         res.redirect('commutedill')
+      } else {
+        res.redirect('lumpsum2015')
+      }
 });
 
 
-router.get(/lumpsum-handler/, function (req, res) {
+
+router.get(/1995lumpsum-handler/, function (req, res) {
+  console.log("1995" + applicant.s1995)
+  console.log("2008" + applicant.s2008)
   if (req.query.lumpsum == "Yes") {
      res.redirect('typeoflumpsum')
-   } else {
-        res.redirect('checkyouranswers')
+   } else if (applicant.s2008 == true && applicant.s2015 == false) {
+     res.redirect('why2008')
+   } else if (applicant.s2008 == false && applicant.s2015 == true ) {
+     res.redirect('why2015')
+  } else {
+      res.redirect('checkyouranswers')
+   }
+});
+
+router.get(/2008lumpsum-handler/, function (req, res) {
+  console.log("1995" + applicant.s1995)
+  console.log("2008" + applicant.s2008)
+  if (req.query.lumpsum == "Yes") {
+     res.redirect('typeoflumpsum')
+   }
+  else if (applicant.s2015 == true ) {
+     res.redirect('why2015')
+   }
+  else {
+      res.redirect('checkyouranswers')
+   }
+});
+
+router.get(/2015lumpsum-handler/, function (req, res) {
+  console.log("1995" + applicant.s1995)
+  console.log("2008" + applicant.s2008)
+  if (req.query.lumpsum == "Yes") {
+     res.redirect('typeoflumpsum')
+   } else if (applicant.s2008 == true && applicant.s2015 == false) {
+     res.redirect('why2008')
+   } else if (applicant.s2008 == false && applicant.s2015 == true ) {
+     res.redirect('why2015')
+  } else {
+      res.redirect('checkyouranswers')
    }
 });
 
 
+router.get(/typeoflumpsum-handler/, function (req, res) {
+  console.log("1995" + applicant.s1995)
+  console.log("2008" + applicant.s2008)
+   if (applicant.s2008 == true && applicant.s2015 == false) {
+     res.redirect('why2008')
+   } else if (applicant.s2008 == false && applicant.s2015 == true ) {
+     res.redirect('why2015')
+  } else {
+      res.redirect('checkyouranswers')
+   }
+});
 
 router.get(/pensionarrangement-handler/, function (req, res) {
   if (req.query.pensionarrangement == "Yes") {
