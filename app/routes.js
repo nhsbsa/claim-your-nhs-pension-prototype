@@ -321,7 +321,7 @@ router.get(/1995lumpsum-handler/, function (req, res) {
   console.log("1995" + applicant.s1995)
   console.log("2008" + applicant.s2008)
   if (req.query.lumpsum == "Yes") {
-     res.redirect('typeoflumpsum')
+     res.redirect('1995typeoflumpsum')
    } else if (applicant.s2008 == true && applicant.s2015 == false) {
      res.redirect('why2008')
    } else if (applicant.s2008 == false && applicant.s2015 == true ) {
@@ -335,7 +335,7 @@ router.get(/2008lumpsum-handler/, function (req, res) {
   console.log("1995" + applicant.s1995)
   console.log("2008" + applicant.s2008)
   if (req.query.lumpsum == "Yes") {
-     res.redirect('typeoflumpsum')
+     res.redirect('2008typeoflumpsum')
    }
   else if (applicant.s2015 == true ) {
      res.redirect('why2015')
@@ -348,19 +348,43 @@ router.get(/2008lumpsum-handler/, function (req, res) {
 router.get(/2015lumpsum-handler/, function (req, res) {
   console.log("1995" + applicant.s1995)
   console.log("2008" + applicant.s2008)
-  if (req.query.lumpsum == "No") {
+  console.log("2015" + applicant.s2015)
+  if (req.query.lumpsum == "Yes") {
+     res.redirect('2015typeoflumpsum')
+   }
+  else {
      res.redirect('checkyouranswers')
   }
 });
 
 
-router.get(/typeoflumpsum-handler/, function (req, res) {
+router.get(/1995typeoflumpsum-handler/, function (req, res) {
   console.log("1995" + applicant.s1995)
   console.log("2008" + applicant.s2008)
    if (applicant.s2008 == true && applicant.s2015 == false) {
      res.redirect('why2008')
    } else if (applicant.s2008 == false && applicant.s2015 == true ) {
      res.redirect('why2015')
+  } else {
+      res.redirect('checkyouranswers')
+   }
+});
+
+router.get(/2008typeoflumpsum-handler/, function (req, res) {
+  console.log("1995" + applicant.s1995)
+  console.log("2008" + applicant.s2008)
+   if (applicant.s2008 == false && applicant.s2015 == true ) {
+     res.redirect('why2015')
+  } else {
+      res.redirect('checkyouranswers')
+   }
+});
+
+router.get(/2015typeoflumpsum-handler/, function (req, res) {
+  console.log("1995" + applicant.s1995)
+  console.log("2008" + applicant.s2008)
+   if (applicant.s2015 == true ) {
+     res.redirect('checkyouranswers')
   } else {
       res.redirect('checkyouranswers')
    }
