@@ -429,7 +429,7 @@ router.get(/pensionarrangement-handler/, function (req, res) {
 
 router.get(/flex-handler/, function (req, res) {
   if (req.query.flex == "Yes") {
-     res.redirect('excludingpension')
+     res.redirect('beforeapril06')
    } else {
         res.redirect('vaild')
    }
