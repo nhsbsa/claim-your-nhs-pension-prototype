@@ -19,7 +19,7 @@
             What is your martial status?
         </h1>
       </div>
-
+  <p>We need this information so that we make payments in the event of your death.</p>
 
 
       <form class="form" action="relationship-handler" method="get">
@@ -33,11 +33,16 @@
 
             <div class="multiple-choice" data-target="married">
               <input id="next" class="sel" type="radio" name="rcg" value="married">
-              <label class="single-line" for="next">Married or in a civil partnership</label>
+              <label class="single-line" for="next">Separated</label>
+            </div>
+
+            <div class="multiple-choice" data-target="married">
+              <input id="next" class="sel" type="radio" name="rcg" value="married">
+              <label class="single-line" for="next">Married</label>
             </div>
 
             <div class="panel panel-border-narrow js-hidden" id="married">
-              <h2 class="heading-small">When did you get married or enter your civil partnership?</h2>
+              <h2 class="heading-small">When did you get married?</h2>
                 <p class="form-hint">For example, 31 03 1980</p>
               <div class="form-date">
                 <div class="form-group form-group-day">
@@ -54,10 +59,31 @@
                 </div>
               </div>
             </div>
+
             <div class="multiple-choice" data-target="married">
               <input id="next" class="sel" type="radio" name="rcg" value="married">
-              <label class="single-line" for="next">Separated</label>
+              <label class="single-line" for="next">Civil partnership</label>
             </div>
+
+            <div class="panel panel-border-narrow js-hidden" id="married">
+              <h2 class="heading-small">When did you enter your civil partnership?</h2>
+                <p class="form-hint">For example, 31 03 1980</p>
+              <div class="form-date">
+                <div class="form-group form-group-day">
+                  <label for="futureday">Day</label>
+                  <input class="form-control" id="futureday" name="futureday" type="number" pattern="[0-9]*" min="0" max="31">
+                </div>
+                <div class="form-group form-group-month">
+                  <label for="futuremonth">Month</label>
+                  <input class="form-control" id="futuremonth" name="futuremonth" type="number" pattern="[0-9]*" min="0" max="12">
+                </div>
+                <div class="form-group form-group-year">
+                  <label for="futureyear">Year</label>
+                  <input class="form-control" id="futureyear" name="futureyear" type="number" pattern="[0-9]*" min="0" max="2017">
+                </div>
+              </div>
+            </div>
+
 
 
 
