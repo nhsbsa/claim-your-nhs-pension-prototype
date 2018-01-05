@@ -287,9 +287,9 @@ router.get(/scheme-handler/, function (req, res) {
 
 router.get(/1995-handler/, function (req, res) {
       if (req.query.benefit == "early") {
-        res.redirect('earlypaymentdate')
+        res.redirect('1995earlypaymentdate')
       } else if (req.query.benefit == "commuted") {
-         res.redirect('commutedill')
+         res.redirect('1995commutedill')
       } else {
         res.redirect('lumpsum1995')
       }
@@ -297,9 +297,9 @@ router.get(/1995-handler/, function (req, res) {
 
 router.get(/2008-handler/, function (req, res) {
       if (req.query.benefit == "early") {
-        res.redirect('earlypaymentdate')
+        res.redirect('2008earlypaymentdate')
       } else if (req.query.benefit == "commuted") {
-         res.redirect('commutedill')
+         res.redirect('2008commutedill')
       } else {
         res.redirect('lumpsum2008')
       }
@@ -307,13 +307,16 @@ router.get(/2008-handler/, function (req, res) {
 
 router.get(/2015-handler/, function (req, res) {
       if (req.query.benefit == "early") {
-        res.redirect('earlypaymentdate')
+        res.redirect('2015earlypaymentdate')
       } else if (req.query.benefit == "commuted") {
-         res.redirect('commutedill')
+         res.redirect('2015commutedill')
       } else {
         res.redirect('lumpsum2015')
       }
 });
+
+
+
 
 
 
@@ -389,6 +392,32 @@ router.get(/2015typeoflumpsum-handler/, function (req, res) {
       res.redirect('checkyouranswers')
    }
 });
+
+
+router.get(/1995commutedill-handler/,function (req, res) {
+  if (applicant.s2008 == true && applicant.s2015 == false) {
+    res.redirect('why2008')
+  } else if (applicant.s2008 == false && applicant.s2015 == true ) {
+    res.redirect('why2015')
+ } else {
+     res.redirect('checkyouranswers')
+  }
+});
+
+router.get(/2008commutedill-handler/,function (req, res) {
+  if (applicant.s2008 == false && applicant.s2015 == true ) {
+    res.redirect('why2015')
+ } else {
+     res.redirect('checkyouranswers')
+  }
+});
+
+router.get(/2015commutedill-handler/,function (req, res) {
+  if (applicant.s2008 == false && applicant.s2015 == true ) {
+     res.redirect('checkyouranswers')
+  }
+});
+
 
 router.get(/pensionarrangement-handler/, function (req, res) {
   if (req.query.pensionarrangement == "Yes") {

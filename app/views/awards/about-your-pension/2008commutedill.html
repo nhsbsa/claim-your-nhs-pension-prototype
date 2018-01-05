@@ -1,0 +1,52 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  When should the early payment of deferred benefit start? - Claim your NHS Pension
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  {% include "includes/phase_banner_beta.html" %}
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <!-- <p class="navigation"><a class="back-to-previous">Back</a></p> -->
+        <div class="heading-group">
+          <p>Claim your NHS Pension</p>
+          <h1 class="heading-large">I wish to have my ill health retirement benefits paid as a lump sum</h1>
+        </div>
+
+      <p>I understand that this lump sum payment will not affect any benefits that may become payable to my
+      dependants. A pension or allowance will be paid to them in the normal way.</p>
+
+      <p>I understand that if the payment of the lump sum causes me to exceed the lifetime allowance, then the
+      amount in excess of the lifetime allowance will be taxed at 55%.'</p>
+
+
+      <div class="multiple-choice multiple-radio" data-target="contact-by-email">
+        <input id="1995" type="checkbox" name="scheme" value="1995">
+        <label class="single-line" for="1995">I understand</label>
+      </div>
+      <form action="2008commutedill-handler" class="form">
+      <div class="form-group">
+        <input class="button" type="submit" value="Next">
+      </div>
+    </form>
+
+
+
+<div class="form-group">
+
+
+        <p class="navigation"><a class="cancel" href="../AW8P">Cancel</a></p>
+
+
+    </div>
+
+  </div>
+
+</main>
+
+{% endblock %}
