@@ -259,15 +259,6 @@ $(document).ready(function() {
             sessionStorage.whyBenefits2008 = toTitleCase(Object.keys(whyBenefits2008).map(function(l){return whyBenefits2008[l]}).join(", "));
         }
 
-        // if (document.location.href.includes("/lumpsum", true)) {
-        //     var wantLumpSum = $("input[name=lumpsum]:checked")[0];
-
-        //     // do you want an lump sum by giving up part of your pension?
-        //     if (wantLumpSum !== undefined) {
-        //         sessionStorage.lumpSum = wantLumpSum.value;
-        //     }
-        // }
-
         if (document.location.href.includes("/lumpsum1995", true)) {
             var wantLumpSum1995 = $("input[name=lumpsum]:checked")[0];
 
@@ -285,29 +276,6 @@ $(document).ready(function() {
                 sessionStorage.lumpSum2008 = wantLumpSum2008.value;
             }
         }
-
-        // if (document.location.href.includes("/typeoflumpsum", true)) {
-        //     var getLumpSum = $("input[name=scheme]:checked")[0];
-        //     var getLumpSumVal;
-
-        //     // how would you like your lump sum?
-        //     if (getLumpSum !== undefined) {
-        //         if (getLumpSum.value == "1995") {
-        //             getLumpSumVal = "Maximum tax free amount";
-        //         } else if (getLumpSum.value == "2008") {
-        //             getLumpSumVal = "Amount less than the maximum amount permitted";
-
-        //             var getLumpSumAmount = document.getElementById("employer-contributions").value;
-        //             if (getLumpSumAmount !== "") {
-        //                 getLumpSumVal = `${getLumpSumVal} - £${getLumpSumAmount}`;
-        //             }
-        //         } else {
-        //             getLumpSumVal = "Maximum lump sum which may have a tax charge";
-        //         }
-
-        //         sessionStorage.typeOfLumpSum = `${getLumpSumVal}`;
-        //     }
-        // }
 
         if (document.location.href.includes("/1995typeoflumpsum", true)) {
             var getLumpSum1995 = $("input[name=scheme]:checked")[0];
