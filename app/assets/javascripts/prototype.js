@@ -223,18 +223,6 @@ $(document).ready(function() {
             sessionStorage.whichScheme = Object.keys(whichScheme).map(function(k){return whichScheme[k]}).join(", ");
         }
 
-        // if (document.location.href.includes("/why", true)) {
-        //     var benefitsChecked = $("input[name=benefit]:checked");
-        //     var whyBenefits = {};
-
-        //     // why are you claiming your deferred benefits?
-        //     for(var k = 0; k < benefitsChecked.length; k++) {
-        //         whyBenefits[k] = benefitsChecked[k].value;
-        //     }
-
-        //     sessionStorage.whyBenefits = toTitleCase(Object.keys(whyBenefits).map(function(l){return whyBenefits[l]}).join(", "));
-        // }
-
         if (document.location.href.includes("/why1995", true)) {
             var benefitsChecked1995 = $("input[name=benefit]:checked");
             var whyBenefits1995 = {};
@@ -259,6 +247,18 @@ $(document).ready(function() {
             sessionStorage.whyBenefits2008 = toTitleCase(Object.keys(whyBenefits2008).map(function(l){return whyBenefits2008[l]}).join(", "));
         }
 
+        if (document.location.href.includes("/why2015", true)) {
+            var benefitsChecked2015 = $("input[name=benefit]:checked");
+            var whyBenefits2015 = {};
+
+            // why are you claiming your deferred benefits?
+            for(var m = 0; m < benefitsChecked2015.length; m++) {
+                whyBenefits2015[m] = benefitsChecked2015[m].value;
+            }
+
+            sessionStorage.whyBenefits2015 = toTitleCase(Object.keys(whyBenefits2015).map(function(l){return whyBenefits2015[l]}).join(", "));
+        }
+
         if (document.location.href.includes("/lumpsum1995", true)) {
             var wantLumpSum1995 = $("input[name=lumpsum]:checked")[0];
 
@@ -274,6 +274,15 @@ $(document).ready(function() {
             // do you want an lump sum by giving up part of your pension?
             if (wantLumpSum2008 !== undefined) {
                 sessionStorage.lumpSum2008 = wantLumpSum2008.value;
+            }
+        }
+
+        if (document.location.href.includes("/lumpsum2015", true)) {
+            var wantLumpSum2015 = $("input[name=lumpsum]:checked")[0];
+
+            // do you want an lump sum by giving up part of your pension?
+            if (wantLumpSum2015 !== undefined) {
+                sessionStorage.lumpSum2015 = wantLumpSum2015.value;
             }
         }
 
@@ -320,6 +329,29 @@ $(document).ready(function() {
                 }
 
                 sessionStorage.typeOfLumpSum2008 = `${getLumpSumVal2008}`;
+            }
+        }
+
+        if (document.location.href.includes("/2015typeoflumpsum", true)) {
+            var getLumpSum2015 = $("input[name=scheme]:checked")[0];
+            var getLumpSumVal2015;
+
+            // how would you like your lump sum?
+            if (getLumpSum2015 !== undefined) {
+                if (getLumpSum2015.value == "1995") {
+                    getLumpSumVal2015 = "Maximum tax free amount";
+                } else if (getLumpSum2015.value == "2008") {
+                    getLumpSumVal2015 = "Amount less than the maximum amount permitted";
+
+                    var getLumpSumAmount2015 = document.getElementById("employer-contributions").value;
+                    if (getLumpSumAmount2015 !== "") {
+                        getLumpSumVal2015 = `${getLumpSumVal2015} - £${getLumpSumAmount2015}`;
+                    }
+                } else {
+                    getLumpSumVal2015 = "Maximum lump sum which may have a tax charge";
+                }
+
+                sessionStorage.typeOfLumpSum2015 = `${getLumpSumVal2015}`;
             }
         }
         // end of #1 pension details - about your pension //
