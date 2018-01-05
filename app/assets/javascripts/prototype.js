@@ -206,12 +206,12 @@ $(document).ready(function() {
 
         // #1 pension details - about your pension //
         if (document.location.href.includes("/whichscheme", true)) {
-            var schemeChecked = $("input[name=scheme]:checked");
+            var schemeChecked = $("input[class=scheme]:checked");
             var whichScheme = {};
 
             // which pension scheme or section?
             for(var j = 0; j < schemeChecked.length; j++) {
-                whichScheme[j] = schemeChecked[j].value;
+                whichScheme[j] = schemeChecked[j].id;
 
                 if (whichScheme[j] == "1995" || whichScheme[j] == "2008") {
                     whichScheme[j] = `${whichScheme[j]} Section`;
@@ -223,47 +223,103 @@ $(document).ready(function() {
             sessionStorage.whichScheme = Object.keys(whichScheme).map(function(k){return whichScheme[k]}).join(", ");
         }
 
-        if (document.location.href.includes("/why", true)) {
-            var benefitsChecked = $("input[name=benefit]:checked");
-            var whyBenefits = {};
+        // if (document.location.href.includes("/why", true)) {
+        //     var benefitsChecked = $("input[name=benefit]:checked");
+        //     var whyBenefits = {};
+
+        //     // why are you claiming your deferred benefits?
+        //     for(var k = 0; k < benefitsChecked.length; k++) {
+        //         whyBenefits[k] = benefitsChecked[k].value;
+        //     }
+
+        //     sessionStorage.whyBenefits = toTitleCase(Object.keys(whyBenefits).map(function(l){return whyBenefits[l]}).join(", "));
+        // }
+
+        if (document.location.href.includes("/why1995", true)) {
+            var benefitsChecked1995 = $("input[name=benefit]:checked");
+            var whyBenefits1995 = {};
 
             // why are you claiming your deferred benefits?
-            for(var k = 0; k < benefitsChecked.length; k++) {
-                whyBenefits[k] = benefitsChecked[k].value;
+            for(var k = 0; k < benefitsChecked1995.length; k++) {
+                whyBenefits1995[k] = benefitsChecked1995[k].value;
             }
 
-            sessionStorage.whyBenefits = toTitleCase(Object.keys(whyBenefits).map(function(l){return whyBenefits[l]}).join(", "));
+            sessionStorage.whyBenefits1995 = toTitleCase(Object.keys(whyBenefits1995).map(function(l){return whyBenefits1995[l]}).join(", "));
         }
 
-        if (document.location.href.includes("/lumpsum", true)) {
-            var wantLumpSum = $("input[name=lumpsum]:checked")[0];
+        if (document.location.href.includes("/why2008", true)) {
+            var benefitsChecked2008 = $("input[name=benefit]:checked");
+            var whyBenefits2008 = {};
+
+            // why are you claiming your deferred benefits?
+            for(var l = 0; l < benefitsChecked2008.length; l++) {
+                whyBenefits2008[l] = benefitsChecked2008[l].value;
+            }
+
+            sessionStorage.whyBenefits2008 = toTitleCase(Object.keys(whyBenefits2008).map(function(l){return whyBenefits2008[l]}).join(", "));
+        }
+
+        if (document.location.href.includes("/lumpsum1995", true)) {
+            var wantLumpSum1995 = $("input[name=lumpsum]:checked")[0];
 
             // do you want an lump sum by giving up part of your pension?
-            if (wantLumpSum !== undefined) {
-                sessionStorage.lumpSum = wantLumpSum.value;
+            if (wantLumpSum1995 !== undefined) {
+                sessionStorage.lumpSum1995 = wantLumpSum1995.value;
             }
         }
 
-        if (document.location.href.includes("/typeoflumpsum", true)) {
-            var getLumpSum = $("input[name=scheme]:checked")[0];
-            var getLumpSumVal;
+        if (document.location.href.includes("/lumpsum2008", true)) {
+            var wantLumpSum2008 = $("input[name=lumpsum]:checked")[0];
+
+            // do you want an lump sum by giving up part of your pension?
+            if (wantLumpSum2008 !== undefined) {
+                sessionStorage.lumpSum2008 = wantLumpSum2008.value;
+            }
+        }
+
+        if (document.location.href.includes("/1995typeoflumpsum", true)) {
+            var getLumpSum1995 = $("input[name=scheme]:checked")[0];
+            var getLumpSumVal1995;
 
             // how would you like your lump sum?
-            if (getLumpSum !== undefined) {
-                if (getLumpSum.value == "1995") {
-                    getLumpSumVal = "Maximum tax free amount";
-                } else if (getLumpSum.value == "2008") {
-                    getLumpSumVal = "Amount less than the maximum amount permitted";
+            if (getLumpSum1995 !== undefined) {
+                if (getLumpSum1995.value == "1995") {
+                    getLumpSumVal1995 = "Maximum tax free amount";
+                } else if (getLumpSum1995.value == "2008") {
+                    getLumpSumVal1995 = "Amount less than the maximum amount permitted";
 
-                    var getLumpSumAmount = document.getElementById("employer-contributions").value;
-                    if (getLumpSumAmount !== "") {
-                        getLumpSumVal = `${getLumpSumVal} - £${getLumpSumAmount}`;
+                    var getLumpSumAmount1995 = document.getElementById("employer-contributions").value;
+                    if (getLumpSumAmount1995 !== "") {
+                        getLumpSumVal1995 = `${getLumpSumVal1995} - £${getLumpSumAmount1995}`;
                     }
                 } else {
-                    getLumpSumVal = "Maximum lump sum which may have a tax charge";
+                    getLumpSumVal1995 = "Maximum lump sum which may have a tax charge";
                 }
 
-                sessionStorage.typeOfLumpSum = `${getLumpSumVal}`;
+                sessionStorage.typeOfLumpSum1995 = `${getLumpSumVal1995}`;
+            }
+        }
+
+        if (document.location.href.includes("/2008typeoflumpsum", true)) {
+            var getLumpSum2008 = $("input[name=scheme]:checked")[0];
+            var getLumpSumVal2008;
+
+            // how would you like your lump sum?
+            if (getLumpSum2008 !== undefined) {
+                if (getLumpSum2008.value == "1995") {
+                    getLumpSumVal2008 = "Maximum tax free amount";
+                } else if (getLumpSum2008.value == "2008") {
+                    getLumpSumVal2008 = "Amount less than the maximum amount permitted";
+
+                    var getLumpSumAmount2008 = document.getElementById("employer-contributions").value;
+                    if (getLumpSumAmount2008 !== "") {
+                        getLumpSumVal2008 = `${getLumpSumVal2008} - £${getLumpSumAmount2008}`;
+                    }
+                } else {
+                    getLumpSumVal2008 = "Maximum lump sum which may have a tax charge";
+                }
+
+                sessionStorage.typeOfLumpSum2008 = `${getLumpSumVal2008}`;
             }
         }
         // end of #1 pension details - about your pension //
@@ -396,9 +452,33 @@ $(document).ready(function() {
 
     if (document.location.href.includes("/about-your-pension/checkyouranswers", true)) {
         $("td#has-mobile")[0].innerHTML = sessionStorage.getItem("whichScheme");
-        $("td#has-mobile")[1].innerHTML = sessionStorage.getItem("whyBenefits");
-        $("td#has-mobile")[2].innerHTML = sessionStorage.getItem("lumpSum");
-        $("td#has-mobile")[3].innerHTML = sessionStorage.getItem("typeOfLumpSum");
+        // 1995 //
+        if (!sessionStorage.getItem("whichScheme").includes("1995")) {
+            $("h2#for1995").addClass("js-hidden");
+            $("hr#for1995").addClass("js-hidden");
+            $("#review-table-one-1995").addClass("js-hidden");
+        }
+        $("td#has-mobile-1995")[0].innerHTML = sessionStorage.getItem("whyBenefits1995");
+        $("td#has-mobile-1995")[1].innerHTML = sessionStorage.getItem("lumpSum1995");
+        $("td#has-mobile-1995")[2].innerHTML = sessionStorage.getItem("typeOfLumpSum1995");
+        // 2008 //
+        if (!sessionStorage.getItem("whichScheme").includes("2008")) {
+            $("h2#for2008").addClass("js-hidden");
+            $("hr#for2008").addClass("js-hidden");
+            $("#review-table-one-2008").addClass("js-hidden");
+        }
+        $("td#has-mobile-2008")[0].innerHTML = sessionStorage.getItem("whyBenefits2008");
+        $("td#has-mobile-2008")[1].innerHTML = sessionStorage.getItem("lumpSum2008");
+        $("td#has-mobile-2008")[2].innerHTML = sessionStorage.getItem("typeOfLumpSum2008");
+        // 2015 //
+        if (!sessionStorage.getItem("whichScheme").includes("2015")) {
+            $("h2#for2015").addClass("js-hidden");
+            $("hr#for2015").addClass("js-hidden");
+            $("#review-table-one-2015").addClass("js-hidden");
+        }
+        $("td#has-mobile-2015")[0].innerHTML = sessionStorage.getItem("whyBenefits2015");
+        $("td#has-mobile-2015")[1].innerHTML = sessionStorage.getItem("lumpSum2015");
+        $("td#has-mobile-2015")[2].innerHTML = sessionStorage.getItem("typeOfLumpSum2015");
     }
 
     // if (document.location.href.includes("/about-your-pension/why", true)) {
