@@ -509,3 +509,14 @@ if (req.query.bank == 'banktransfer') {
 }
 
 });
+
+router.get(/april-handler/, function (req, res) {
+  if (req.query.arethey == 'true') {
+    res.redirect('excessLTA')
+  } else if (req.query.arethey == 'true') {
+      res.redirect('excessLTA')
+
+  } else {
+      res.redirect('checkyouranswers')
+  }
+});
