@@ -6,6 +6,55 @@ function toTitleCase(str) {
 
 $(document).ready(function() {
     $("input").on("change", function() {
+        // #0 personal details - about you //
+        if (document.location.href.includes("/start/name", true)) {
+            var yourFirstName = toTitleCase(document.getElementById("firstname").value);
+            var yourLastName = toTitleCase(document.getElementById("lastname").value);
+
+            // full name
+            sessionStorage.yourName = `${yourFirstName} ${yourLastName}`;
+        }
+
+        if (document.location.href.includes("/start/dob", true)) {
+            var day1 = document.getElementById("day").value;
+            var month1 = document.getElementById("month").value;
+            var year1 = document.getElementById("year").value;
+
+            // date of birth
+            sessionStorage.yourDOB = `${day1}/${month1}/${year1}`;
+        }
+
+        if (document.location.href.includes("/start/gender", true)) {
+            var gender = $("input[name=rcg]:checked")[0];
+
+            // gender
+            if (gender !== undefined) {
+                sessionStorage.yourGender = gender.value;
+            }
+        }
+
+        if (document.location.href.includes("/start/post-address", true)) {
+            var lineone = document.getElementById("lineone").value;
+            var linetwo;
+            var town = document.getElementById("town").value;
+            var postcode = document.getElementById("postcode").value;
+            var country = document.getElementById("country").value;
+
+            if (document.getElementById("linetwo").value !== "") {
+                linetwo = document.getElementById("linetwo").value;
+            }
+
+            // address
+            sessionStorage.yourAddress = linetwo !== undefined ? `${lineone}, ${linetwo}, ${town}, ${postcode}, ${country}` : `${lineone}, ${town}, ${postcode}, ${country}`;
+        }
+
+        if (document.location.href.includes("/start/nino", true)) {
+             // national insurance number
+             sessionStorage.yourNINO = document.getElementById("firstname").value;
+        }
+        // end of #0 personal details - about you //
+
+
         // #1 relationship details - about you //
         if (document.location.href.includes("/relationshipstatus", true)) {
             var elementChecked = $("input[name=rcg]:checked");
@@ -25,9 +74,9 @@ $(document).ready(function() {
                 if (relationshipStatus == "single") {
                     sessionStorage.relationshipStatus = toTitleCase(relationshipStatus);
                 } else if (relationshipStatus == "married") {
-                    futureDay = $("input[name=futureday]")[0].value || "01";
-                    futureMonth = $("input[name=futuremonth]")[0].value || "01";
-                    futureYear = $("input[name=futureyear]")[0].value || "1970";
+                    futureDay = $("input[name=futureday]")[0].value;
+                    futureMonth = $("input[name=futuremonth]")[0].value;
+                    futureYear = $("input[name=futureyear]")[0].value;
 
                     sessionStorage.relationshipStatus = toTitleCase(relationshipStatus);
                     sessionStorage.relationshipStatusDate = `${futureDay}/${futureMonth}/${futureYear}`;
@@ -40,9 +89,9 @@ $(document).ready(function() {
                         rsValue = 2;
                     }
 
-                    pastDay = $("input[name=pastday]")[rsValue].value || "01";
-                    pastMonth = $("input[name=pastmonth]")[rsValue].value || "01";
-                    pastYear = $("input[name=pastyear]")[rsValue].value || "1970";
+                    pastDay = $("input[name=pastday]")[rsValue].value;
+                    pastMonth = $("input[name=pastmonth]")[rsValue].value;
+                    pastYear = $("input[name=pastyear]")[rsValue].value;
 
                     sessionStorage.relationshipStatus = toTitleCase(relationshipStatus);
                     sessionStorage.relationshipStatusDate = `${pastDay}/${pastMonth}/${pastYear}`;
@@ -83,17 +132,17 @@ $(document).ready(function() {
         }
 
         if (document.location.href.includes("/spousename", true)) {
-            var firstName2 = toTitleCase(document.getElementById("firstname").value) || "Firstname";
-            var lastName2 = toTitleCase(document.getElementById("lastname").value) || "Lastname";
+            var firstName2 = toTitleCase(document.getElementById("firstname").value);
+            var lastName2 = toTitleCase(document.getElementById("lastname").value);
 
             // what is your spouse's or civil partners name?
             sessionStorage.spouseName = `${firstName2} ${lastName2}`;
         }
 
         if (document.location.href.includes("/spousedob", true)) {
-            var day = document.getElementById("day").value || "01";
-            var month = document.getElementById("month").value || "01";
-            var year = document.getElementById("year").value || "1970";
+            var day = document.getElementById("day").value;
+            var month = document.getElementById("month").value;
+            var year = document.getElementById("year").value;
 
             // what is your spouse's or civil partners date of birth?
             sessionStorage.spouseDOB = `${day}/${month}/${year}`;
@@ -113,34 +162,34 @@ $(document).ready(function() {
 
         if (document.location.href.includes("/lastnhsemployer", true)) {
             // what was the name of your last NHS employer?
-            sessionStorage.lastNHSEmployer = document.getElementById("town").value || "NHS-BSA";
+            sessionStorage.lastNHSEmployer = document.getElementById("town").value;
         }
 
         if (document.location.href.includes("/date-leave", true)) {
-            var day1 = document.getElementById("day").value || "01";
-            var month1 = document.getElementById("month").value || "01";
-            var year1 = document.getElementById("year").value || "1970";
+            var day2 = document.getElementById("day").value;
+            var month2 = document.getElementById("month").value;
+            var year2 = document.getElementById("year").value;
 
             // what date did you leave?
-            sessionStorage.dateLeave = `${day1}/${month1}/${year1}`;
+            sessionStorage.dateLeave = `${day2}/${month2}/${year2}`;
         }
 
         if (document.location.href.includes("/doyouintend", true)) {
             var workNHS = $("input[name=hasnhsno]:checked")[0];
-            var day2,
-                month2,
-                year2;
+            var day3,
+                month3,
+                year3;
 
             // do you intend to work in the NHS after you get your pension?
             if (workNHS !== undefined) {
                 sessionStorage.doYouIntend = workNHS.value;
 
                 if (workNHS.value == "Yes") {
-                    day2 = document.getElementById("day").value || "01";
-                    month2 = document.getElementById("month").value || "01";
-                    year2 = document.getElementById("year").value || "1970";
+                    day3 = document.getElementById("day").value;
+                    month3 = document.getElementById("month").value;
+                    year3 = document.getElementById("year").value;
 
-                    sessionStorage.returnToWork = `${day2}/${month2}/${year2}`;
+                    sessionStorage.returnToWork = `${day3}/${month3}/${year3}`;
                 }
             }
         }
@@ -159,12 +208,12 @@ $(document).ready(function() {
 
         if (document.location.href.includes("/emailaddress", true)) {
             // email address
-            sessionStorage.emailaddress = document.getElementById("lineone").value || "email@nhs.net";
+            sessionStorage.emailaddress = document.getElementById("lineone").value;
         }
 
         if (document.location.href.includes("/mobilenumber", true)) {
             // mobile telephone number
-            sessionStorage.mobilenumber = document.getElementById("lineone").value || "+44 7890 123456";
+            sessionStorage.mobilenumber = document.getElementById("lineone").value;
         }
         // end of #3 contact details - about you //
 
@@ -180,26 +229,26 @@ $(document).ready(function() {
 
         if (document.location.href.includes("/nameofbank", true)) {
             // account holders name (yes-route)
-            sessionStorage.nameofbank = document.getElementById("exyear").value || "Bankname";
+            sessionStorage.nameofbank = document.getElementById("exyear").value;
         }
 
         if (document.location.href.includes("/bankaddress", true)) {
-            var lineone = document.getElementById("lineone").value || "Building and Street";
-            var linetwo;
-            var town = document.getElementById("town").value || "Town or City";
-            var postcode = document.getElementById("postcode").value || "Postcode";
+            var lineone1 = document.getElementById("lineone").value;
+            var linetwo1;
+            var town1 = document.getElementById("town").value;
+            var postcode1 = document.getElementById("postcode").value;
 
             if (document.getElementById("linetwo").value !== "") {
-                linetwo = document.getElementById("linetwo").value;
+                linetwo1 = document.getElementById("linetwo").value;
             }
 
             // account holders address (yes-route)
-            sessionStorage.holderaddress = linetwo !== undefined ? `${lineone}, ${linetwo}, ${town}, ${postcode}` : `${lineone}, ${town}, ${postcode}`;
+            sessionStorage.holderaddress = linetwo1 !== undefined ? `${lineone1}, ${linetwo1}, ${town1}, ${postcode1}` : `${lineone1}, ${town1}, ${postcode1}`;
         }
 
         if (document.location.href.includes("/ddpay", true)) {
             // account holder's name (no-route)
-            sessionStorage.holdername = document.getElementById("holdername").value || "Accountname";
+            sessionStorage.holdername = document.getElementById("holdername").value;
         }
         // end of #4 payment details - about you //
 
@@ -378,38 +427,47 @@ $(document).ready(function() {
             }
         }
 
-        if (document.location.href.includes("/excludingpension", true)) {
-            var excludingPensionChecked = $("input[name=hasnhsno]:checked")[0];
+        // if (document.location.href.includes("/excludingpension", true)) {
+        //     var excludingPensionChecked = $("input[name=hasnhsno]:checked")[0];
 
-            // excluding your main NHS pension benefits were any of your separate pension benefits in payment on or after 6 April 2006?
-            if (excludingPensionChecked !== undefined) {
-                if (excludingPensionChecked.value == "Yes") {
-                    var totalCombinedPercentage = document.getElementById("employer-contributions").value || "100";
-                    var day3 = document.getElementById("day").value || "06";
-                    var month3 = document.getElementById("month").value || "04";
-                    var year3 = document.getElementById("year").value || "2006";
+        //     // excluding your main NHS pension benefits were any of your separate pension benefits in payment on or after 6 April 2006?
+        //     if (excludingPensionChecked !== undefined) {
+        //         if (excludingPensionChecked.value == "Yes") {
+        //             var totalCombinedPercentage = document.getElementById("employer-contributions").value;
+        //             var day4 = document.getElementById("day").value;
+        //             var month4 = document.getElementById("month").value;
+        //             var year4 = document.getElementById("year").value;
 
-                    sessionStorage.excludingPension = excludingPensionChecked.value;
-                    sessionStorage.totalCombinedPercentageLTA = `${totalCombinedPercentage}%`;
-                    sessionStorage.dateFirstBenefitCrystallisation = `${day3}/${month3}/${year3}`;
-                } else {
-                    sessionStorage.excludingPension = excludingPensionChecked.value;
-                }
-            }
-        }
+        //             sessionStorage.excludingPension = excludingPensionChecked.value;
+        //             sessionStorage.totalCombinedPercentageLTA = `${totalCombinedPercentage}%`;
+        //             sessionStorage.dateFirstBenefitCrystallisation = `${day4}/${month4}/${year4}`;
+        //         } else {
+        //             sessionStorage.excludingPension = excludingPensionChecked.value;
+        //         }
+        //     }
+        // }
 
         if (document.location.href.includes("/beforeapril06", true)) {
-            var beforeAprilChecked = $("input[name=hasnhsno]:checked")[0];
+            var aprilChecked = $("input[class=april]:checked")[0];
 
-            // excluding your main NHS pension benefits were any of your separate pension benefits in payment before 6 April 2006?
-            if (beforeAprilChecked !== undefined) {
-                if (beforeAprilChecked.value == "Yes") {
-                    var grossAnnualRate = document.getElementById("employer-contributions").value || "100";
+            if (aprilChecked !== undefined) {
+                // excluding your main NHS pension benefits were any of your separate pension benefits in payment on or after 6 April 2006?
+                if (aprilChecked.id == "1995") {
+                    var grossAnnualRate = document.getElementById("employer-contributions").value;
 
-                    sessionStorage.beforeApril = beforeAprilChecked.value;
-                    sessionStorage.grossAnnualRateSeparatePension = `£${grossAnnualRate}`;
-                } else {
-                    sessionStorage.beforeApril = beforeAprilChecked.value;
+                    sessionStorage.onOrAfterApril = "Yes";
+                    sessionStorage.grossAnnualRateSeparatePension = `${grossAnnualRate}`;
+                }
+                // excluding your main NHS pension benefits were any of your separate pension benefits in payment before 6 April 2006?
+                if (aprilChecked.id == "2008") {
+                    var totalCombinedPercentage = document.getElementById("employer-contributions").value;
+                    var day4 = document.getElementById("day").value;
+                    var month4 = document.getElementById("month").value;
+                    var year4 = document.getElementById("year").value;
+
+                    sessionStorage.excludingPension = "Yes";
+                    sessionStorage.totalCombinedPercentageLTA = `${totalCombinedPercentage}%`;
+                    sessionStorage.dateFirstBenefitCrystallisation = `${day4}/${month4}/${year4}`;
                 }
             }
         }
@@ -428,7 +486,7 @@ $(document).ready(function() {
             // do you have any valid HMRC Lifetime Allowance Charge protection?
             if (validProtectionChecked !== undefined) {
                 if (validProtectionChecked.value == "Yes") {
-                    var certificateOrReference = document.getElementById("employer-contributions").value || "1234567890";
+                    var certificateOrReference = document.getElementById("employer-contributions").value;
 
                     sessionStorage.validProtection = validProtectionChecked.value;
                     sessionStorage.certOrRefNumber = certificateOrReference;
@@ -454,6 +512,14 @@ $(document).ready(function() {
         } else {
             return;
         }
+    }
+
+    if (document.location.href.includes('/start/checkyouranswers', true)) {
+        $("td#has-mobile")[0].innerHTML = sessionStorage.getItem("yourName");
+        $("td#has-mobile")[1].innerHTML = sessionStorage.getItem("yourDOB");
+        $("td#has-mobile")[2].innerHTML = sessionStorage.getItem("yourGender");
+        $("td#has-mobile")[3].innerHTML = sessionStorage.getItem("yourAddress");
+        $("td#has-mobile")[4].innerHTML = sessionStorage.getItem("yourNINO");
     }
 
     if (document.location.href.includes("/about-you/checkyouranswers", true)) {
@@ -521,8 +587,8 @@ $(document).ready(function() {
         $("td#has-mobile")[0].innerHTML = sessionStorage.getItem("pensionArrangement");
         $("td#has-mobile")[1].innerHTML = sessionStorage.getItem("annualPension");
         $("td#has-mobile")[2].innerHTML = sessionStorage.getItem("annualPension");
-        $("td#has-mobile")[3].innerHTML = sessionStorage.getItem("excludingPension");
-        $("td#has-mobile")[4].innerHTML = sessionStorage.getItem("beforeApril");
+        $("td#has-mobile")[3].innerHTML = sessionStorage.getItem("onOrAfterApril");
+        $("td#has-mobile")[4].innerHTML = sessionStorage.getItem("excludingPension");
         $("td#has-mobile")[5].innerHTML = sessionStorage.getItem("vaildProtection");
     }
 });
