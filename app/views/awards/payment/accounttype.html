@@ -22,27 +22,25 @@
       </div>
 
 
-
-      <form class="form" action="scheme-handler" method="get">
+  <form class="form" action="accounttype-handler" method="get">
         <div class="form-group">
           <fieldset>
 
-            <div class="multiple-choice" data-target="contact-by-email">
-              <input id="1995" type="radio" name="scheme" value="1995">
+            <div class="multiple-choice">
+              <input id="1995" type="radio" name="bank" value="current">
               <label class="single-line" for="1995">Current Account</label>
             </div>
 
-            <div class="multiple-choice" data-target="contact-by-email">
-              <input id="2015" type="radio" name="scheme" value="2015">
+            <div class="multiple-choice">
+              <input id="2015" type="radio" name="bank" value="deposit">
               <label class="single-line" for="2015">Deposit Account</label>
             </div>
             </div>
           </fieldset>
 
-        <div class="form-group">
-          <a href="ddpay" class="button" type="submit" value="Next">Next</a>
-        </div>
-
+          <div class="form-group">
+            <input class="button" type="submit"  value="Next">
+          </div>
       </form>
 
     </div>

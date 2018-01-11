@@ -443,12 +443,12 @@ router.get(/isthisfile-handler/, function (req, res) {
    }
 });
 
-router.get(/outsideUK-handler/, function (req, res) {
+router.get(/accounttype-handler/, function (req, res) {
 
-if (req.query.outside == 'Yes') {
-  res.redirect('outsideuk/nameofbank')
+if (req.query.bank == 'current') {
+  res.redirect('ddpay')
 } else {
-  res.redirect('accounttype')
+  res.redirect('ddroll')
 }
 
 });
