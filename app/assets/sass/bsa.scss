@@ -521,3 +521,21 @@ table {
 .right {
   text-align: right;
 }
+
+#back {
+  float: left;
+}
+
+#back a {
+  display: inline-block;
+  margin-top: 15px;
+  padding-left: 14px;
+  border-bottom: #0b0c0c 1px solid;
+  text-decoration: none;
+  background: url(../images/icon-caret-left.png) no-repeat 0 4px;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.25;
+  font-weight: 400;
+  text-transform: none;
+}
