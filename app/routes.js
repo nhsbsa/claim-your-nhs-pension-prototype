@@ -326,9 +326,9 @@ router.get(/1995lumpsum-handler/, function (req, res) {
   if (req.query.lumpsum == "Yes") {
      res.redirect('1995typeoflumpsum')
    } else if (applicant.s2008 == true && applicant.s2015 == false) {
-     res.redirect('why2008')
+     res.redirect('2008')
    } else if (applicant.s2008 == false && applicant.s2015 == true ) {
-     res.redirect('why2015')
+     res.redirect('2015')
   } else {
       res.redirect('checkyouranswers')
    }
@@ -341,7 +341,7 @@ router.get(/2008lumpsum-handler/, function (req, res) {
      res.redirect('2008typeoflumpsum')
    }
   else if (applicant.s2015 == true ) {
-     res.redirect('why2015')
+     res.redirect('2015')
    }
   else {
       res.redirect('checkyouranswers')
