@@ -147,6 +147,13 @@ $(document).ready(function() {
             // what is your spouse's or civil partners date of birth?
             sessionStorage.spouseDOB = `${day}/${month}/${year}`;
         }
+
+        if (document.location.href.includes("/allocatename", true)) {
+            var firstName3 = toTitleCase(document.getElementById("firstname").value);
+            var lastName3 = toTitleCase(document.getElementById("lastname").value);
+
+            sessionStorage.allocatedName = `${firstName3} ${lastName3}`;
+        }
         // end of #1 relationship details - about you //
 
 
@@ -497,6 +504,58 @@ $(document).ready(function() {
         }
         // end of #2 HM Revenue and Customs - about your pension //
     });
+
+    if (sessionStorage.getItem("spouseName") !== null) {
+        var splitSpouseName = sessionStorage.getItem("spouseName").split(" ");
+
+        if (document.location.href.includes("/about-you/spousedob", true)) {
+            $("h1.heading-large")[0].innerHTML = `What is ${splitSpouseName[0]}'s date of birth?`;
+        }
+        if (document.location.href.includes("/about-you/spousegender", true)) {
+            $("h1.heading-large")[0].innerHTML = `What is ${splitSpouseName[0]}'s gender?`;
+        }
+        if (document.location.href.includes("/about-you/spousenino", true)) {
+            $("h1.heading-large")[0].innerHTML = `What is ${splitSpouseName[0]}'s National Insurance number?`;
+        }
+    }
+
+    if (sessionStorage.getItem("childName") !== null) {
+        if (!sessionStorage.getItem("childName").includes(",", true)) {
+            var splitOnlyChildsName = sessionStorage.getItem("childName").split(" "); // only-child
+
+            if (document.location.href.includes("/about-you/childdob", true)) {
+                $("h1.heading-large")[0].innerHTML = `What is ${splitOnlyChildsName[0]}'s date of birth?`;
+            }
+            if (document.location.href.includes("/about-you/childgender", true)) {
+                $("h1.heading-large")[0].innerHTML = `What is ${splitOnlyChildsName[0]}'s gender?`;
+            }
+        } else {
+            var splitChildrensNames = sessionStorage.getItem("childName").split(", ");
+            splitChildrensNames = splitChildrensNames.splice(-1, splitChildrensNames.length - 1);
+            splitChildrensNames = splitChildrensNames[0].split(" ");
+
+            if (document.location.href.includes("/about-you/childdob", true)) {
+                $("h1.heading-large")[0].innerHTML = `What is ${splitChildrensNames[0]}'s date of birth?`;
+            }
+            if (document.location.href.includes("/about-you/childgender", true)) {
+                $("h1.heading-large")[0].innerHTML = `What is ${splitChildrensNames[0]}'s gender?`;
+            }
+        }
+    }
+
+    if (sessionStorage.getItem("allocatedName") !== null) {
+        var splitAllocatedName = sessionStorage.getItem("allocatedName").split(" ");
+
+        if (document.location.href.includes("/allocating/allocatedob", true)) {
+            $("h1.heading-large")[0].innerHTML = `What is ${splitAllocatedName[0]}'s date of birth?`;
+        }
+        if (document.location.href.includes("/allocating/allocategender", true)) {
+            $("h1.heading-large")[0].innerHTML = `What is ${splitAllocatedName[0]}'s gender?`;
+        }
+        if (document.location.href.includes("/allocating/relationshiptoyou", true)) {
+            $("h1.heading-large")[0].innerHTML = `What is ${splitAllocatedName[0]}'s relationship to you?`;
+        }
+    }
 
     if (document.location.href.includes("/about-you/secondchildren", true)) {
         var sessionStorageChildren = sessionStorage.getItem("childName");
