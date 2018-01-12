@@ -172,7 +172,7 @@ router.get(/relationship-handler/, function (req, res) {
 } else if (req.query.rcg == "widowed"){
   res.redirect('children');
 } else if (req.query.rcg == "divorced"){
-  res.redirect('spousename');
+  res.redirect('children');
 } else {
   res.redirect('spousename');
  }
