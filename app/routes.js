@@ -514,8 +514,9 @@ router.get(/april-handler/, function (req, res) {
     res.redirect('excessLTA')
   } else if (req.query.werethey == 'true') {
       res.redirect('excessLTA')
-
-  } else {
+ } else if (req.query.none == 'true') {
+     res.redirect('vaild')
+  }    else {
       res.redirect('checkyouranswers')
   }
 });
