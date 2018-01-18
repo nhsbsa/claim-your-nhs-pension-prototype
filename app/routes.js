@@ -520,3 +520,21 @@ router.get(/april-handler/, function (req, res) {
       res.redirect('checkyouranswers')
   }
 });
+
+
+router.get(/paymaster-handler/, function (req, res) {
+  if (req.query.paymaster == "Yes") {
+  res.redirect('paymaster/paymastername');
+} else {
+  res.redirect('ddv2-confirm');
+}
+});
+
+
+router.get(/secondpay-handler/, function (req, res) {
+  if (req.query.paymaster == "Yes") {
+  res.redirect('paymaster/paymastername');
+} else {
+  res.redirect('ddv2-confirm');
+}
+});
