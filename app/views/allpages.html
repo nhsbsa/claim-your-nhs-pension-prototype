@@ -1,0 +1,86 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+    Verison 4 - Claim your NHS Pension
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  {% include "includes/phase_banner_beta.html" %}
+  <div class="grid-row">
+    <div class="column-two-thirds">
+  <br>
+   <a href="/" class="link-back">Back</a>
+
+   <div class="heading-group">
+     <p>Claim your NHS Pension</p>
+     <h1 class="heading-xlarge">
+      Verison 4
+     </h1>
+   </div>
+    <h2 class="heading-medium">end-to-end Journey</h2>
+   <p class="button-group">
+     <a class="button button-get-started" href="awards/start/start" id="next">
+       Start now
+     </a>
+   </p>
+
+   <h2 class="heading-medium">Page breakdown</h2>
+
+   <table  id="review-table-one" class="check-table">
+     <thead>
+       <tr>
+         <th>Page</th>
+         <th class="right" style="padding-right:0px;">JIRA ticket number</th>
+       </tr>
+     </thead>
+     <tbody>
+       <tr>
+         <td><a href="awards/start/start">Start page</a></td>
+         <td class="right"><a href="https://bsa2468.atlassian.net/browse/BP490-86">BP490-86</a></td>
+       </tr>
+       <tr>
+         <td><a href="awards/AW8P">Your application</a></td>
+         <td class="right"><a href="https://bsa2468.atlassian.net/browse/BP490-92">BP490-92</a></td>
+       </tr>
+       <tr class="breakheader">
+        <td class="strong">Personal details</td>
+        <th class="right" style="padding-right:0px;">JIRA ticket number</th>
+       </tr>
+       <tr>
+         <td><a href="awards/start/name">What is your name?</a></td>
+         <td class="right"></td>
+       </tr>
+       <tr>
+         <td><a href="awards/start/dob">What is your date of birth?</a></td>
+         <td class="right"></td>
+       </tr>
+
+       <tr>
+         <td><a href="awards/start/gender">What is your gender?</a></td>
+         <td class="right"></td>
+       </tr>
+       <tr>
+         <td><a href="awards/start/post-address">What is your address?</a></td>
+         <td class="right"></td>
+       </tr>
+       <tr>
+         <td><a href="awards/start/nino">What is your National Insurance number?</a></td>
+         <td class="right"></td>
+       </tr>
+       <tr>
+         <td><a href="awards/start/checkyouranswers">Check your answers</a></td>
+         <td class="right"></td>
+       </tr>
+       <tr class="breakheader">
+        <td class="strong">Partner and child details</td>
+        <th class="right" style="padding-right:0px;">JIRA ticket number</th>
+       </tr>
+
+     </tbody>
+   </table>
+
+</main>
+
+{% endblock %}
