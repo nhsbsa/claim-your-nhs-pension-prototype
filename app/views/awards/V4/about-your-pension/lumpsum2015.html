@@ -1,0 +1,54 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  Do you want an aditional lump sum by giving up part of your pension? - Claim your NHS Pension
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  {% include "includes/phase_banner_beta.html" %}
+  {% include "includes/back.html" %}
+
+  <div class="grid-row">
+
+    <div class="column-two-thirds">
+
+      <div class="heading-group">
+        <p>Claim your NHS Pension<p>
+        <h1 class="heading-large">Do you want to give up part of your 2015 Section pension to receive a lump sum?
+</h1>
+      </div>
+
+      <form action="2015lumpsum-handler" method="post-address" class="form">
+
+        <div class="form-group">
+
+          <fieldset class="inline">
+            <legend></legend>
+
+            <div class="multiple-choice">
+              <input id="yes" type="radio" name="lumpsum" value="Yes">
+              <label for="yes">Yes</label>
+            </div>
+            <div class="multiple-choice">
+              <input id="no" type="radio" name="lumpsum" value="No">
+              <label for="no">No</label>
+            </div>
+        </fieldset>
+
+        </div>
+
+        <div class="form-group">
+          <input class="button" type="submit"  value="Next">
+        </div>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</main>
+
+{% endblock %}

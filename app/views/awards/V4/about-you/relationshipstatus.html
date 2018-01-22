@@ -1,0 +1,154 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  What is your status? - Claim your NHS Pension
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  {% include "includes/phase_banner_beta.html" %}
+  {% include "includes/back.html" %}
+
+  <div class="grid-row">
+
+    <div class="column-two-thirds">
+
+      <div class="heading-group">
+        <p>Claim your NHS Pension</p>
+        <h1 class="heading-large">
+            What is your martial status?
+        </h1>
+      </div>
+      <p>We need these details so we can pay benefits to them if you die.</p>
+
+
+      <form class="form" action="relationship-handler" method="get">
+        <div class="form-group">
+          <fieldset>
+
+            <div class="multiple-choice">
+              <input id="today" class="sel" type="radio" name="rcg" value="single">
+              <label class="single-line" for="today">Single and never married</label>
+            </div>
+
+            <div class="multiple-choice">
+              <input id="next" class="sel" type="radio" name="rcg" value="single">
+              <label class="single-line" for="next">Separated</label>
+            </div>
+
+            <div class="multiple-choice" data-target="married">
+              <input id="next" class="sel" type="radio" name="rcg" value="married">
+              <label class="single-line" for="next">Married</label>
+            </div>
+
+            <div class="panel panel-border-narrow js-hidden" id="married">
+              <h2 class="heading-small">When did you get married?</h2>
+                <p class="form-hint">For example, 31 03 1980</p>
+              <div class="form-date">
+                <div class="form-group form-group-day">
+                  <label for="futureday">Day</label>
+                  <input class="form-control" id="futureday" name="futureday" type="number" pattern="[0-9]*" min="0" max="31">
+                </div>
+                <div class="form-group form-group-month">
+                  <label for="futuremonth">Month</label>
+                  <input class="form-control" id="futuremonth" name="futuremonth" type="number" pattern="[0-9]*" min="0" max="12">
+                </div>
+                <div class="form-group form-group-year">
+                  <label for="futureyear">Year</label>
+                  <input class="form-control" id="futureyear" name="futureyear" type="number" pattern="[0-9]*" min="0" max="2017">
+                </div>
+              </div>
+            </div>
+
+            <div class="multiple-choice" data-target="civil">
+              <input id="next" class="sel" type="radio" name="rcg" value="civil">
+              <label class="single-line" for="next">Civil partnership</label>
+            </div>
+            <div class="panel panel-border-narrow js-hidden" id="civil">
+              <h2 class="heading-small">When did you enter your civil partnership?</h2>
+                <p class="form-hint">For example, 31 03 1980</p>
+              <div class="form-date">
+                <div class="form-group form-group-day">
+                  <label for="futureday">Day</label>
+                  <input class="form-control" id="futureday" name="futureday" type="number" pattern="[0-9]*" min="0" max="31">
+                </div>
+                <div class="form-group form-group-month">
+                  <label for="futuremonth">Month</label>
+                  <input class="form-control" id="futuremonth" name="futuremonth" type="number" pattern="[0-9]*" min="0" max="12">
+                </div>
+                <div class="form-group form-group-year">
+                  <label for="futureyear">Year</label>
+                  <input class="form-control" id="futureyear" name="futureyear" type="number" pattern="[0-9]*" min="0" max="2017">
+                </div>
+              </div>
+            </div>
+
+
+
+
+            <div class="multiple-choice" data-target="widowed">
+              <input id="already" type="radio" class="sel" name="rcg" value="widowed">
+              <label class="single-line" for="already">Widowed or surviving partner</label>
+            </div>
+
+            <div class="panel panel-border-narrow js-hidden" id="widowed">
+              <h2 class="heading-small">When did your partner die?</h2>
+                <p class="form-hint">For example, 31 03 1980</p>
+
+              <div class="form-date">
+                <div class="form-group form-group-day">
+                  <label for="pastday">Day</label>
+                  <input class="form-control" id="pastday" name="pastday" type="number" pattern="[0-9]*" min="0" max="31">
+                </div>
+                <div class="form-group form-group-month">
+                  <label for="pastmonth">Month</label>
+                  <input class="form-control" id="pastmonth" name="pastmonth" type="number" pattern="[0-9]*" min="0" max="12">
+                </div>
+                <div class="form-group form-group-year">
+                  <label for="pastyear">Year</label>
+                  <input class="form-control" id="pastyear" name="pastyear" type="number" pattern="[0-9]*" min="0" max="2017">
+                </div>
+              </div>
+            </div>
+
+              <div class="multiple-choice" data-target="divorced">
+                <input id="already" type="radio" class="sel" name="rcg" value="divorced">
+                <label class="single-line" for="already">Divorced or dissolved civil partnership</label>
+              </div>
+
+              <div class="panel panel-border-narrow js-hidden" id="divorced">
+                <h2 class="heading-small">When were you divorced?</h2>
+                    <p class="form-hint">For example, 31 03 1980</p>
+                <div class="form-date">
+                  <div class="form-group form-group-day">
+                    <label for="pastday">Day</label>
+                    <input class="form-control" id="pastday" name="pastday" type="number" pattern="[0-9]*" min="0" max="31">
+                  </div>
+                  <div class="form-group form-group-month">
+                    <label for="pastmonth">Month</label>
+                    <input class="form-control" id="pastmonth" name="pastmonth" type="number" pattern="[0-9]*" min="0" max="12">
+                  </div>
+                  <div class="form-group form-group-year">
+                    <label for="pastyear">Year</label>
+                    <input class="form-control" id="pastyear" name="pastyear" type="number" pattern="[0-9]*" min="0" max="2017">
+                  </div>
+                </div>
+
+
+            </div>
+          </fieldset>
+        </div>
+        <div class="form-group">
+          <input class="button" type="submit" value="Next">
+        </div>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</main>
+
+{% endblock %}

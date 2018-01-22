@@ -1,0 +1,60 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  Do you want to be contact about your pension by text and email? - Claim your NHS Pension
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  {% include "includes/phase_banner_beta.html" %}
+  {% include "includes/back.html" %}
+
+  <div class="grid-row">
+
+    <div class="column-two-thirds">
+
+      <div class="heading-group">
+        <p>Claim your NHS Pension<p>
+        <h1 class="heading-large">Do you want to allocate part of your pension?
+      </div>
+      <p>Allocating your pension means giving up part of your pension now to provide a pension for someone who is partially dependent on you when you die.</p>
+      <p>Survivor benefits will still be paid to the people who you’ve allocated.</p>
+      <form action="allocating-handler" method="post-address" class="form">
+
+        <div class="form-group">
+
+          <fieldset class="inline">
+            <legend></legend>
+
+            <legend class="visually-hidden">
+            Do you want to allocate part of your pension?
+            </legend>
+
+            <div class="multiple-choice" data-target="getnhsno">
+              <input id="yes" type="radio" name="allocating" value="Yes">
+              <label for="yes">Yes</label>
+            </div>
+
+            <div class="multiple-choice">
+              <input id="no" type="radio" name="allocating" value="No">
+              <label for="no">No</label>
+            </div>
+
+
+        </fieldset>
+        <br>
+
+        <div class="form-group">
+        <input class="button" id="application" type="submit" value="Next">
+        </div>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</main>
+
+{% endblock %}

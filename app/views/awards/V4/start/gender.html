@@ -1,0 +1,55 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  What is your status? - Claim your NHS Pension
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  {% include "includes/phase_banner_beta.html" %}
+  {% include "includes/back.html" %}
+
+  <div class="grid-row">
+
+    <div class="column-two-thirds">
+
+      <div class="heading-group">
+        <p>Claim your NHS Pension</p>
+        <h1 class="heading-large">
+            What is your gender?
+        </h1>
+      </div>
+
+
+
+      <form class="form" action="gender-handler" method="get">
+        <div class="form-group">
+          <fieldset>
+            <div class="multiple-choice" data-target="contact-by-email">
+              <input id="today" type="radio" name="rcg" value="single">
+              <label class="single-line" for="today">Female</label>
+            </div>
+            <div class="multiple-choice" data-target="contact-by-email">
+              <input id="today" type="radio" name="rcg" value="single">
+              <label class="single-line" for="today">Male</label>
+            </div>
+            <div class="multiple-choice" data-target="contact-by-email">
+              <input id="today" type="radio" name="rcg" value="single">
+              <label class="single-line" for="today">Unspecified</label>
+            </div>
+          </fieldset>
+        </div>
+        <div class="form-group">
+          <input class="button" type="submit" value="Next">
+        </div>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</main>
+
+{% endblock %}

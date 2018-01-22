@@ -1,0 +1,103 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+Claim your NHS Pension
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  {% include "includes/phase_banner_beta.html" %}
+  {% include "includes/back.html" %}
+
+  <div class="grid-row">
+
+
+
+      <div class="column-two-thirds left-floater">
+
+      <h1 class="heading-large">Enter bank details</h1>
+
+      <form class="form" method="get" action="dd-handler">
+
+        <div class="form-group">
+
+          <label class="form-label-bold" for="cardnumber">
+            Account number
+          </label>
+
+          <input class="form-control medium-width" id="cardnumber" name="cardnumber" type="number">
+
+        </div>
+
+        <div class="form-group">
+
+          <fieldset>
+
+            <div class="form-date">
+
+              <legend class="form-label-bold">
+                Sort code
+              </legend>
+
+                <div class="form-group form-group-month">
+
+                  <input class="form-control" id="exmonth" name="exmonth" type="number">
+
+                </div>
+
+                <div class="form-group form-group-month">
+
+                  <input class="form-control" id="exyear" name="exyear" type="number">
+
+              </div>
+
+                <div class="form-group form-group-month">
+
+                  <input class="form-control" id="exyear" name="exyear" type="number">
+
+              </div>
+          </div>
+          </fieldset>
+
+        </div>
+
+        <div class="form-group">
+
+          <label class="form-label-bold" for="holdername">
+            Account holder's name
+          </label>
+
+          <input class="form-control max-width" id="holdername" name="holdername" type="text">
+
+        </div>
+
+<!--
+        <div class="multiple-choice nbg">
+          <input id="checkbox-telephone-number" name="contact-by-text-phone" type="checkbox" value="true">
+          <label for="checkbox-telephone-number">
+            I am the account holder and can authorise <br> Direct Debit payments.
+          </label>
+        </div>
+-->
+
+
+
+        <br>
+        <div class="form-item-wrapper">
+          <div class="form-group">
+            <a href="paymaster" class="button" type="submit" >Next</a>
+          </div>
+        </div>
+
+
+
+              </form>
+
+    </div>
+
+  </div>
+
+</main>
+
+{% endblock %}

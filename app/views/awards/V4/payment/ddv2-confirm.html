@@ -1,0 +1,84 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+    Check your bank details - Claim your NHS Pension
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  {% include "includes/phase_banner_beta.html" %}
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+  <div class="text">
+
+    <div class="heading-group">
+      <p>Claim your NHS Pension</p>
+      <h1 class="heading-large">
+        Check your bank details
+      </h1>
+    </div>
+
+    <table id="review-table-two" class="check-table">
+      <tr>
+        <td class="strong">Your account details</td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Account holder's name</td>
+        <td id="has-mobile">{{holdername}}</td>
+        <td><a href="ddpay#holdername">Change</a></td>
+      </tr>
+      <tr>
+        <td>Account number</td>
+        <td>987654321</td>
+        <td><a href="ddpay#cardnumber">Change</a></td>
+      </tr>
+      <tr>
+        <td>Roll number</td>
+        <td>987654321</td>
+        <td><a href="ddpay#cardnumber">Change</a></td>
+      </tr>
+      <tr>
+        <td>Sort code</td>
+        <td>01 01 01</td>
+        <td><a href="ddpay#exmonth">Change</a></td>
+      </tr>
+      <tr>
+        <td>Do you have any other pensions paid by Equiniti Paymaster?</td>
+        <td></td>
+        <td><a href="ddpay#cardnumber">Change</a></td>
+      </tr>
+      <tr>
+        <td>Give the name of the pension paid by Equiniti Paymaster?</td>
+        <td></td>
+        <td><a href="ddpay#cardnumber">Change</a></td>
+      </tr>
+      <tr>
+        <td>Give the reference number of {dynamic}</td>
+        <td></td>
+        <td><a href="ddpay#cardnumber">Change</a></td>
+      </tr>
+    </table>
+
+
+
+    <br>
+    <form action="dd-dec" method="get" class="form">
+      <div class="form-item-wrapper">
+        <div class="form-group">
+          <a href="../AW8P" class="button" type="submit">Continue</a>
+        </div>
+    </div>
+    </form>
+
+   </div>
+  </div>
+</div>
+
+</main>
+
+{% endblock %}
