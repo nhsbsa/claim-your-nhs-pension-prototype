@@ -17,12 +17,21 @@
       <div class="heading-group">
         <p>Claim your NHS Pension</p>
         <h1 class="heading-large">
-            What is your gender?
+            What is your legally recognised gender?
         </h1>
       </div>
+<p>We need to know this to calculate your pension entitlement, as a small number of gender specific regulations remain in the NHS Pension Scheme.</p>
 
+<details>
 
+  <summary><span class="summary">How legal gender is identified</span></summary>
 
+  <div class="panel panel-border-narrow">
+
+  <p>A person’s legal gender is tied to their UK birth certificate unless they apply for a Gender Recognition Certificate (GRC) to change it legally. More information about this is available on our <a href="https://www.nhsbsa.nhs.uk/sites/default/files/2017-05/Gender%20recognition%20V3%2006.2015.pdf">website</a>.</p>
+  </div>
+
+</details>
       <form class="form" action="gender-handler" method="get">
         <div class="form-group">
           <fieldset>
@@ -34,10 +43,7 @@
               <input id="today" type="radio" name="rcg" value="single">
               <label class="single-line" for="today">Male</label>
             </div>
-            <div class="multiple-choice" data-target="contact-by-email">
-              <input id="today" type="radio" name="rcg" value="single">
-              <label class="single-line" for="today">Unspecified</label>
-            </div>
+
           </fieldset>
         </div>
         <div class="form-group">
