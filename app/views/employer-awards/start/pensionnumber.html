@@ -1,12 +1,14 @@
 {% extends "layout_bsa.html" %}
 
 {% block page_title %}
- What is your spouse's or civil partners name?- Claim your NHS Pension
+ What is your National Insurance number? - Claim your NHS Pension
 {% endblock %}
+
 {% block content %}
 
 <main id="content" role="main">
   {% include "includes/phase_banner_beta.html" %}
+  {% include "includes/back.html" %}
 
   <div class="grid-row">
 
@@ -15,28 +17,26 @@
     <div class="column-two-thirds">
 
       <div class="heading-group">
-        <p>Claim your NHS Pension
-        <h1 class="heading-large">What is your relationship to the member?</h1>
+        <p>Claim your NHS Pension</p>
+        <h1 class="heading-large">What is the members NHS Pension Scheme membership number?</h1>
       </div>
 
 
 
 
 
-        <form action="childn-handler" method="get" class="form">
+        <form action="nino-handler" method="get" class="form">
 
           <div class="form-group">
-            <label class="form-label" for="firstname">
-            </label>
+
             <input class="form-control" id="firstname" name="firstname" type="text">
           </div>
+
           <div class="form-item-wrapper">
             <div class="form-group">
-              <a href="childdob" class="button" type="submit" value="Next">Next</a>
+                <a href="start-enddate" class="button" type="submit" value="Submit">Next</a>
             </div>
           </div>
-
-          <p class="navigation"><a class="cancel" href="../AW8P">Cancel</a></p>
 
         </form>
 
