@@ -1,0 +1,59 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+        Which pension scheme or section? - Claim your NHS Pension
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  {% include "includes/phase_banner_beta.html" %}
+  {% include "includes/back.html" %}
+
+  <div class="grid-row">
+
+    <div class="column-two-thirds">
+
+      <div class="heading-group">
+        <p>Claim your NHS Pension</p>
+        <h1 class="heading-large">
+        Which Section or Scheme is the member in?
+        </h1>
+      </div>
+
+
+      <form class="form" action="scheme-handler" method="get">
+        <div class="form-group">
+          <fieldset>
+            <legend>
+               <span class="body-text">Select all that apply</span>
+            </legend>
+            <br>
+            <div class="multiple-choice multiple-radio" data-target="contact-by-email">
+              <input id="1995" class="scheme" type="checkbox" name="s1995" value="true">
+              <label class="single-line" for="1995">1995 Section</label>
+            </div>
+            <div class="multiple-choice multiple-radio" data-target="contact-by-email">
+              <input id="2008" class="scheme" type="checkbox" name="s2008" value="true">
+              <label class="single-line" for="2008">2008 Section</label>
+            </div>
+            <div class="multiple-choice multiple-radio" data-target="contact-by-email">
+              <input id="2015" class="scheme" type="checkbox" name="s2015" value="true">
+              <label class="single-line" for="2015">2015 Scheme</label>
+            </div>
+          </fieldset>
+        </div>
+
+        <div class="form-group">
+          <input class="button" type="submit" value="Next">
+        </div>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</main>
+
+{% endblock %}
