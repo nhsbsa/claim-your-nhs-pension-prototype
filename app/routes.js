@@ -395,9 +395,9 @@ router.get(/2015typeoflumpsum-handler/, function (req, res) {
 
 router.get(/1995commutedill-handler/,function (req, res) {
   if (applicant.s2008 == true && applicant.s2015 == false) {
-    res.redirect('why2008')
+    res.redirect('2008')
   } else if (applicant.s2008 == false && applicant.s2015 == true ) {
-    res.redirect('why2015')
+    res.redirect('2015')
  } else {
      res.redirect('checkyouranswers')
   }
