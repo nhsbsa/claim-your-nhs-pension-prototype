@@ -127,8 +127,9 @@ router.get(/birth-handler/, function (req, res) {
   console.log(applicant.dobMonth)
   console.log(applicant.dobYear)
    res.redirect('gender');
-  });
+ });
 
+ 
   router.get(/gender-handler/, function (req, res) {
     res.redirect('post-address');
   });

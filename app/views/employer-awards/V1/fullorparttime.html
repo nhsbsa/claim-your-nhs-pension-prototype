@@ -1,0 +1,53 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  What is your status? - Claim your NHS Pension
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  {% include "includes/phase_banner_beta.html" %}
+  {% include "includes/back.html" %}
+
+  <div class="grid-row">
+
+    <div class="column-two-thirds">
+
+      <div class="heading-group">
+        <p>Claim your NHS Pension</p>
+        <h1 class="heading-large">
+        Full time or part time
+        </h1>
+      </div>
+
+      <form>
+    <fieldset>
+
+
+      <div class="multiple-choice">
+        <input id="waste-type-1" name="waste-types" type="radio" value="waste-animal">
+        <label for="waste-type-1">Full time </label>
+      </div>
+      <div class="multiple-choice">
+        <input id="waste-type-2" name="waste-types" type="radio" value="waste-mines">
+        <label for="waste-type-2">Part time</label>
+      </div>
+
+
+      <div class="form-item-wrapper">
+        <div class="form-group">
+          <a href="national-wholetime" class="button">Next</a>
+        </div>
+      </div>
+
+    </fieldset>
+  </form>
+
+    </div>
+
+  </div>
+
+</main>
+
+{% endblock %}
