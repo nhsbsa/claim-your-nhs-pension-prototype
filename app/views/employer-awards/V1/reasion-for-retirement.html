@@ -1,0 +1,98 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  What is your status? - Claim your NHS Pension
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  {% include "includes/phase_banner_beta.html" %}
+  {% include "includes/back.html" %}
+
+  <div class="grid-row">
+
+    <div class="column-two-thirds">
+
+      <div class="heading-group">
+        <p>Claim your NHS Pension</p>
+        <h1 class="heading-large">
+          Reason for retirement
+        </h1>
+      </div>
+
+      <form>
+    <fieldset>
+
+
+      <br>
+      <div class="multiple-choice">
+        <input id="waste-type-1" name="waste-types" type="radio" data-target="Competitive">
+        <label for="waste-type-1">Competitive tendering</label>
+      </div>
+      <div class="panel panel-border-narrow js-hidden" id="competitive">
+        <div class="multiple-choice">
+          <input id="waste-type-1" name="waste-types" type="radio" value="waste-animal">
+          <label for="waste-type-1">Premature retirement</label>
+        </div>
+        <div class="multiple-choice">
+          <input id="waste-type-1" name="waste-types" type="radio" value="waste-animal">
+          <label for="waste-type-1">Redundancy</label>
+        </div>
+
+     </div>
+
+      <div class="multiple-choice">
+        <input id="waste-type-2" name="waste-types" type="radio" data-target="Organisational">
+        <label for="waste-type-2">Organisational change</label>
+      </div>
+      <div class="panel panel-border-narrow js-hidden" id="Organisational">
+        <div class="multiple-choice">
+          <input id="waste-type-1" name="waste-types" type="radio" value="waste-animal">
+          <label for="waste-type-1">Premature retirement (CPLNHS)</label>
+        </div>
+        <div class="multiple-choice">
+          <input id="waste-type-1" name="waste-types" type="radio" value="waste-animal">
+          <label for="waste-type-1">Premature retirement (Other)</label>
+        </div>
+        <div class="multiple-choice">
+          <input id="waste-type-1" name="waste-types" type="radio" value="waste-animal">
+          <label for="waste-type-1">Redundancy (CPLNHS)</label>
+        </div>
+     </div>
+      <div class="multiple-choice ">
+        <input id="waste-type-3" name="waste-types" type="radio" data-target="OTHER">
+        <label for="waste-type-3">Other closures</label>
+      </div>
+      <div class="panel panel-border-narrow js-hidden" id="OTHER">
+        <div class="multiple-choice">
+          <input id="waste-type-1" name="waste-types" type="radio" value="waste-animal">
+          <label for="waste-type-1">Redundancy</label>
+        </div>
+     </div>
+      </div>
+      <div class="multiple-choice">
+        <input id="waste-type-4" name="waste-types" type="radio" value="waste-farm-agricultural">
+        <label for="waste-type-4">Other redundancies</label>
+      </div>
+      <div class="multiple-choice">
+        <input id="waste-type-5" name="waste-types" type="radio" value="waste-farm-agricultural">
+        <label for="waste-type-5">Early retirement</label>
+      </div>
+
+      <div class="form-item-wrapper">
+        <div class="form-group">
+          <a href="pensionnumber" class="button">Next</a>
+        </div>
+      </div>
+
+    </fieldset>
+  </form>
+
+    </div>
+
+  </div>
+
+</main>
+
+{% endblock %}
