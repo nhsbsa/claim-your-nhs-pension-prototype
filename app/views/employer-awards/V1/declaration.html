@@ -1,0 +1,51 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+ What is your name? - Claim your NHS Pension
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  {% include "includes/phase_banner_beta.html" %}
+  {% include "includes/back.html" %}
+
+  <div class="grid-row">
+
+
+
+    <div class="column-two-thirds">
+
+      <div class="heading-group">
+        <p>Claim your NHS Pension</p>
+        <h1 class="heading-large">Declaration</h1>
+      </div>
+
+    <p>I certify that:</p>
+        <ul  class="list list-bullet">
+              <li>The details given in Parts 1 to 6 are correct and the amounts shown in Part 2 have been reconciled
+              with the pension contributions submitted to NHS Pensions.</li>
+              <li> All Scheme contributions have been, or will be, deducted from the member's pensionable pay</li>
+              <li> Form SD55T has been completed on Pensions Online. Or you have submitted the Leaver Excel
+              spreadsheet to NHS Pensions to terminate the record.</li>
+              <li>If the box at Part 6.2 is ticked, entitlement to NHS redundancy benefits is provided for in the member’s
+             terms and conditions</li>
+        </ul>
+          <div class="form-item-wrapper">
+            <div class="form-group">
+              <a href="done" class="button">Next</a>
+            </div>
+          </div>
+
+        </form>
+
+
+      </div>
+
+    </div>
+
+  </div>
+
+</main>
+
+{% endblock %}
