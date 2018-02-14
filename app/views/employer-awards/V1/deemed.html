@@ -22,31 +22,34 @@
 
 
 
-      <form action="paymaster-handler" method="post-address" class="form">
+      <form  method="post-address" class="form">
 
         <div class="form-group">
 
-
           <fieldset class="inline">
-                  <legend class="visually-hidden"> </legend>
+            <legend class="visually-hidden">
+              Do you know your NHS number?
+            </legend>
 
-            <div class="multiple-choice">
-              <input id="yes" type="radio" data-target="deemed">
+            <div class="multiple-choice" data-target="getnhsno">
+              <input id="yes" type="radio" name="hasnhsno" value="Yes" aria-controls="getnhsno" aria-expanded="true">
               <label for="yes">Yes</label>
             </div>
+
             <div class="multiple-choice">
-              <input id="no" type="radio" name="paymaster" value="No">
+              <input id="no" type="radio" name="hasnhsno" value="No">
               <label for="no">No</label>
             </div>
-            <div class="form-group">
-            <div class="panel panel-border-narrow js-hidden" id="deemed">
-                <input class="form-control" id="example-phone-number" name="example-phone-number" type="text">
-            </div>
-            </div>
 
+          <div class="panel panel-border-narrow js-hidden" id="getnhsno" aria-hidden="false">
+            <label class="form-label" for="nhsno"></label>
+            <input class="form-control" name="nhsno" type="nhsno" id="nhsno">
+          </div>
         </fieldset>
 
         </div>
+
+
 
         <div class="form-group">
          <a href="domiciliany" class="button">Next</a>
