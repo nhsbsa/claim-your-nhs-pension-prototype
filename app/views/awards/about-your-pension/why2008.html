@@ -26,24 +26,36 @@
         <div class="form-group">
 
 
-            <div class="multiple-choice " data-target="contact-by-email">
+            <div class="multiple-choice " data-target="retirement-age">
               <input id="age" type="radio" name="benefit" value="age">
               <label class="single-line" for="age">Retirement based on your age</label>
             </div>
-            <div class="multiple-choice " data-target="contact-by-email">
+            <div class="panel panel-border-narrow js-hidden" id="retirement-age">
+            <p>This will normally be your 65th Birthday.</p>
+            </div>
+
+            <div class="multiple-choice " data-target="early-payment">
               <input id="benefit" type="radio" name="benefit" value="early">
               <label class="single-line" for="benefit">Early payment of deferred pension benefit.</label>
             </div>
-            <div class="multiple-choice " data-target="contact-by-email">
+            <div class="panel panel-border-narrow js-hidden" id="early-payment">
+            <p>You can take early payment of your deferred benefit between the ages of 55 and 65.</p>
+            </div>
+
+            <div class="multiple-choice " data-target="ill-health">
               <input id="ill" type="radio" name="benefit" value="ill">
               <label class="single-line" for="ill">Early payment of deferred benefits because of ill health</label>
             </div>
+            <div class="panel panel-border-narrow js-hidden" id="ill-health">
+            <p>You can only choose this option if you have been approved by the Scheme’s medical advisers.</p>
+            </div>
+
             <div class="multiple-choice  " data-target="commutedill">
               <input id="commuted" type="radio" name="benefit" value="commuted">
               <label class="single-line" for="commuted">Commuted early payment of pension benefits based on ill health</label>
             </div>
             <div class="panel panel-border-narrow js-hidden" id="commutedill">
-              <p>This benefit has to be taken as a lump sum.</p>
+              <p>You can only choose this option if you have been approved by the Scheme’s medical advisers.</p>
             </div>
 
 

@@ -26,24 +26,39 @@
         <div class="form-group">
 
 
-            <div class="multiple-choice " data-target="contact-by-email">
+            <div class="multiple-choice " data-target="retirement-age">
               <input id="age" type="radio" name="benefit" value="age">
               <label class="single-line" for="age">Retirement based on your age</label>
             </div>
-            <div class="multiple-choice " data-target="contact-by-email">
+            <div class="panel panel-border-narrow js-hidden" id="retirement-age">
+              <p>This will normally be your 60th Birthday.</p>
+            </div>
+            <div class="multiple-choice " data-target="early-payment">
               <input id="benefit" type="radio" name="benefit" value="early">
               <label class="single-line" for="benefit">Early payment of deferred pension benefit.</label>
             </div>
-            <div class="multiple-choice " data-target="contact-by-email">
+            <div class="panel panel-border-narrow js-hidden" id="early-payment">
+              <p>Early payment of deferred benefits are available to you at the age of:</p>
+              <ul class="list list-bullet">
+                <li style="margin-bottom:10px"> 50 – 60 if you joined the scheme between 01/04/2000 and 05/04/2006 and you had a break in service of less than 5 years</li>
+                <li style="margin-bottom:10px"> 55 – 60 if joined the scheme on or after 06/04/2006</li>
+                <li style="margin-bottom:10px"> 55 - 60 if you had a break in service of 5 years or more, then re-joined the scheme on or after 06/04/2006
+              </ul>
+            </div>
+
+            <div class="multiple-choice " data-target="ill-health">
               <input id="ill" type="radio" name="benefit" value="ill">
               <label class="single-line" for="ill">Early payment of deferred benefits because of ill health</label>
+            </div>
+            <div class="panel panel-border-narrow js-hidden" id="ill-health">
+              <p>You can only choose this option if you have been approved by the Scheme’s medical advisers.</p>
             </div>
             <div class="multiple-choice  " data-target="commutedill">
               <input id="commuted" type="radio" name="benefit" value="commuted">
               <label class="single-line" for="commuted">Commuted early payment of pension benefits based on ill health</label>
             </div>
             <div class="panel panel-border-narrow js-hidden" id="commutedill">
-              <p>This benefit has to be taken as a lump sum.</p>
+              <p>You can only choose this option if you have been approved by the Scheme’s medical advisers. You must have joined the NHS Pension Scheme on or after 06/03/1995. This benefit has to be taken as a lump sum.</p>
             </div>
 
 
