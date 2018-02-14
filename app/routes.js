@@ -129,7 +129,7 @@ router.get(/birth-handler/, function (req, res) {
    res.redirect('gender');
  });
 
- 
+
   router.get(/gender-handler/, function (req, res) {
     res.redirect('post-address');
   });
@@ -466,50 +466,6 @@ if (req.query.excesslta == 'Yes') {
 });
 
 
-//ESTIMATES//
-
-
-router.get(/TRS-handler/, function (req, res) {
-
-if (req.query.TRS == 'Yes') {
-  res.redirect('https://www.totalrewardstatements.nhs.uk/login')
-} else {
-  res.redirect('behalf')
-}
-
-});
-
-router.get(/behalf-handler/, function (req, res) {
-
-if (req.query.behalf == 'Yes') {
-  res.redirect('typeofactingbody')
-} else {
-  res.redirect('your-details/name')
-}
-
-});
-
-router.get(/type-handler/, function (req, res) {
-
-if (req.query.type == 'adviser') {
-  res.redirect('actingbody-name')
-} else {
-  res.redirect('actingbody-company')
-}
-
-});
-
-
-router.get(/bank-handler/, function (req, res) {
-
-if (req.query.bank == 'banktransfer') {
-  res.redirect('../checkyouranswersbank')
-} else {
-  res.redirect('../checkyouranswerscheque')
-}
-
-});
-
 router.get(/april-handler/, function (req, res) {
   if (req.query.arethey == 'true') {
     res.redirect('excessLTA')
@@ -539,3 +495,7 @@ router.get(/secondpay-handler/, function (req, res) {
   res.redirect('ddv2-confirm');
 }
 });
+
+
+
+//AW8 handler//
