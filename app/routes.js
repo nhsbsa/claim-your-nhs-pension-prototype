@@ -497,5 +497,45 @@ router.get(/secondpay-handler/, function (req, res) {
 });
 
 
+//
+// //AW8 handler//
+//
 
-//AW8 handler//
+
+router.get(/AW8-scheme-handler/, function (req, res){
+  if (req.query.s1995 == 'true') {
+    applicant.s1995 = true;
+    console.log("applicant.s1995 = true;");
+  } else {
+    applicant.s1995 = false;
+    console.log("applicant.s1995 = false;");
+  }
+
+  if (req.query.s2008 == 'true') {
+    applicant.s2008 = true;
+    console.log("applicant.s2008 = true");
+  } else {
+    applicant.s2008 = false;
+    console.log("applicant.s2008 = false");
+  }
+
+  if (req.query.s2015 == 'true') {
+    applicant.s2015  = true;
+    console.log("applicant.s2015 = true");
+  } else {
+    applicant.s2015 = false;
+    console.log("applicant.s2015 = false");
+  }
+
+  if (applicant.s1995 == true) {
+    res.redirect('why1995');
+  } if (applicant.s2008  == true) {
+       res.redirect('why2008');
+  } if (applicant.s2015  == true) {
+        res.redirect('why2015');
+  }
+});
+router.get(/disallowed-handler/, function (req, res) {
+
+
+});
