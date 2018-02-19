@@ -502,7 +502,7 @@ router.get(/secondpay-handler/, function (req, res) {
 //
 
 
-router.get(/AW8-scheme-handler/, function (req, res){
+router.get(/AW8-handler/, function (req, res){
   if (req.query.s1995 == 'true') {
     applicant.s1995 = true;
     console.log("applicant.s1995 = true;");
@@ -527,15 +527,35 @@ router.get(/AW8-scheme-handler/, function (req, res){
     console.log("applicant.s2015 = false");
   }
 
-  if (applicant.s1995 == true) {
-    res.redirect('why1995');
-  } if (applicant.s2008  == true) {
-       res.redirect('why2008');
-  } if (applicant.s2015  == true) {
-        res.redirect('why2015');
+  if (applicant.s1995 && applicant.s2008   == true) {
+       res.redirect('reasion-for-retirement');
+  } if (applicant.s1995 && applicant.s2015  == true) {
+        res.redirect('reasion-for-retirement');
+  } if (applicant.s1995 == true) {
+          res.redirect('disallowed');
+  } if ( applicant.s2008  == true) {
+        res.redirect('reasion-for-retirement');
+  } if ( applicant.s2015 == true) {
+      res.redirect('reasion-for-retirement');
   }
 });
+
 router.get(/disallowed-handler/, function (req, res) {
+  if (req.query.disallowed == 'Yes') {
+    res.redirect('numberofdisallowed');
+  } else {
+     res.redirect('Amount');
+  }
+
+
+});
+
+router.get(/fulltime-parttime-handler/, function (req, res) {
+  if (req.query.time == 'parttime') {
+    res.redirect('national-wholetime');
+  } else {
+     res.redirect('reasion-for-retirement');
+  }
 
 
 });

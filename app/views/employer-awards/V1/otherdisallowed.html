@@ -22,7 +22,7 @@
 
 
 
-      <form action="paymaster-handler" method="post-address" class="form">
+      <form action="disallowed-handler" method="post-address" class="form">
 
         <div class="form-group">
 
@@ -31,12 +31,12 @@
                   <legend class="visually-hidden">HAHH</legend>
 
             <div class="multiple-choice">
-              <input id="yes" type="radio" name="paymaster" value="Yes">
+              <input id="yes" type="radio" name="disallowed" value="Yes">
               <label for="yes">Yes</label>
             </div>
 
             <div class="multiple-choice">
-              <input id="no" type="radio" name="paymaster" value="No">
+              <input id="no" type="radio" name="disallowed" value="No">
               <label for="no">No</label>
             </div>
         </fieldset>
@@ -44,7 +44,7 @@
         </div>
 
         <div class="form-group">
-         <a href="amount" class="button">Next</a>
+           <input class="button" type="submit" value="Next">
         </div>
 
       </form>
