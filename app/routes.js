@@ -544,7 +544,7 @@ router.get(/disallowed-handler/, function (req, res) {
   if (req.query.disallowed == 'Yes') {
     res.redirect('numberofdisallowed');
   } else {
-     res.redirect('Amount');
+     res.redirect('amount');
   }
 
 
