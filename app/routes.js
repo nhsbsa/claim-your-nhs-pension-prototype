@@ -468,11 +468,11 @@ if (req.query.excesslta == 'Yes') {
 
 router.get(/april-handler/, function (req, res) {
   if (req.query.arethey == 'true') {
-    res.redirect('excessLTA')
+    res.redirect('vaild')
   } else if (req.query.werethey == 'true') {
-      res.redirect('excessLTA')
+      res.redirect('vaild')
  } else if (req.query.none == 'true') {
-     res.redirect('vaild')
+     res.redirect('excessLTA')
   }    else {
       res.redirect('checkyouranswers')
   }
