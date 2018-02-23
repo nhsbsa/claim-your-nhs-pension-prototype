@@ -490,7 +490,7 @@ router.get(/paymaster-handler/, function (req, res) {
 
 router.get(/secondpay-handler/, function (req, res) {
   if (req.query.paymaster == "Yes") {
-  res.redirect('paymaster/paymastername');
+  res.redirect('ddv2-confirm');
 } else {
   res.redirect('ddv2-confirm');
 }
