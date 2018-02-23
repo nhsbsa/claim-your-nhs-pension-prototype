@@ -546,8 +546,6 @@ router.get(/disallowed-handler/, function (req, res) {
   } else {
      res.redirect('amount');
   }
-
-
 });
 
 router.get(/fulltime-parttime-handler/, function (req, res) {
@@ -556,6 +554,4 @@ router.get(/fulltime-parttime-handler/, function (req, res) {
   } else {
      res.redirect('reasion-for-retirement');
   }
-
-
 });
