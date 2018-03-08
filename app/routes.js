@@ -460,7 +460,7 @@ router.get(/LTA-handler/, function (req, res) {
 if (req.query.excesslta == 'Yes') {
   res.redirect('vaild')
 } else {
-  res.redirect('checkyouranswers')
+  res.redirect('kickout')
 }
 
 });
