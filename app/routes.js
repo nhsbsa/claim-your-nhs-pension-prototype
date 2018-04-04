@@ -399,15 +399,14 @@ router.get(/1995commutedill-handler/,function (req, res) {
     res.redirect('2008')
   } else if (applicant.s2008 == false && applicant.s2015 == true ) {
     res.redirect('2015')
- } else {
+ }  else {
      res.redirect('checkyouranswers')
-  }
-});
+ });
 
 router.get(/2008commutedill-handler/,function (req, res) {
   if (applicant.s2008 == false && applicant.s2015 == true ) {
     res.redirect('why2015')
- } else {
+ } else  {
      res.redirect('checkyouranswers')
   }
 });
