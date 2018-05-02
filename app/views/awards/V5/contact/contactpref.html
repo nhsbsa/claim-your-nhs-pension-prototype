@@ -1,0 +1,52 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  Do you want to be contact about your pension by text and email? - Claim your NHS Pension
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  {% include "includes/phase_banner_beta.html" %}
+  {% include "includes/back.html" %}
+
+  <div class="grid-row">
+
+    <div class="column-two-thirds">
+
+      <div class="heading-group">
+        <p>Claim your NHS Pension<p>
+        <h1 class="heading-large">How would you like to be contacted about your pension?</h1>
+      </div>
+      <p>We will only contact you to get clarification on information you’ve provided in your claim form.</p>
+
+
+      <form class="form" action="contact-handler" id="contact-boxes">
+        <fieldset class="form-group">
+
+          <div class="multiple-choice multiple-radio">
+            <input id="text" name="text" type="checkbox" value="true">
+            <label for="text">By phone</label>
+          </div>
+          <div class="multiple-choice multiple-radio">
+            <input id="email" name="email" type="checkbox" value="true">
+            <label for="email">By email</label>
+          </div>
+          <!-- <div class="multiple-choice multiple-radio" data-target="neither">
+            <input id="post" name="post" type="checkbox" value="true">
+            <label for="post">I would not like to be contacted</label>
+          </div> -->
+        </fieldset>
+
+        <div class="form-group">
+          <input class="button" type="submit" value="Next">
+        </div>
+      </form>
+
+    </div>
+
+  </div>
+
+</main>
+
+{% endblock %}

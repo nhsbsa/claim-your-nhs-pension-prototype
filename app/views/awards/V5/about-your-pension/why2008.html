@@ -1,0 +1,81 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  Why are you claiming your deferred benefits? - Claim your NHS Pension
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  {% include "includes/phase_banner_beta.html" %}
+  {% include "includes/back.html" %}
+
+  <div class="grid-row">
+
+    <div class="column-two-thirds">
+
+      <div class="heading-group">
+        <p>Claim your NHS Pension</p>
+        <h1 class="heading-large">
+          Why are you claiming your deferred benefits for the 2008 Section?
+        </h1>
+      </div>
+
+
+      <form class="form" action="2008-handler" method="get">
+        <div class="form-group">
+
+
+            <div class="multiple-choice " data-target="retirement-age">
+              <input id="age" type="radio" name="benefit" value="age">
+              <label class="single-line" for="age">Retirement based on your age</label>
+            </div>
+            <div class="panel panel-border-narrow js-hidden" id="retirement-age">
+            <p>This will normally be your 65th Birthday.</p>
+            </div>
+
+            <div class="multiple-choice " data-target="early-payment">
+              <input id="benefit" type="radio" name="benefit" value="early">
+              <label class="single-line" for="benefit">Early payment of deferred pension benefit.</label>
+            </div>
+            <div class="panel panel-border-narrow js-hidden" id="early-payment">
+            <p>You can take early payment of your deferred benefit between the ages of 55 and 65.</p>
+            </div>
+
+            <div class="multiple-choice " data-target="ill-health">
+              <input id="ill" type="radio" name="benefit" value="ill">
+              <label class="single-line" for="ill">Early payment of deferred benefits because of ill health</label>
+            </div>
+            <div class="panel panel-border-narrow js-hidden" id="ill-health">
+            <p>You can only choose this option if you’re under 65 and your ill health application has been approved by the Scheme’s medical advisors.</p>
+            </div>
+
+            <div class="multiple-choice  " data-target="commutedill">
+              <input id="commuted" type="radio" name="benefit" value="commuted">
+              <label class="single-line" for="commuted">Commuted early payment of pension benefits because of ill health</label>
+            </div>
+            <div class="panel panel-border-narrow js-hidden" id="commutedill">
+              <p>You can only choose this option if you’re under 65 and your ill health application has been approved by the Scheme’s medical advisors'.</p>
+            </div>
+
+
+
+
+
+
+            </div>
+          </fieldset>
+
+        <div class="form-group">
+          <input class="button" type="submit" value="Next">
+        </div>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</main>
+
+{% endblock %}

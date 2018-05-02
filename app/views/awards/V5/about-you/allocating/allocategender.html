@@ -1,0 +1,55 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+What is their gender? - Claim your NHS Pension
+{% endblock %}
+{% block content %}
+
+<main id="content" role="main">
+  {% include "includes/phase_banner_beta.html" %}
+  {% include "includes/back.html" %}
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <!-- <p class="navigation"><a class="back-to-previous">Back</a></p> -->
+        <div class="heading-group">
+          <p>Claim your NHS Pension</p>
+          <h1 class="heading-large">What is their legally recognised gender?</h1>
+        </div>
+        <div class="panel panel-border-narrow" id="details-content-0" aria-hidden="false">
+
+  <p>A person’s legal gender is tied to their UK birth certificate unless they apply for a Gender Recognition Certificate (GRC) to change it legally. We have <a href="https://www.nhsbsa.nhs.uk/sites/default/files/2017-05/Gender%20recognition%20V3%2006.2015.pdf"> more guidance on legally recognised gender available</a>.</p>
+  </div>
+
+        <form class="form" method="get">
+          <div class="form-group">
+            <fieldset>
+              <div class="multiple-choice" data-target="contact-by-email">
+                <input id="today" type="radio" name="rcg" value="single">
+                <label class="single-line" for="today">Female</label>
+              </div>
+              <div class="multiple-choice" data-target="contact-by-email">
+                <input id="today" type="radio" name="rcg" value="single">
+                <label class="single-line" for="today">Male</label>
+              </div>
+
+            </fieldset>
+          </div>
+
+        </form>
+
+
+        <div class="form-group">
+          <a href="relationshiptoyou" class="button" type="submit" value="Next">Next</a>
+        </div>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</main>
+
+{% endblock %}
