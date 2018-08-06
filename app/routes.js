@@ -174,6 +174,7 @@ router.get(/nino-resume-handler/, function (req, res) {
   applicant.nino = req.query.nino;
   if (req.query.nino == "QQ 12 34 56 C") {
     res.redirect('dob');
+    applicant.ninoattempts == 0;
   } else {
     applicant.ninoattempts++;
     if (applicant.ninoattempts == 4) {
@@ -188,6 +189,7 @@ router.get(/birth-resume-handler/, function (req, res) {
   applicant.dobDay = req.query.dobDay;
   if (req.query.dobDay == "11") {
     res.redirect('/awards/V6/AW8P');
+    applicant.dobattempts == 0;
   } else {
     applicant.dobattempts++;
     if (applicant.dobattempts == 4) {

@@ -12,13 +12,22 @@ What is your date of birth? - Claim your NHS Pension - NHSBSA
     
     <div class="grid-row">
         <div class="column-two-thirds">
+            <!-- errors and validation -->
+            <div id="validation" class="error-summary visually-hidden" role="group" aria-labelledby="error-summary-heading" tabindex="-1">
+                <h1 class="heading-medium error-summary-heading" id="error-summary-heading">Your form contains errors</h1>
+                <p>Check your answer:</p>
+                <ul class="error-summary-list">
+                    <li><a href="#dob-legend">Your date of birth doesn't match</a></li>
+                </ul>
+            </div>
+
             <div class="heading-group">
                 <p>Claim your NHS Pension</p>
                 <h1 class="heading-large">What is your date of birth?</h1>
             </div>
             <form class="form" action="birth-resume-handler" method="get">
                 <fieldset class="form-group">
-                    <legend class="visuallyhidden">Date of birth</legend>
+                    <legend id="dob-legend" class="visuallyhidden">Date of birth</legend>
                     <div class="form-date">
                         <p class="form-hint">For example, 31 03 1980</p>
                         <div class="form-group form-group-day">
@@ -43,5 +52,15 @@ What is your date of birth? - Claim your NHS Pension - NHSBSA
         </div>
     </div>
 </main>
+
+<!-- scripts -->
+<script src="/../../../../public/javascripts/jquery-1.11.3.js"></script>
+<script>
+    if (document.location.href.includes("#1") || document.location.href.includes("#2") || document.location.href.includes("#3")) {
+        $("#validation").removeClass("visually-hidden");
+    } else {
+        $("#validation").addClass("visually-hidden");
+    }    
+</script>
 
 {% endblock %}
