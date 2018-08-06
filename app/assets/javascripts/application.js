@@ -91,7 +91,8 @@ if (document.location.href.includes("/awards/V6/AW8P") && document.cookie.indexO
   document.getElementById("hmrccomplete").classList.remove("js-hidden");
 }
 
-if (document.cookie.indexOf("visited1=") >= 0 &&
+if (document.getElementById("application") &&
+    document.cookie.indexOf("visited1=") >= 0 &&
     document.cookie.indexOf("visited2=") >= 0 &&
     document.cookie.indexOf("visited3=") >= 0 &&
     document.cookie.indexOf("visited4=") >= 0 &&
