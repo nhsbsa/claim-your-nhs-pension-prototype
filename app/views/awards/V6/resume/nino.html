@@ -1,0 +1,36 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+    What is your National Insurance number? - Claim your NHS Pension - NHSBSA
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+    {% include "includes/phase_banner_beta.html" %}
+    {% include "includes/back.html" %}
+    
+    <div class="grid-row">
+        <div class="column-two-thirds">
+            <div class="heading-group">
+                <p>Claim your NHS Pension</p>
+                <h1 class="heading-large">What is your National Insurance number?</h1>
+            </div>
+            <form action="nino-resume-handler" method="get" class="form">
+                <p class="form-hint">For example, 'QQ 12 34 56 C'</p>
+                <div class="form-group">
+                    <input class="form-control" id="nino" name="nino" type="text" autocomplete="off" />
+                </div>
+                <div class="form-item-wrapper">
+                    <div class="form-group">
+                        <!-- <a href="dob" class="button" type="submit" value="Submit">Next</a> -->
+                        <input class="button" id="resume-application" type="submit" value="Next" />
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</main>
+
+{% endblock %}

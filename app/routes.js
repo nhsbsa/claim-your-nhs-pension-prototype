@@ -48,6 +48,8 @@ applicant.email = null;
 applicant.address = '3 street, Town, NE1 246';
 applicant.age = null;
 applicant.renewing = false;
+applicant.ninoattempts = 0;
+applicant.dobattempts = 0;
 
 //create a text helper
 var text_master = require('./textHelper.js');
@@ -164,7 +166,37 @@ router.get(/AW8P-handler/, function (req, res) {
   res.redirect('declaration');
 });
 
+router.get(/AW8P-save-handler/, function (req, res) {
+  res.redirect('save/email-address');
+});
 
+router.get(/nino-resume-handler/, function (req, res) {
+  applicant.nino = req.query.nino;
+  if (req.query.nino == "QQ 12 34 56 C") {
+    res.redirect('dob');
+  } else {
+    applicant.ninoattempts++;
+    if (applicant.ninoattempts == 4) {
+      res.redirect('start-again');
+    } else {
+      res.redirect('nino#' + applicant.ninoattempts);
+    }
+  }
+});
+
+router.get(/birth-resume-handler/, function (req, res) {
+  applicant.dobDay = req.query.dobDay;
+  if (req.query.dobDay == "11") {
+    res.redirect('/awards/V6/AW8P');
+  } else {
+    applicant.dobattempts++;
+    if (applicant.dobattempts == 4) {
+      res.redirect('start-again');
+    } else {
+      res.redirect('dob#' + applicant.dobattempts);
+    }
+  }
+});
 
 router.get(/relationship-handler/, function (req, res) {
   applicant.relationship = req.query.rcg;

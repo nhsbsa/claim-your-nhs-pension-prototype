@@ -539,3 +539,16 @@ table {
   font-weight: 400;
   text-transform: none;
 }
+
+#save-application {
+  background-color: #005ea5;
+  margin-left: 1em;
+}
+
+#save-application:hover, #save-application:focus {
+  background-color: #004f8c;
+}
+
+.save-app {
+  display: inline-block;
+}

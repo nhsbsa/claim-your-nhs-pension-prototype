@@ -1,0 +1,43 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+What is their gender? - Claim your NHS Pension
+{% endblock %}
+{% block content %}
+
+<main id="content" role="main">
+  {% include "includes/phase_banner_beta.html" %}
+  {% include "includes/back.html" %}
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <!-- <p class="navigation"><a class="back-to-previous">Back</a></p> -->
+        <div class="heading-group">
+          <p>Claim your NHS Pension</p>
+          <h1 class="heading-large">What is their relationship to you?</h1>
+        </div>
+        <p>We need these details so we can pay benefits to them if you die.</p>
+        <form class="form" method="get">
+          <div class="form-group">
+            <fieldset>
+              <input class="form-control" id="firstname" name="firstname" type="text">
+            </fieldset>
+          </div>
+
+        </form>
+
+
+        <div class="form-group">
+          <a href="../checkyouranswers" class="button" type="submit" value="Next">Next</a>
+        </div>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</main>
+
+{% endblock %}

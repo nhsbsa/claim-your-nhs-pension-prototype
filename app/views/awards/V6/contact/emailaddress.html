@@ -1,0 +1,41 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  What is your email address? - Claim your NHS Pension
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  {% include "includes/phase_banner_beta.html" %}
+  {% include "includes/back.html" %}
+
+  <div class="grid-row">
+
+    <div class="column-two-thirds">
+
+      <!-- <p class="navigation"><a class="back-to-previous">Back</a></p> -->
+
+      <div class="heading-group">
+        <p>Claim your NHS Pension</p>
+        <h1 class="heading-large">What is your email address?</h1>
+      </div>
+      <form action="" method="get" class="form">
+
+      <div class="form-group">
+        <input class="form-control" id="lineone" name="lineone" type="text">
+      </div>
+
+      <div class="form-group">
+        <a href="checkyouranswers" class="button" type="submit"  value="Next">Next</a>
+      </div>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</main>
+
+{% endblock %}

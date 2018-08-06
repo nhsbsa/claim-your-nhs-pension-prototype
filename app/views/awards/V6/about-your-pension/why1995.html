@@ -1,0 +1,89 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  Why are you claiming your deferred benefits? - Claim your NHS Pension
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  {% include "includes/phase_banner_beta.html" %}
+  {% include "includes/back.html" %}
+
+  <div class="grid-row">
+
+    <div class="column-two-thirds">
+
+      <div class="heading-group">
+        <p>Claim your NHS Pension</p>
+        <h1 class="heading-large">
+          Why are you claiming your deferred benefits for the 1995 Section?
+        </h1>
+      </div>
+
+
+      <form class="form" action="1995-handler" method="get">
+        <div class="form-group">
+
+
+            <div class="multiple-choice " data-target="retirement-age">
+              <input id="age" type="radio" name="benefit" value="age">
+              <label class="single-line" for="age">Retirement based on your age</label>
+            </div>
+            <div class="panel panel-border-narrow js-hidden" id="retirement-age">
+              <p>This will normally be your 60th Birthday.</p>
+            </div>
+            <div class="multiple-choice " data-target="early-payment">
+              <input id="benefit" type="radio" name="benefit" value="early">
+              <label class="single-line" for="benefit">Early payment of deferred pension benefit.</label>
+            </div>
+            <div class="panel panel-border-narrow js-hidden" id="early-payment">
+              <p>Early payment of deferred benefits are available to you at the age of:</p>
+              <ul class="list list-bullet">
+                <li style="margin-bottom:10px"> 50 – 60 if you joined the scheme between 01/04/2000 and 05/04/2006 and you had a break in service of less than 5 years</li>
+                <li style="margin-bottom:10px"> 55 – 60 if joined the scheme on or after 06/04/2006</li>
+                <li style="margin-bottom:10px"> 55 - 60 if you had a break in service of 5 years or more, then re-joined the scheme on or after 06/04/2006
+              </ul>
+            </div>
+
+            <div class="multiple-choice " data-target="ill-health">
+              <input id="ill" type="radio" name="benefit" value="ill">
+              <label class="single-line" for="ill">Early payment of deferred benefits because of ill health</label>
+            </div>
+            <div class="panel panel-border-narrow js-hidden" id="ill-health">
+
+              <p>You can only choose this option if you’re under 60 and your ill health application has been approved by the Scheme’s medical advisors</p>
+            </div>
+            <div class="multiple-choice  " data-target="commutedill">
+              <input id="commuted" type="radio" name="benefit" value="commuted">
+              <label class="single-line" for="commuted">Commuted early payment of pension benefits because of ill health</label>
+            </div>
+            <div class="panel panel-border-narrow js-hidden" id="commutedill">
+              <p>You can only choose this option if:</p>
+                <ul class="list list-bullet">
+                  <li>you’re under 60 and your ill health application has been approved by the Scheme’s medical advisors'</li>
+                  <li>joined the NHS Pension Scheme on or after 06/03/1995</li>
+                  <li> you take this benefit as a lump sum</li>
+            </div>
+
+
+
+
+
+
+            </div>
+          </fieldset>
+
+        <div class="form-group">
+          <input class="button" type="submit" value="Next">
+        </div>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</main>
+
+{% endblock %}

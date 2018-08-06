@@ -1,0 +1,24 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+You will need to start application again - Claim your NHS Pension - NHSBSA
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+    {% include "includes/phase_banner_beta.html" %}
+
+    <div class="grid-row">
+        <div class="column-full">
+            <div class="heading-group">
+                <h1 class="heading-large">You will need to start application again</h1>
+            </div>
+            <div class="form-group">
+                <a href="/awards/V6/start/start" class="button" type="submit" value="Continue">Continue</a>
+            </div>
+        </div>
+    </div>
+</main>
+
+{% endblock %}
