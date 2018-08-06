@@ -17,96 +17,88 @@ var paymentcomplete = document.getElementById("paymentcomplete");
 var pensioncomplete = document.getElementById("pensioncomplete");
 var hmrccomplete = document.getElementById("hmrccomplete");
 
-
 if (document.location.href == "https://tea-prototype.herokuapp.com/awards/V6/about-you/checkyouranswers") {
-// set a new cookie
-expiry = new Date();
-expiry.setTime(expiry.getTime()+(60*60*1000)); // Sixty minutes
+  // set a new cookie
+  expiry = new Date();
+  expiry.setTime(expiry.getTime()+(60*60*1000)); // Sixty minutes
 
-// Date()'s toGMTSting() method will format the date correctly for a cookie
-document.cookie = "visited1=yes; path=/; expires=" + expiry.toGMTString();
+  // Date()'s toGMTSting() method will format the date correctly for a cookie
+  document.cookie = "visited1=yes; path=/; expires=" + expiry.toGMTString();
 } else if (document.location.href == "https://tea-prototype.herokuapp.com/awards/V6/employment/checkyouranswers") {
-// set a new cookie
-expiry = new Date();
-expiry.setTime(expiry.getTime()+(60*60*1000)); // Sixty minutes
+  // set a new cookie
+  expiry = new Date();
+  expiry.setTime(expiry.getTime()+(60*60*1000)); // Sixty minutes
 
-// Date()'s toGMTSting() method will format the date correctly for a cookie
-document.cookie = "visited2=yes; path=/; expires=" + expiry.toGMTString();
+  // Date()'s toGMTSting() method will format the date correctly for a cookie
+  document.cookie = "visited2=yes; path=/; expires=" + expiry.toGMTString();
 } else if (document.location.href == "https://tea-prototype.herokuapp.com/awards/V6/contact/checkyouranswers") {
-// set a new cookie
-expiry = new Date();
-expiry.setTime(expiry.getTime()+(60*60*1000)); // Sixty minutes
+  // set a new cookie
+  expiry = new Date();
+  expiry.setTime(expiry.getTime()+(60*60*1000)); // Sixty minutes
 
-// Date()'s toGMTSting() method will format the date correctly for a cookie
-document.cookie = "visited3=yes; path=/; expires=" + expiry.toGMTString();
-}
-else if (document.location.href == "https://tea-prototype.herokuapp.com/awards/V6/payment/ddv2-confirm") {
-// set a new cookie
-expiry = new Date();
-expiry.setTime(expiry.getTime()+(60*60*1000)); // Sixty minutes
+  // Date()'s toGMTSting() method will format the date correctly for a cookie
+  document.cookie = "visited3=yes; path=/; expires=" + expiry.toGMTString();
+} else if (document.location.href == "https://tea-prototype.herokuapp.com/awards/V6/payment/ddv2-confirm") {
+  // set a new cookie
+  expiry = new Date();
+  expiry.setTime(expiry.getTime()+(60*60*1000)); // Sixty minutes
 
-// Date()'s toGMTSting() method will format the date correctly for a cookie
-document.cookie = "visited4=yes; path=/; expires=" + expiry.toGMTString();
-}
-else if (document.location.href == "https://tea-prototype.herokuapp.com/awards/V6/about-your-pension/checkyouranswers") {
-// set a new cookie
-expiry = new Date();
-expiry.setTime(expiry.getTime()+(60*60*1000)); // Sixty minutes
+  // Date()'s toGMTSting() method will format the date correctly for a cookie
+  document.cookie = "visited4=yes; path=/; expires=" + expiry.toGMTString();
+} else if (document.location.href == "https://tea-prototype.herokuapp.com/awards/V6/about-your-pension/checkyouranswers") {
+  // set a new cookie
+  expiry = new Date();
+  expiry.setTime(expiry.getTime()+(60*60*1000)); // Sixty minutes
 
-// Date()'s toGMTSting() method will format the date correctly for a cookie
-document.cookie = "visited5=yes; path=/; expires=" + expiry.toGMTString();
-}
+  // Date()'s toGMTSting() method will format the date correctly for a cookie
+  document.cookie = "visited5=yes; path=/; expires=" + expiry.toGMTString();
+} else if (document.location.href == "https://tea-prototype.herokuapp.com/awards/V6/HMRC/checkyouranswers") {
+  // set a new cookie
+  expiry = new Date();
+  expiry.setTime(expiry.getTime()+(60*60*1000)); // Sixty minutes
 
-else if (document.location.href == "https://tea-prototype.herokuapp.com/awards/V6/HMRC/checkyouranswers") {
-// set a new cookie
-expiry = new Date();
-expiry.setTime(expiry.getTime()+(60*60*1000)); // Sixty minutes
-
-// Date()'s toGMTSting() method will format the date correctly for a cookie
-document.cookie = "visited6=yes; path=/; expires=" + expiry.toGMTString();
+  // Date()'s toGMTSting() method will format the date correctly for a cookie
+  document.cookie = "visited6=yes; path=/; expires=" + expiry.toGMTString();
 }
 
-if (document.location.href.includes("/awards/AW8P") && document.cookie.indexOf("visited1=") >= 0) {
+if (document.location.href.includes("/awards/V6/AW8P") && document.cookie.indexOf("visited1=") >= 0) {
   // They've been here before
   document.getElementById("relationshipcomplete").classList.remove("js-hidden");
 }
 
-if (document.location.href.includes("/awards/AW8P") && document.cookie.indexOf("visited2=") >= 0) {
+if (document.location.href.includes("/awards/V6/AW8P") && document.cookie.indexOf("visited2=") >= 0) {
   // They've been here before
   document.getElementById("employmentcomplete").classList.remove("js-hidden");
 }
 
-if (document.location.href.includes("/awards/AW8P") && document.cookie.indexOf("visited3=") >= 0) {
+if (document.location.href.includes("/awards/V6/AW8P") && document.cookie.indexOf("visited3=") >= 0) {
   // They've been here before
   document.getElementById("contactcomplete").classList.remove("js-hidden");
 }
 
-if (document.location.href.includes("/awards/AW8P") && document.cookie.indexOf("visited4=") >= 0) {
+if (document.location.href.includes("/awards/V6/AW8P") && document.cookie.indexOf("visited4=") >= 0) {
   // They've been here before
   document.getElementById("paymentcomplete").classList.remove("js-hidden");
 }
 
-if (document.location.href.includes("/awards/AW8P") && document.cookie.indexOf("visited5=") >= 0) {
+if (document.location.href.includes("/awards/V6/AW8P") && document.cookie.indexOf("visited5=") >= 0) {
   // They've been here before
   document.getElementById("pensioncomplete").classList.remove("js-hidden");
 }
 
-if (document.location.href.includes("/awards/AW8P") && document.cookie.indexOf("visited6=") >= 0) {
+if (document.location.href.includes("/awards/V6/AW8P") && document.cookie.indexOf("visited6=") >= 0) {
   // They've been here before
   document.getElementById("hmrccomplete").classList.remove("js-hidden");
 }
 
 if (document.cookie.indexOf("visited1=") >= 0 &&
-  document.cookie.indexOf("visited2=") >= 0 &&
-document.cookie.indexOf("visited3=") >= 0 &&
-document.cookie.indexOf("visited4=") >= 0 &&
-document.cookie.indexOf("visited5=") >= 0 &&
-document.cookie.indexOf("visited6=") >= 0){
-  document.getElementById("application").removeAttribute("disabled");
+    document.cookie.indexOf("visited2=") >= 0 &&
+    document.cookie.indexOf("visited3=") >= 0 &&
+    document.cookie.indexOf("visited4=") >= 0 &&
+    document.cookie.indexOf("visited5=") >= 0 &&
+    document.cookie.indexOf("visited6=") >= 0) {
+      document.getElementById("application").removeAttribute("disabled");
 }
-
-
-
 
 var del_cookies = function() {
   document.cookie = "visited1=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
@@ -117,8 +109,6 @@ var del_cookies = function() {
   document.cookie = "visited6=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
   location.reload();
 };
-
-
 
 // if(document.getElementById("review-table-one")) {
 //   var runout = document.getElementById("runout");
@@ -165,6 +155,7 @@ var del_cookies = function() {
 if (document.getElementById("has_dd")) {
   var ddContent = document.getElementById("dd_content");
   var hasDD = document.getElementById("has_dd").innerHTML;
+
   if (hasDD != "dd") {
     ddContent.className += " hidden";
   }
@@ -180,7 +171,6 @@ $(document).ready(function () {
   // to toggle hidden content
   var showHideContent = new GOVUK.ShowHideContent()
   showHideContent.init()
-
 
   //checkbox contact
   if (document.getElementById("contact-boxes")) {
@@ -207,7 +197,6 @@ $(document).ready(function () {
       document.getElementById('runout').classList.remove("hidden");
     } else {
       console.log("no");
-
     };
   }
 });
