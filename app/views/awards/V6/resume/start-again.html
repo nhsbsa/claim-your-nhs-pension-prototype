@@ -10,13 +10,22 @@ You will need to start application again - Claim your NHS Pension - NHSBSA
     {% include "includes/phase_banner_beta.html" %}
 
     <div class="grid-row">
-        <div class="column-full">
-            <div class="heading-group">
-                <h1 class="heading-large">You will need to start application again</h1>
-            </div>
-            <div class="form-group">
-                <a href="/awards/V6/start/start" class="button" type="submit" value="Continue">Continue</a>
-            </div>
+        <div class="column-two-thirds">
+            <form class="form" action="start-again-handler" method="get">
+                <h1 class="heading-large">
+                    <span class="heading-secondary">Claim your NHS Pension</span>
+                    You will need to start application again
+                </h1>
+                <div class="form-group">
+                    <fieldset>
+                        <legend class="visuallyhidden" tabindex=”-1”>You will need to start application again</legend>
+                        <p>It was not possible to confirm you were the person who started the original application. To protect your data, you will need to start the application again by clicking "Continue".</p>
+                    </fieldset>
+                </div>
+                <div class="form-group">
+                    <input class="button" type="submit" value="Continue" />
+                </div>
+            </form>
         </div>
     </div>
 </main>
