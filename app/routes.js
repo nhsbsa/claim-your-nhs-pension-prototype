@@ -51,6 +51,9 @@ applicant.renewing = false;
 applicant.ninoattempts = 0;
 applicant.dobattempts = 0;
 
+applicant.thirtyK = false;
+applicant.moreInfo = true;
+
 //create a text helper
 var text_master = require('./textHelper.js');
 var textHelper = text_master.createTextHelper();
@@ -317,6 +320,28 @@ router.get(/scheme-handler/, function (req, res) {
   }
 });
 
+
+router.get(/thirty-k-handler/, function (req, res) {
+  if (req.query.thirtyK == 'true') {
+    applicant.thirtyK = true;
+  } else {
+    applicant.thirtyK = false;
+  }
+
+  if (applicant.thirtyK == true) {
+    res.redirect('moreinfo');
+  } else {
+    res.redirect('whichscheme');
+  }
+});
+
+router.get(/more-info-handler/, function (req, res) {
+  if (applicant.moreInfo == true) {
+    res.redirect('whichscheme');
+  } else {
+    res.redirect('whichscheme');
+  }
+});
 
 
 router.get(/1995-handler/, function (req, res) {
