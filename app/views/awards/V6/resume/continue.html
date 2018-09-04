@@ -9,7 +9,7 @@
 <main id="content" role="main">
     {% include "includes/phase_banner_beta.html" %}
     {% include "includes/back.html" %}
-    
+
     <div class="grid-row">
         <div class="column-two-thirds">
             <!-- errors and validation -->
@@ -17,8 +17,7 @@
                 <h1 class="heading-medium error-summary-heading" id="error-summary-heading">Your form contains errors</h1>
                 <p>Check your answer:</p>
                 <ul class="error-summary-list">
-                    <li><a href="#nino">Enter the National Insurance number used in your application</a></li>
-                    <li><a href="#dob">Enter the date of birth used in your application</a></li>
+                    <li><a href="#resumeApplication">Enter a valid National Insurance number and date of birth combination.</a></li>
                 </ul>
             </div>
 
@@ -27,42 +26,46 @@
                 <h1 class="heading-large">Resume your application</h1>
             </div>
             <form action="resume-application-handler" method="get" class="form">
-                <p>We need to check these details match your application before continuing.</p>
-
-                <div id="resume-nino" class="form-group">
-                    <label class="form-label-bold" for="nino">
-                        What is your National Insurance number?
-                        <span class="form-hint">
-                            For example, 'QQ 12 34 56 C'
-                        </span>
-                    </label>
-                    <input class="form-control" id="nino" name="nino" type="text" autocomplete="off" />
-                </div>
-
-                <div id="resume-dob" class="form-group">
-                    <fieldset id="dob">
-                        <legend>
-                            <span class="form-label-bold">
-                                What is your date of birth?
+                <p>We’ll use these details to find your application. You’ll be able to continue your application from where you left of.</p>
+                <fieldset id="resumeApplication">
+                    <legend class="visuallyhidden">
+                        Resume your application
+                    </legend>
+                    <div id="resume-nino" class="form-group">
+                        <label class="form-label-bold" for="nino">
+                            What is your National Insurance number?
+                            <span class="form-hint">
+                                For example, 'QQ 12 34 56 C'
                             </span>
-                            <span class="form-hint" id="dob-hint">For example, 31 03 1980</span>
-                        </legend>
-                        <div class="form-date">
-                            <div class="form-group form-group-day">
-                                <label class="form-label" for="dob-day">Day</label>
-                                <input class="form-control" id="dob-day" name="dobDay" type="number" pattern="[0-9]*" min="0" max="31" autocomplete="off" aria-describedby="dob-hint">
+                        </label>
+                        <input class="form-control" id="nino" name="nino" type="text" autocomplete="off" />
+                    </div>
+
+                    <div id="resume-dob" class="form-group">
+                        <fieldset id="dob">
+                            <legend>
+                                <span class="form-label-bold">
+                                    What is your date of birth?
+                                </span>
+                                <span class="form-hint" id="dob-hint">For example, 31 03 1980</span>
+                            </legend>
+                            <div class="form-date">
+                                <div class="form-group form-group-day">
+                                    <label class="form-label" for="dob-day">Day</label>
+                                    <input class="form-control" id="dob-day" name="dobDay" type="number" pattern="[0-9]*" min="0" max="31" autocomplete="off" aria-describedby="dob-hint">
+                                </div>
+                                <div class="form-group form-group-month">
+                                    <label class="form-label" for="dob-month">Month</label>
+                                    <input class="form-control" id="dob-month" name="dobMonth" type="number" pattern="[0-9]*" min="0" max="12" autocomplete="off">
+                                </div>
+                                <div class="form-group form-group-year">
+                                    <label class="form-label" for="dob-year">Year</label>
+                                    <input class="form-control" id="dob-year" name="dobYear" type="number" pattern="[0-9]*" autocomplete="off">
+                                </div>
                             </div>
-                            <div class="form-group form-group-month">
-                                <label class="form-label" for="dob-month">Month</label>
-                                <input class="form-control" id="dob-month" name="dobMonth" type="number" pattern="[0-9]*" min="0" max="12" autocomplete="off">
-                            </div>
-                            <div class="form-group form-group-year">
-                                <label class="form-label" for="dob-year">Year</label>
-                                <input class="form-control" id="dob-year" name="dobYear" type="number" pattern="[0-9]*" autocomplete="off">
-                            </div>
-                        </div>
-                    </fieldset>
-                </div>
+                        </fieldset>
+                    </div>
+                </fieldset>
                 <div class="form-item-wrapper">
                     <div class="form-group">
                         <!-- <a href="dob" class="button" type="submit" value="Submit">Next</a> -->
@@ -82,7 +85,7 @@
         $("#validation").removeClass("visually-hidden");
     } else {
         $("#validation").addClass("visually-hidden");
-    }    
+    }
 </script>
 
 {% endblock %}
