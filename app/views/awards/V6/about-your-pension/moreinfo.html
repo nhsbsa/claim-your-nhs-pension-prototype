@@ -1,7 +1,7 @@
 {% extends "layout_bsa.html" %}
 
 {% block page_title %}
-    Would you like more information about taking a one off lump sum payment (Trivial Commutation)? - Claim your NHS Pension
+Would you like more information about taking a one off lump sum payment (Trivial Commutation)? - Claim your NHS Pension
 {% endblock %}
 
 {% block content %}
@@ -15,11 +15,33 @@
 			<div class="heading-group">
 				<p>Claim your NHS Pension</p>
 				<h1 class="heading-large">
-					Would you like more information about taking a one off lump sum payment (Trivial Commutation)?
+					Do you want to apply for trivial commutation?
 				</h1>
-            </div>
-            <p>Where the capital value of the benefits built up within the NHS Pension Scheme and with any other pension provider is no more than £30,000, you could be considered for taking a one off single lump sum payment.</p>
-            <p>More information is available in the <a href="https://www.nhsbsa.nhs.uk/sites/default/files/2018-01/Trivial%20commutation%20factsheet-20180126-%28V5%29.pdf" target="_blank">Trivial Commutation guide</a> (opens in another window).</p>
+			</div>
+			<p>Trivial commutation is when a small pension can be paid as a one off payment when you retire.</p>
+			<p>You can apply for it if the value of all of your benefits added together (capital value) is between £6,000 and £30,000. If they are less than £6,000, we’ll automatically send you the information you’ll need.</p>
+
+			<details>
+				<summary>
+					<span class="summary">When will I get the payment?</span>
+				</summary>
+				<div class="panel panel-border-narrow">
+					<p>You get this when you retire, either:</p>
+					<ul class="list list-bullet">
+						<li>on ill health at any age</li>
+						<li>on or after age 55 (or age 50, if you have a protected minimum pension age)</li>
+					</ul>						  
+				</div>
+			</details>
+
+			<details>
+					<summary>
+						<span class="summary">If your capital value is higher than £30,000</span>
+					</summary>
+					<div class="panel panel-border-narrow">
+						<p>If the capital value of your NHS benefits and any other pension benefits with other providers is more than £30,000, it may still be possible to pay your NHS benefits as a one off payment, if that one off payment is less than £10,000.</p>
+					</div>
+				</details>
 
 			<form class="form" action="more-info-handler" method="get">
 				<div class="form-group">
@@ -37,9 +59,46 @@
 				<div class="form-group">
 					<input class="button" type="submit" value="Next">
 				</div>
+				<div class="form-group">
+					<p>If you don’t have this information available, you can <a href="/awards/V6/AW8P">return to your application summary</a> and save your application for later.</p>
+				</div>
 			</form>
 		</div>
 	</div>
+
+	<!-- <div class="grid-row">
+		<div class="column-two-thirds">
+			<div class="heading-group">
+				<p>Claim your NHS Pension</p>
+				<h1 class="heading-large">
+					Would you like more information about taking a one off lump sum payment (Trivial Commutation)?
+				</h1>
+			</div>
+			<p>Where the capital value of the benefits built up within the NHS Pension Scheme and with any other pension provider is no more than £30,000, you could be considered for taking a one off single lump sum payment.</p>
+			<p>More information is available in the <a href="https://www.nhsbsa.nhs.uk/sites/default/files/2018-01/Trivial%20commutation%20factsheet-20180126-%28V5%29.pdf" target="_blank">Trivial Commutation guide</a> (opens in another window).</p>
+
+			<form class="form" action="more-info-handler" method="get">
+				<div class="form-group">
+					<fieldset>
+						<div class="multiple-choice">
+							<input id="radio-1" type="radio" name="moreInfo" value="true" />
+							<label class="single-line" for="radio-1">Yes</label>
+						</div>
+						<div class="multiple-choice">
+							<input id="radio-2" type="radio" name="moreInfo" value="false" />
+							<label class="single-line" for="radio-2">No</label>
+						</div>
+					</fieldset>
+				</div>
+				<div class="form-group">
+					<input class="button" type="submit" value="Next">
+				</div>
+				<div class="form-group">
+					<p>If you don’t have this information available, you can <a href="/awards/V6/AW8P">return to your application summary</a> and save your application for later.</p>
+				</div>
+			</form>
+		</div>
+	</div> -->
 </main>
 
 {% endblock %}
