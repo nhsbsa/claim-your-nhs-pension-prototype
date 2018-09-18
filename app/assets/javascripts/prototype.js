@@ -261,6 +261,15 @@ $(document).ready(function() {
 
 
         // #1 pension details - about your pension //
+        if (document.location.href.includes("/moreinfo", true)) {
+            var trivialCommutation = $("input[name=moreInfo]:checked")[0];
+            
+            // do you want to apply for trivial commutation?
+            if (trivialCommutation !== undefined) {
+                sessionStorage.trivComm = trivialCommutation.value;
+            }
+        }
+        
         if (document.location.href.includes("/whichscheme", true)) {
             var schemeChecked = $("input[class=scheme]:checked");
             var whichScheme = {};
@@ -608,7 +617,8 @@ $(document).ready(function() {
     }
 
     if (document.location.href.includes("/about-your-pension/checkyouranswers", true)) {
-        $("td#has-mobile")[0].innerHTML = sessionStorage.getItem("whichScheme");
+        $("td#has-mobile")[0].innerHTML = sessionStorage.getItem("trivComm");
+        $("td#has-mobile")[1].innerHTML = sessionStorage.getItem("whichScheme");
         // 1995 //
         if (!sessionStorage.getItem("whichScheme").includes("1995")) {
             $("h2#for1995").addClass("js-hidden");
