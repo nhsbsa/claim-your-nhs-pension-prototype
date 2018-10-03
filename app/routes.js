@@ -169,7 +169,7 @@ router.get(/AW8P-handler/, function (req, res) {
 });
 
 router.get(/AW8P-save-handler/, function (req, res) {
-	res.redirect('save/email-address');
+	res.redirect('save/memorable-word');
 });
 
 router.get(/resume-application-handler/, function (req, res) {
