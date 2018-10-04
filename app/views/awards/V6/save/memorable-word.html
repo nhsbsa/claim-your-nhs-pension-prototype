@@ -12,12 +12,27 @@ What email address should we send link to? - Claim your NHS Pension - NHSBSA
 
     <div class="grid-row">
         <div class="column-two-thirds">
+            <div class="error-summary visually-hidden" role="group" aria-labelledby="error-summary-memorable-word" tabindex="-1">
+
+                <h1 class="heading-medium error-summary-heading" id="error-summary-memorable-word">
+                    Please enter a valid memorable word
+                </h1>
+                
+                <p>
+                    Your memorable word must only contain letters and numbers
+                </p>
+                
+                <ul class="error-summary-list">
+                    <li><a href="#memorable-word-form">Please enter a valid memorable word</a></li>
+                </ul>
+                
+            </div>
             <div class="heading-group">
                 <p>Claim your NHS Pension</p>
                 <h1 class="heading-large">Provide a memorable word</h1>
             </div>
             <p class="form-hint">This is a word you'll need to remember as we'll ask for this when you resume your application</p>
-            <form action="" method="get" class="form form-to-validate">
+            <form action="" method="get" class="form form-to-validate" id="memorable-word-form">
                 <div class="form-group">
                     <input class="form-control" type="text" autocomplete="off" aria-required="true">
                 </div>
