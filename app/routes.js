@@ -172,6 +172,18 @@ router.get(/AW8P-save-handler/, function (req, res) {
 	res.redirect('save/memorable-word');
 });
 
+router.get(/bank-handler/, function (req, res) {
+	if (req.query.payukbank == "Yes") {
+		res.redirect('accounttype');
+	} else {
+		res.redirect('iban-swift-code');
+	}
+});
+
+router.get(/iban-swift-handler/, function (req, res) {
+	res.redirect('paymaster');
+});
+
 router.get(/resume-application-handler/, function (req, res) {
 	applicant.nino = req.query.nino;
 	applicant.dobDay = req.query.dobDay;

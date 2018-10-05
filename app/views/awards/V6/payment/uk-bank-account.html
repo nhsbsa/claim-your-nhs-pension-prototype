@@ -1,0 +1,50 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+        Do you want your pension paying into a UK bank account? - Claim your NHS Pension
+{% endblock %}
+
+{% block content %}
+
+
+<main id="content" role="main">
+    {% include "includes/phase_banner_beta.html" %}
+    {% include "includes/back.html" %}
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
+            <div class="heading-group">
+                <p>Claim your NHS Pension</p>
+                <h1 class="heading-large">
+                Do you want your pension paying into a UK bank account?
+                </h1>
+            </div>
+            <form action="bank-handler" method="get" class="form">
+                <div class="form-group">
+                    <div class="form-group">
+                        <fieldset class="inline">
+                    
+                        <legend class="visually-hidden">Do you want your pension paying into a UK bank account?</legend>
+                    
+                        <div class="multiple-choice">
+                            <input id="radio-yes" type="radio" name="payukbank" value="Yes">
+                            <label for="radio-yes">Yes</label>
+                        </div>
+                        <div class="multiple-choice">
+                            <input id="radio-no" type="radio" name="payukbank" value="No">
+                            <label for="radio-no">No</label>
+                        </div>
+                    
+                        </fieldset>
+                    </div>
+                    <button class="button" id="uk-bank-account">Next</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+</main>
+
+
+{% endblock %}

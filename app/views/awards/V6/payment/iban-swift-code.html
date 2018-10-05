@@ -1,0 +1,84 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+        Do you know your IBAN and SWIFT(BIC) code? - Claim your NHS Pension
+{% endblock %}
+
+{% block content %}
+
+
+<main id="content" role="main">
+    {% include "includes/phase_banner_beta.html" %}
+    {% include "includes/back.html" %}
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
+            <div class="heading-group">
+                <p>Claim your NHS Pension</p>
+                <h1 class="heading-large">
+                    Do you know your IBAN and SWIFT(BIC) code?
+                </h1>
+            </div>
+            <form action="iban-swift-handler" method="get" class="form">
+
+                    <div class="form-group">
+            
+                      <fieldset class="inline">
+                        <legend class="visually-hidden">Do you know your IBAN and SWIFT(BIC) code?</legend>
+            
+                        <div class="multiple-choice" data-target="yes-code">
+                          <input id="yes" type="radio" name="hasnhsno" value="Yes">
+                          <label for="yes">Yes</label>
+                        </div>
+            
+                        <div class="multiple-choice" data-target="no-code">
+                          <input id="no" type="radio" name="hasnhsno" value="No">
+                          <label for="no">No</label>
+                        </div>
+            
+                      <div class="panel panel-border-narrow js-hidden" id="yes-code">
+                          <div class="form-group">
+                                <label class="form-label" for="account-holder">Account holders name</label>
+                                <input class="form-control" name="account-holder" type="text" id="account-holder">
+                          </div>
+                          <div class="form-group">
+                                <label class="form-label" for="iban-code">IBAN</label>
+                                <input class="form-control" name="iban-code" type="text" id="iban-code">
+                          </div>
+                          <div class="form-group">
+                                <label class="form-label" for="swift-code">SWIFT(BIC) Code</label>
+                                <input class="form-control" name="swift-code" type="text" id="swift-code">
+                          </div>
+
+                            <button class="button" type="submit"  value="Next">Submit</button>
+                      </div>
+
+                      <div class="panel panel-border-narrow js-hidden" id="no-code">
+                            <div class="form-group">
+                                    <label class="form-label" for="account-holder">Account holders name</label>
+                                    <input class="form-control" name="account-holder" type="text" id="account-holder">
+                              </div>
+                              <div class="form-group">
+                                    <label class="form-label" for="account-number">Account number</label>
+                                    <input class="form-control" name="account-number" type="text" id="account-number">
+                              </div>
+                              <div class="form-group">
+                                    <label class="form-label" for="bank-identifier">Bank identifier</label>
+                                    <input class="form-control" name="bank-identifier" type="text" id="bank-identifier">
+                              </div>
+    
+                                <button class="button" type="submit"  value="Next">Submit</button>
+                        </div>
+                    </fieldset>
+            
+                    </div>
+
+                  </form>
+        </div>
+    </div>
+
+
+</main>
+
+
+{% endblock %}
