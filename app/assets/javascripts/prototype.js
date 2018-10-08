@@ -582,6 +582,7 @@ $(document).ready(function() {
         }
     }
 
+
     if (document.location.href.includes('/start/checkyouranswers', true)) {
         $("td#has-mobile")[0].innerHTML = sessionStorage.getItem("yourName");
         $("td#has-mobile")[1].innerHTML = sessionStorage.getItem("yourDOB");
@@ -660,4 +661,61 @@ $(document).ready(function() {
         $("td#has-mobile")[4].innerHTML = sessionStorage.getItem("excludingPension");
         $("td#has-mobile")[5].innerHTML = sessionStorage.getItem("vaildProtection");
     }
+
+    // Non uk Bank - Store the inputs to be shown on the checkyouranswers page.
+    // Content on the checkyouranswers to change depending on the route taken from UK Bank or Non UK Bank
+
+    // Store user input into sessionStorage to help change content on checkyouranswers
+    if (document.location.href.includes('/payment/uk-bank-account', true)) {
+        $('input[name="payukbank"]').change(function(){
+            var ukBank = document.querySelector('input[name="payukbank"]:checked').value;
+            sessionStorage.ukBank = ukBank;
+        })
+    }
+    // Store user inputs into sessionStorage for to be used to populate the data table on checkyouranswers
+    if (document.location.href.includes('/payment/iban-swift-code', true)) {
+        $('input.ibanSwiftData').change(function(){
+            sessionStorage.accountName = document.querySelector('input[name="account-holder"]').value;
+            sessionStorage.iban = document.querySelector('input[name="iban-code"]').value;
+            sessionStorage.swift = document.querySelector('input[name="swift-code"]').value;
+            sessionStorage.accountHolder = document.querySelector('input[name="account-holder-2"]').value;
+            sessionStorage.accountNumber= document.querySelector('input[name="account-number"]').value;
+            sessionStorage.bankIdentifier = document.querySelector('input[name="bank-identifier"]').value;
+        })
+        // Store user input into sessionStorage to populate checkyouranswers with correct data 
+        $('input[name="hasnhsno"]').change(function(){
+            var ibanSwiftKnown = document.querySelector('input[name="hasnhsno"]:checked').value;
+            sessionStorage.ibanSwiftKnown = ibanSwiftKnown;
+        })
+    }
+
+    // Change the content in the data table depending on the route the user has taken and which data that have entered.
+    if (document.location.href.includes('/payment/ddv2-confirm', true)) {
+        if (sessionStorage.getItem('ukBank') == 'No') {
+
+            // Use the sessionStorage from a previous page which is holding the value from the selected input chosen for "Do you know your IBAN and SWIFT(BIC) code?" This then decides which data to populate into checkyouranswers
+            if (sessionStorage.getItem('ibanSwiftKnown') == 'Yes') {
+
+            document.getElementById('account-type').innerHTML = '<td>Do you know your IBAN and SWIFT(Business Identification Code) code?</td><td id="has-mobile">Yes</td><td><a href="/awards/V6/payment/iban-swift-code">Change <span class="visually-hidden">your bank details.</span></a></td>';
+            document.getElementById('account-holder-name').innerHTML = "<td>Account holder's name</td><td id='has-mobile'>" + sessionStorage.getItem('accountName') + "</td><td><a href='/awards/V6/payment/iban-swift-code'>Change <span class='visually-hidden'>your bank details.</span></a></td>";
+            document.getElementById('if-iban').innerHTML = '<td>IBAN</td><td>'+ sessionStorage.getItem('iban') + '</td><td><a href="/awards/V6/payment/iban-swift-code">Change <span class="visually-hidden">your bank details.</span></a></td>';
+            document.getElementById('if-swift').innerHTML = '<td>SWIFT(Business Identification Code)</td><td>'+ sessionStorage.getItem('swift') + '</td><td><a href="/awards/V6/payment/iban-swift-code">Change <span class="visually-hidden">your bank details.</span></a></td>';
+            document.getElementById('non-uk').style.display = "none";
+
+            } else if (sessionStorage.getItem('ibanSwiftKnown') == 'No') {
+
+                document.getElementById('account-type').innerHTML = '<td>Do you know your IBAN and SWIFT(Business Identification Code) code?</td><td id="has-mobile">No</td><td><a href="/awards/V6/payment/iban-swift-code">Change <span class="visually-hidden">bank account details.</span></a></td>';
+                document.getElementById('account-holder-name').innerHTML = "<td>Account holder's name</td><td id='has-mobile'>" + sessionStorage.getItem('accountHolder') + "</td><td><a href='/awards/V6/payment/iban-swift-code'>Change <span class='visually-hidden'>bank account details.</span></a></td>";
+                document.getElementById('if-iban').innerHTML = '<td>Account Number</td><td>'+ sessionStorage.getItem('accountNumber') + '</td><td><a href="/awards/V6/payment/iban-swift-code">Change <span class="visually-hidden">bank account details.</span></a></td>';
+                document.getElementById('if-swift').innerHTML = '<td>Bank Identifier</td><td>'+ sessionStorage.getItem('bankIdentifier') + '</td><td><a href="/awards/V6/payment/iban-swift-code">Change <span class="visually-hidden">bank account details.</span></a></td>';
+                document.getElementById('non-uk').style.display = "none";
+
+            } else {
+
+            }
+
+        }
+    }
+
+    // End Non Uk Bank
 });

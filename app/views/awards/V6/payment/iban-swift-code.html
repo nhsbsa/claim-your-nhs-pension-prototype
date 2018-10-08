@@ -1,7 +1,7 @@
 {% extends "layout_bsa.html" %}
 
 {% block page_title %}
-        Do you know your IBAN and SWIFT(BIC) code? - Claim your NHS Pension
+        Do you know your IBAN and SWIFT(Business Identification Code) code? - Claim your NHS Pension
 {% endblock %}
 
 {% block content %}
@@ -16,15 +16,15 @@
             <div class="heading-group">
                 <p>Claim your NHS Pension</p>
                 <h1 class="heading-large">
-                    Do you know your IBAN and SWIFT(BIC) code?
+                    Do you know your IBAN and SWIFT(Business Identification Code) code?
                 </h1>
             </div>
-            <form action="iban-swift-handler" method="get" class="form">
+            <form action="iban-swift-handler" method="get" class="form" id="ukBank">
 
                     <div class="form-group">
             
                       <fieldset class="inline">
-                        <legend class="visually-hidden">Do you know your IBAN and SWIFT(BIC) code?</legend>
+                        <legend class="visually-hidden">Do you know your IBAN and SWIFT(Business Identification Code) code?</legend>
             
                         <div class="multiple-choice" data-target="yes-code">
                           <input id="yes" type="radio" name="hasnhsno" value="Yes">
@@ -39,35 +39,35 @@
                       <div class="panel panel-border-narrow js-hidden" id="yes-code">
                           <div class="form-group">
                                 <label class="form-label" for="account-holder">Account holders name</label>
-                                <input class="form-control" name="account-holder" type="text" id="account-holder">
+                                <input class="form-control ibanSwiftData" name="account-holder" type="text" id="account-holder">
                           </div>
                           <div class="form-group">
                                 <label class="form-label" for="iban-code">IBAN</label>
-                                <input class="form-control" name="iban-code" type="text" id="iban-code">
+                                <input class="form-control ibanSwiftData" name="iban-code" type="text" id="iban-code">
                           </div>
                           <div class="form-group">
                                 <label class="form-label" for="swift-code">SWIFT(BIC) Code</label>
-                                <input class="form-control" name="swift-code" type="text" id="swift-code">
+                                <input class="form-control ibanSwiftData" name="swift-code" type="text" id="swift-code">
                           </div>
 
-                            <button class="button" type="submit"  value="Next">Submit</button>
+                            <button class="button" type="submit"  value="Next">Next</button>
                       </div>
 
                       <div class="panel panel-border-narrow js-hidden" id="no-code">
                             <div class="form-group">
-                                    <label class="form-label" for="account-holder">Account holders name</label>
-                                    <input class="form-control" name="account-holder" type="text" id="account-holder">
+                                    <label class="form-label" for="account-holder-2">Account holders name</label>
+                                    <input class="form-control ibanSwiftData" name="account-holder-2" type="text" id="account-holder-2">
                               </div>
                               <div class="form-group">
                                     <label class="form-label" for="account-number">Account number</label>
-                                    <input class="form-control" name="account-number" type="text" id="account-number">
+                                    <input class="form-control ibanSwiftData" name="account-number" type="text" id="account-number">
                               </div>
                               <div class="form-group">
                                     <label class="form-label" for="bank-identifier">Bank identifier</label>
-                                    <input class="form-control" name="bank-identifier" type="text" id="bank-identifier">
+                                    <input class="form-control ibanSwiftData" name="bank-identifier" type="text" id="bank-identifier">
                               </div>
     
-                                <button class="button" type="submit"  value="Next">Submit</button>
+                                <button class="button" type="submit"  value="Next">Next</button>
                         </div>
                     </fieldset>
             
