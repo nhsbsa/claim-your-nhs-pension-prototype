@@ -675,9 +675,11 @@ $(document).ready(function() {
     // Store user inputs into sessionStorage for to be used to populate the data table on checkyouranswers
     if (document.location.href.includes('/payment/iban-swift-code', true)) {
         $('input.ibanSwiftData').change(function(){
+            // Do you know IBAN and SWIFT(BIC) code? (Yes)
             sessionStorage.accountName = document.querySelector('input[name="account-holder"]').value;
             sessionStorage.iban = document.querySelector('input[name="iban-code"]').value;
             sessionStorage.swift = document.querySelector('input[name="swift-code"]').value;
+            // Do you know IBAN and SWIFT(BIC) code? (No)
             sessionStorage.accountHolder = document.querySelector('input[name="account-holder-2"]').value;
             sessionStorage.accountNumber= document.querySelector('input[name="account-number"]').value;
             sessionStorage.bankIdentifier = document.querySelector('input[name="bank-identifier"]').value;
