@@ -174,9 +174,9 @@ router.get(/AW8P-save-handler/, function (req, res) {
 
 router.get(/bank-handler/, function (req, res) {
 	if (req.query.payukbank == "Yes") {
-		res.redirect('accounttype');
+		res.redirect('what-type-of-account');
 	} else {
-		res.redirect('iban-swift-code');
+		res.redirect('non-uk-account-details');
 	}
 });
 

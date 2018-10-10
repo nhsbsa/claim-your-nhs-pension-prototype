@@ -674,14 +674,14 @@ $(document).ready(function() {
     }
 
     // Store user input into sessionStorage for to be displayed on check your answers page
-    if (document.location.href.includes('/payment/accounttype', true)) {
+    if (document.location.href.includes('/payment/what-type-of-account', true)) {
         $('input[name="bank"]').change(function(){
             sessionStorage.accountType = document.querySelector('input[name="bank"]:checked').value;
         })
     }
 
     // Store user inputs into sessionStorage for to be used to populate the data table on checkyouranswers
-    if (document.location.href.includes('/payment/iban-swift-code', true)) {
+    if (document.location.href.includes('/payment/non-uk-account-details', true)) {
         $('input.ibanSwiftData').change(function(){
             // What are your bank account details?
             sessionStorage.accountName = document.querySelector('input[name="account-holder"]').value;
@@ -702,14 +702,14 @@ $(document).ready(function() {
             // Use the sessionStorage from a previous page which is holding the value from the selected input chosen for "Do you know your IBAN and SWIFT(BIC) code?" This then decides which data to populate into checkyouranswers
             document.getElementById('check-uk-bank').innerHTML = '<td>Do you want your NHS Pension paid into a UK bank account?</td><td id="has-mobile" class="input-ukBank">'+ sessionStorage.getItem('ukBank') + '</td><td><a href="uk-bank-account">Change <span class="visually-hidden">if you have a UK bank account.</span></a></td>';
             document.getElementById('account-type').style.display = 'none';
-            document.getElementById('account-holder-name').innerHTML = "<td>Account holder's name</td><td id='has-mobile'>" + sessionStorage.getItem('accountName') + "</td><td><a href='/awards/V6/payment/iban-swift-code'>Change <span class='visually-hidden'>your bank details.</span></a></td>";
-            document.getElementById('if-iban').innerHTML = '<td>IBAN</td><td>'+ sessionStorage.getItem('iban') + '</td><td><a href="/awards/V6/payment/iban-swift-code">Change <span class="visually-hidden">your bank details.</span></a></td>';
-            document.getElementById('if-swift').innerHTML = '<td>SWIFT code</td><td>'+ sessionStorage.getItem('swift') + '</td><td><a href="/awards/V6/payment/iban-swift-code">Change <span class="visually-hidden">your bank details.</span></a></td>';
+            document.getElementById('account-holder-name').innerHTML = "<td>Account holder's name</td><td id='has-mobile'>" + sessionStorage.getItem('accountName') + "</td><td><a href='/awards/V6/payment/non-uk-account-details'>Change <span class='visually-hidden'>your bank details.</span></a></td>";
+            document.getElementById('if-iban').innerHTML = '<td>IBAN</td><td>'+ sessionStorage.getItem('iban') + '</td><td><a href="/awards/V6/payment/non-uk-account-details">Change <span class="visually-hidden">your bank details.</span></a></td>';
+            document.getElementById('if-swift').innerHTML = '<td>SWIFT code</td><td>'+ sessionStorage.getItem('swift') + '</td><td><a href="/awards/V6/payment/non-uk-account-details">Change <span class="visually-hidden">your bank details.</span></a></td>';
             document.getElementById('non-uk').style.display = "none";
 
             } else if (sessionStorage.getItem('ukBank') == 'Yes') {
                 document.getElementById('check-uk-bank').innerHTML = '<td>Do you want your NHS Pension paid into a UK bank account?</td><td id="has-mobile" class="input-ukBank">'+ sessionStorage.getItem('ukBank') + '</td><td><a href="uk-bank-account">Change <span class="visually-hidden">if you have a UK bank account.</span></a></td>';
-                document.getElementById('account-type').innerHTML = '<td>What type of account are we making the payment to?</td><td id="has-mobile">' + sessionStorage.getItem('accountType') + ' Account</td><td><a href="accounttype">Change <span class="visually-hidden">if you have a UK bank account.</span></a></td>';
+                document.getElementById('account-type').innerHTML = '<td>What type of account are we making the payment to?</td><td id="has-mobile">' + sessionStorage.getItem('accountType') + ' Account</td><td><a href="what-type-of-account">Change <span class="visually-hidden">if you have a UK bank account.</span></a></td>';
             } else {
 
             }
