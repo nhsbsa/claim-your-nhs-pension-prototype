@@ -1,0 +1,69 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+Form complete - Claim your NHS Pension - NHSBSA
+{% endblock %}
+
+{% block content %}
+
+<style>
+.address-block {
+	display: block;
+}
+</style>
+
+<main id="content" role="main">
+	{% include "includes/phase_banner_beta.html" %}
+	<div class="grid-row">
+		<div class="column-two-thirds">
+			<div class="done-panel">
+				<h1 class="heading-large"><span id="done-tick"> </span>Form complete</h1>
+				<p class="lede">Follow the next steps to complete your application</p>
+			</div>
+			<h2 class="heading-medium">What you need to do next</h2>
+			<p>For us to progress this application, send us original or certified copies of your:</p>
+			<ul class="list list-bullet">
+				<li>birth certificate</li>
+				<li>marriage certificate (if applicable)</li>
+				<li>HMRC Lifetime Allowance protection certificate (if applicable)</li>
+			</ul>
+			<p>For us to match up this application with the documents you send us, <a href="javascript:window.print();" target="_blank">print this page</a> or write down and include:</p>
+			<ul class="list list-bullet">
+				<li>our Application Type code - AW8P</li>
+				<li>your National Insurance number - [NINO]</li>
+			</ul>
+			<p>Include the return address we can post all of your documents to. Otherwise we will use the address we have saved for you, which is:</p>
+			<div class="panel">
+				<span class="address-block">12 Return St</span>
+				<span class="address-block">Return Town</span>
+				<span class="address-block">RT6 9GH</span>
+			</div>
+			<p>The address you need to send everything to:</p>
+			<div class="panel left-margin">
+				<span class="address-block">NHS Pensions</span>
+				<span class="address-block">PO Box 2269</span>
+				<span class="address-block">Bolton</span>
+				<span class="address-block">BL6 9JS</span>
+			</div>
+			<div class="form-group">
+				<h2 class="heading-medium">What we'll do next</h2>
+				<p>We'll send your documents back through the same delivery method we received them.</p>
+				<p>Your pension will be processed within either:</p>
+				<ul class="list list-bullet">
+					<li>30 calendar days from the date you retired</li>
+					<li>30 days from the date NHS Pensions receives all the information needed to calculate and pay your pension</li>
+				</ul>
+				<p>When we process your application, we’ll contact you if we need any further information from you and let you know if this will cause a further delay.</p>
+			</div>
+			<ul class="list options-list">
+				<li><a class="icon download-icon" href="#" target="_blank"> Download your application (<span id="application-size">115KB</span>)</a></li>
+			</ul>
+			<br>
+			<p>
+				<a class="button" href="../start/start">Finished</a>
+			</p>
+		</div>
+	</div>
+</main>
+
+{% endblock %}

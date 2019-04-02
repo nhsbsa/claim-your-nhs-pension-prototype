@@ -1,0 +1,89 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+Application - Claim your NHS Pension
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  {% include "includes/phase_banner_beta.html" %}
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <div class="heading-group">
+        <p>Claim your NHS Pension</p>
+        <h1 class="heading-xlarge">Your application</h1>
+      </div>
+      <p>You can’t finish the application until you've completed all the sections.</p>
+      <br>
+      <h2 class="task-list-section">About you</h2>
+      <div class="form-group">
+        <table class="check-table">
+          <thead>
+            <tr>
+              <th>
+                <th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td scope="row"><a href="start/checkyouranswers">Personal details</a></td>
+                  <td class="numeric"><strong id="personalcomplete" class="phase-tag">Completed</strong></td>
+                </tr>
+                <tr>
+                  <td scope="row"><a href="about-you/relationshipstatus">Partner and child details</a></td>
+                  <td class="numeric"><strong id="relationshipcomplete" class="phase-tag js-hidden">Completed</strong></td>
+                </tr>
+                <tr>
+                  <td scope="row"><a href="employment/details">Employment details</a></td>
+                  <td class="numeric" ><strong id="employmentcomplete" class="phase-tag js-hidden">Completed</strong></td>
+                </tr>
+                <tr>
+                  <td scope="row"><a href="contact/contactpref">Contact details</a></td>
+                  <td class="numeric"><strong id="contactcomplete" class="phase-tag js-hidden">Completed</strong></td>
+                </tr>
+              </tbody>
+            </table>
+            <br>
+            <br>
+            <h2 class="task-list-section">About your pension</h2>
+            <table class="check-table">
+              <thead>
+                <tr>
+                  <th></th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tr>
+                <td scope="row"><a href="about-your-pension/moreinfo">Pension details</a></td>
+                <td class="numeric"><strong id="pensioncomplete" class="phase-tag  js-hidden">Completed</strong></td>
+              </tr>
+              <tr>
+                <td scope="row"><a href="HMRC/pensionarrangement">HM Revenue and Customs</a></td>
+                <td class="numeric"><strong id="hmrccomplete" class="phase-tag js-hidden">Completed</strong></td>
+              </tr>
+              <tr>
+                <td scope="row"><a href="payment/uk-bank-account">Payment details</a></td>
+                <td class="numeric"><strong id="paymentcomplete" class="phase-tag js-hidden">Completed</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <!-- <h2 class="heading-medium">Submit application</h2> -->
+        <div class="form-group">
+          <form action="AW8P-handler" class="save-app">
+            <input class="button" id="application" type="submit" value="Continue" disabled="disabled" aria-disabled="true" />
+          </form>
+          <form action="AW8P-save-handler" class="save-app">
+            <input class="button" id="save-application" type="submit" value="Save for later" />
+          </form>
+        </div>
+        <br>
+        <br>
+      </div>
+    </div>
+  </div>
+</main>
+
+{% endblock %}
