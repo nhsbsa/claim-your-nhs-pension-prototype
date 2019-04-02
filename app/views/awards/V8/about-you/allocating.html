@@ -1,0 +1,94 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  Do you want to be contact about your pension by text and email? - Claim your NHS Pension
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  {% include "includes/phase_banner_beta.html" %}
+  {% include "includes/back.html" %}
+
+  <div class="grid-row">
+
+    <div class="column-two-thirds">
+
+      <div class="heading-group">
+        <p>Claim your NHS Pension<p>
+        <h1 class="heading-large">Do you want to allocate part of your pension?
+      </div>
+      <details>
+
+    <summary><span class="summary">What is allocation?</span></summary>
+
+    <div class="panel panel-border-narrow">
+
+    <p>  Allocation is where you permanently give up part of your pension now to your spouse, civil partner or a dependant. If you die, the allocated person will receive this amount as a pension.</p>
+
+  <p>  If you allocate to anyone other than a spouse or civil partner, they must be dependant on you at the time of your retirement and when you die.</p>
+
+  <p>  If you allocate, it will provide an additional payment on top of any adult dependant's pension or children’s pension that may be payable.</p>
+
+  <p>  To apply, you’ll have to pay for a medical. We can send you guidance on this.</p>
+    </div>
+
+  </details>
+  <details>
+
+<summary><span class="summary">How is this different to a death benefit nomination? </span></summary>
+
+<div class="panel panel-border-narrow">
+
+  <p>
+    You can nominate someone to receive an adult dependant's pension and lump sum on death benefit if you die.
+  </p>
+
+  <p>
+This does not affect the amount of pension you receive.
+  </p>
+</div>
+
+</details>
+<br>
+      <form action="allocating-handler" method="post-address" class="form">
+
+        <div class="form-group">
+
+          <fieldset class="inline">
+            <legend></legend>
+
+            <legend class="visually-hidden">
+            Do you want to allocate part of your pension?
+            </legend>
+
+            <div class="multiple-choice" data-target="getnhsno">
+              <input id="yes" type="radio" name="allocating" value="Yes">
+              <label for="yes">Yes</label>
+            </div>
+
+            <div class="multiple-choice">
+              <input id="no" type="radio" name="allocating" value="No">
+              <label for="no">No</label>
+            </div>
+
+
+        </fieldset>
+        <br>
+
+        <div class="form-group">
+        <input class="button" id="application" type="submit" value="Next">
+        </div>
+        <div class="form-group">
+          <p>If you don’t have this information available, you can <a href="/awards/V6/AW8P">return to your application summary</a> and save your application for later.</p>
+        </div>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</main>
+
+{% endblock %}

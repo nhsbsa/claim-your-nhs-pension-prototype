@@ -1,0 +1,74 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+Login - Present Submitted Awards Applications - NHSBSA
+{% endblock %}
+
+{% block content %}
+
+<style>
+	.display-none {
+		display: none;
+	}
+	.error {
+		margin-right: 15px;
+		border-left: 5px solid #b10e1e;
+		padding-left: 15px;
+	}
+</style>
+
+<main id="content" role="main" tabindex="-1">
+	{% include "includes/phase_banner_beta.html" %}
+
+	<div class="grid-row">
+		<div class="column-two-thirds">
+			<div class="error-summary display-none" role="group" aria-labelledby="finance-login-message-heading" tabindex="-1">
+				<h1 class="heading-medium error-summary-heading">
+					Some questions have not been answered correctly
+				</h1>
+				<p>Please see the errors below:</p>
+				<ul class="error-summary-list">
+					<li><a href="#login-form">Login failed. Enter correct login details.</a></li>
+				</ul>
+			</div>
+
+			<div class="heading-group">
+				<p>Present Submitted Awards Applications</p>
+				<h1 class="heading-large">Login</h1>
+			</div>
+
+			<form action="dashboard" method="get" class="form form-to-validate" id="login-form" novalidate="novalidate" autocomplete="off">
+				<div class="form-group">
+					<label for="username">
+						<span class="form-label-bold">Username</span>
+						<span class="error-message display-none" id="error-message-username">Enter your username</span>
+					</label>
+					<input type="text" id="username" class="form-control validate-text-input" name="username" autocomplete="off" />
+				</div>
+				<div class="form-group">
+					<label for="password">
+						<span class="form-label-bold">Password</span>
+						<span class="error-message display-none" id="error-message-password">Enter your password</span>
+					</label>
+					<input type="password" id="password" class="form-control validate-text-input" name="password" autocomplete="off" />
+				</div>
+
+				<div class="form-item-wrapper">
+					<div class="form-group">
+						<input class="button" type="submit" value="Login">
+					</div>
+				</div>
+
+				<details>
+					<summary>
+						<span class="summary">Forgotten your password?</span>
+					</summary>
+					<div class="panel panel-border-narrow">
+						<p>Contact the Digital Team to reset your password.</p>
+					</div>
+				</details>
+			</form>
+		</div>
+	</div>
+</main>
+{% endblock %}

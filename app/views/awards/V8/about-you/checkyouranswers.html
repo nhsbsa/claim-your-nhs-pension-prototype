@@ -1,0 +1,72 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  Check your answers - Claim your NHS Pension
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  {% include "includes/phase_banner_beta.html" %}
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+  <div class="text">
+
+    <div class="heading-group">
+      <p>Claim your NHS Pension</p>
+      <h1 class="heading-large">
+        Check your answers
+      </h1>
+    </div>
+
+
+    <table id="review-table-one" class="check-table">
+          <!-- about you -->
+          <tr>
+            <td>What is your status?</td>
+            <td id="has-mobile"></td>
+            <td><a href="relationshipstatus">Change</a></td>
+          </tr>
+          <tr>
+            <td>What is your spouse's or civil partners name?</td>
+            <td id="has-mobile">{{hasmobile}}</td>
+            <td><a href="spousename#firstname">Change</a></td>
+          </tr>
+          <tr>
+            <td>What is your spouse's or civil partners date of birth?</td>
+            <td id="has-mobile">{{hasmobile}}</td>
+            <td><a href="spousedob#day">Change</a></td>
+          </tr>
+          <tr>
+            <td>Do you have any dependant children?</td>
+            <td id="has-mobile">{{hasmobile}}</td>
+            <td><a href="children">Change</a></td>
+          </tr>
+          <tr>
+            <td>Do you want to allocate part of your pension?</td>
+            <td id="has-mobile">{{hasmobile}}</td>
+            <td><a href="allocating">Change</a></td>
+          </tr>
+
+          <!-- about your prepayment -->
+      </table>
+
+    <br>
+
+    <form action="c-handler" method="get" class="form">
+      <div class="form-item-wrapper">
+        <div class="form-group">
+          <a href="../AW8P" class="button" type="submit" value="Continue">Continue</a>
+        </div>
+      </div>
+    </form>
+
+  </div>
+  </div>
+  </div>
+
+</main>
+
+{% endblock %}

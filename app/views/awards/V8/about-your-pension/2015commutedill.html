@@ -1,0 +1,70 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  When should the early payment of deferred benefit start? - Claim your NHS Pension
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  {% include "includes/phase_banner_beta.html" %}
+  {% include "includes/back.html" %}
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <!-- <p class="navigation"><a class="back-to-previous">Back</a></p> -->
+        <div class="heading-group">
+          <p>Claim your NHS Pension</p>
+          <h1 class="heading-large">Do you agree to take your ill health retirement benefits as a lump sum?</h1>
+        </div>
+
+      <div class="form-group">
+
+        <fieldset class="inline">
+          <legend></legend>
+
+          <div class="multiple-choice" data-target="contact-by-email">
+            <input id="yes" type="radio" name="file" value="Yes">
+            <label for="yes">Yes</label>
+          </div>
+          <div class="panel panel-border-narrow js-hidden" id="contact-by-email">
+          <p>I understand and agree that this lump sum payment will not affect payments to my dependants. If the lump sum causes me to exceed the lifetime allowance, the amount in excess of the lifetime allowance will be taxed at 55%​.</p>
+         </div>
+          <div class="multiple-choice" data-target="contact-by-phone">
+            <input id="no" type="radio" name="file" value="No">
+            <label for="no">No</label>
+          </div>
+      </fieldset>
+
+
+
+     <div class="panel panel-border-narrow js-hidden" id="contact-by-phone">
+     <p>You will have to make another choice on why you are claiming your deferred benefits.</p>
+    </div>
+
+
+      </div>
+
+
+      <form action="2015commutedill-handler" class="form">
+      <div class="form-group">
+        <input class="button" type="submit" value="Next">
+      </div>
+      <div class="form-group">
+        <p>If you don’t have this information available, you can <a href="/awards/V6/AW8P">return to your application summary</a> and save your application for later.</p>
+      </div>
+    </form>
+
+
+
+<div class="form-group">
+
+    </div>
+
+  </div>
+
+</main>
+
+
+{% endblock %}
