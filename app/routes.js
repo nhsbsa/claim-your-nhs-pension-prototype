@@ -556,6 +556,15 @@ router.get(/secondpay-handler/, function (req, res) {
 });
 
 
+router.get(/eligibility-handler/, function (req, res) {
+	if (req.query.hasHMRCno == "yes" || req.query.hasHMRCno == "idk") {
+		res.redirect('paper');
+	} else {
+		res.redirect('name');
+	}
+});
+
+
 //
 // //AW8 handler//
 //
