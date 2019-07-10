@@ -1,0 +1,36 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+You have signed out - {{ serviceName }}
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  {% include "includes/phase_banner_beta.html" %}
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <div class="heading-group">
+        <p>{{ serviceName }}</p>
+        <h1 class="heading-large">You have signed out</h1>
+      </div>
+
+      <p>You have successfully signed out. We have saved your application.</p>
+
+      <h2 class="heading-medium">What's next?</h2>
+      <p>If you want to sign into this service you will need to <a href="start/start">Start again</a> and reconfirm your identity using GOV.UK Verify.</p>
+
+      <p><a href="https://www.nhsbsa.nhs.uk/nhs-pensions">Find out more about pensions in the NHS</a>.</p>
+
+      <hr>
+
+      <p><a href="#">What did you think of this service?</a> (takes 30 seconds)</p>
+
+    </div>
+  </div>
+
+</main>
+
+{% endblock %}

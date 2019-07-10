@@ -1,18 +1,19 @@
 {% extends "layout_bsa.html" %}
 
 {% block page_title %}
-Application - Claim your NHS Pension
+Application - {{ serviceName }}
 {% endblock %}
 
 {% block content %}
 
 <main id="content" role="main">
   {% include "includes/phase_banner_beta.html" %}
+  {% include "includes/sign_out_link.html" %}
 
   <div class="grid-row">
     <div class="column-two-thirds">
       <div class="heading-group">
-        <p>Claim your NHS Pension</p>
+        <p>{{ serviceName }}</p>
         <h1 class="heading-xlarge">Your application</h1>
       </div>
       <p>You can’t finish the application until you've completed all the sections.</p>

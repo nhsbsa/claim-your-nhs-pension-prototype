@@ -557,3 +557,13 @@ table {
 .button.button-get-started {
   background-image: url('/public/images/icon-pointer-x2.png');
 }
+
+.sign-out-link {
+  float: right;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  font-size: 14px;
+  @include media(tablet) {
+    font-size: 16px;
+  }
+}

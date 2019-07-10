@@ -31,12 +31,12 @@
               <input id="today" class="sel" type="radio" name="rcg" value="single">
               <label class="single-line" for="today">Single and never married</label>
             </div>
-            <div class="multiple-choice" data-target="married">
-              <input id="next" class="sel" type="radio" name="rcg" value="married">
-              <label class="single-line" for="next">Married</label>
+            <div class="multiple-choice" data-target="marriedT">
+              <input id="married" class="sel" type="radio" name="rcg" value="married">
+              <label class="single-line" for="married">Married</label>
             </div>
 
-            <div class="panel panel-border-narrow js-hidden" id="married">
+            <div class="panel panel-border-narrow js-hidden" id="marriedT">
               <h2 class="heading-small">When did you get married?</h2>
                 <p class="form-hint">For example, 31 03 1980</p>
               <div class="form-date">
@@ -56,8 +56,8 @@
             </div>
 
             <div class="multiple-choice" data-target="civil">
-              <input id="next" class="sel" type="radio" name="rcg" value="civil">
-              <label class="single-line" for="next">Civil partnership</label>
+              <input id="cp" class="sel" type="radio" name="rcg" value="civil">
+              <label class="single-line" for="cp">Civil partnership</label>
             </div>
             <div class="panel panel-border-narrow js-hidden" id="civil">
               <h2 class="heading-small">When did you enter your civil partnership?</h2>
@@ -82,8 +82,8 @@
 
 
             <div class="multiple-choice" data-target="widowed">
-              <input id="already" type="radio" class="sel" name="rcg" value="widowed">
-              <label class="single-line" for="already">Widowed or surviving partner</label>
+              <input id="widow" type="radio" class="sel" name="rcg" value="widowed">
+              <label class="single-line" for="widow">Widowed or surviving partner</label>
             </div>
 
             <div class="panel panel-border-narrow js-hidden" id="widowed">
@@ -107,8 +107,8 @@
             </div>
 
               <div class="multiple-choice" data-target="divorced">
-                <input id="already" type="radio" class="sel" name="rcg" value="divorced">
-                <label class="single-line" for="already">Divorced or dissolved civil partnership</label>
+                <input id="divorced" type="radio" class="sel" name="rcg" value="divorced">
+                <label class="single-line" for="divorced">Divorced or dissolved civil partnership</label>
               </div>
 
               <div class="panel panel-border-narrow js-hidden" id="divorced">
@@ -134,9 +134,7 @@
         <div class="form-group">
           <input class="button" type="submit" value="Next" />
         </div>
-        <div class="form-group">
-          <p>If you don’t have this information available, you can <a href="/awards/V6/AW8P">return to your application summary</a> and save your application for later.</p>
-        </div>
+        {% include "includes/return_to_summary.html" %}
 
       </form>
 
