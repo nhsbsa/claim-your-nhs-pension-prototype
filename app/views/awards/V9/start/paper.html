@@ -1,0 +1,48 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+You must use a paper form - Claim your NHS Pension
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  {% include "includes/phase_banner_beta.html" %}
+  {# {% include "includes/back.html" %} #}
+
+  <div class="grid-row">
+
+    <div class="column-two-thirds">
+
+      <div class="heading-group">
+        <p>Claim your NHS Pension<p>
+        <h1 class="heading-large">You must use the paper form</h1>
+      </div>
+
+      <div class="notice">
+        <i class="icon icon-important">
+            <span class="visually-hidden">Warning</span>
+        </i>
+        <p><strong class="bold">You cannot claim your NHS Pension using the online service if you have lifetime allowance protection</strong></p>
+    </div>
+
+
+
+    <h2 class="heading-medium">What to do next</h2>
+      {# <p>You will need to apply for your NHS pension using the paper form.</p> #}
+      
+      <ul class="list list-bullet">
+        <li><a href="https://www.nhsbsa.nhs.uk/member-hub/applying-your-pension#jumplink4">Download and complete the paper application form</a></li>
+        <li>Send the application form along with the paper certificate or a copy of HMRC’s notification. (Your pensions office will send a copy of the certificate to HMRC).</li>
+      </ul>
+      <div class="panel panel-border-wide">
+        <p>The certificate must confirm the 2016 protection reference number.  You must send the application form and certificate together or your benefits may be delayed.</p>
+      </div>
+
+    </div>
+
+  </div>
+
+</main>
+
+{% endblock %}

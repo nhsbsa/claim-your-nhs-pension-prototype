@@ -1,0 +1,72 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+Download award applications that have been submitted - Present Submitted Awards Applications - NHSBSA
+{% endblock %}
+
+{% block content %}
+
+<style>
+    tbody tr td:nth-child(1) {
+        width: 30%;
+    }
+
+    tbody tr td:nth-child(2),
+    tbody tr td:nth-child(3) {
+        width: 35%;
+        font-weight: normal;
+    }
+</style>
+
+<main id="content" role="main" tabindex="-1">
+	{% include "includes/phase_banner_beta.html" %}
+
+	<div class="grid-row">
+		<div class="column-two-thirds">
+			<div class="heading-group">
+				<p>Present Submitted Awards Applications</p>
+				<h1 class="heading-large">Download award applications that have been submitted</h1>
+            </div>
+
+            <div class="form-group">
+                <p>Click download to see application.</p>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th scope="col">NINO</th>
+                            <th scope="col">Date submitted</th>
+                            <th scope="col">Date downloaded</th>
+                            <th scope="col">Downloaded by</th>
+                            <th scope="col">&nbsp;</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>QQ123456C</td>
+                            <td>01/11/2017 14:30</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td><a href="#">Download</a></td>
+                        </tr>
+                        <tr>
+                            <td>QQ123456C</td>
+                            <td>01/11/2017 14:32</td>
+                            <td>03/11/2017 14:30</td>
+                            <td>Sarah</td>
+                            <td><a href="#">Download</a></td>
+                        </tr>
+                        <tr>
+                            <td>QQ123456C</td>
+                            <td>01/11/2017 14:35</td>
+                            <td>03/11/2017 14:30</td>
+                            <td>Sarah</td>
+                            <td><a href="#">Download</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+		</div>
+	</div>
+</main>
+{% endblock %}

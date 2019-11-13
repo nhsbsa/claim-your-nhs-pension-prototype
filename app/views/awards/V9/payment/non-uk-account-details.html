@@ -1,0 +1,66 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+What are your bank account details? - Claim your NHS Pension
+{% endblock %}
+
+{% block content %}
+
+
+<main id="content" role="main">
+      {% include "includes/phase_banner_beta.html" %}
+      {% include "includes/back.html" %}
+
+      <div class="grid-row">
+            <div class="column-two-thirds">
+                  <div class="heading-group">
+                        <p>Claim your NHS Pension</p>
+                        <h1 class="heading-large">What country is the bank in?</h1>
+                  </div>
+                  <div class="form-group">
+                        <form action="iban-swift-handler" method="get" class="form" id="ukBank">
+                            {# <p>When your application is complete, we will provide you with a form to download. You will need to complete it and send it to us.</p> #}
+                            
+                            <div class="form-group">
+                                <div class="notice">
+                                    <i class="icon icon-important">
+                                        <span class="visually-hidden">Warning</span>
+                                    </i>
+                                    <strong class="bold-small">
+                                        At the end of this application, you will need to download an overseas mandate form.
+                                    </strong>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label" for="account-holder">
+                                    Select your country
+                                    <span class="form-hint">
+                                        For example, Germany.
+                                    </span>
+                                </label>
+                                <input class="form-control ibanSwiftData" name="account-holder" type="text" id="account-holder">
+                            </div>
+
+                            <div class="form-group">
+                                <details>
+                                    <summary><span class="summary">Can't find a country?</span></summary>
+                                    <div class="panel panel-border-narrow">
+                                        <p>Due to banking security, we can't accept bank accounts in all countries. If you can't find a country,
+                                        you will need to setup an account in The United Kingdom or a country that has an overseas mandate form.</p>
+                                    </div>
+                                </details>
+                            </div>
+
+                            <button class="button" type="submit" value="Next">Next</button>
+                        </form>
+                  </div>
+            </div>
+
+      </div>
+
+
+</main>
+
+
+{% endblock %}
