@@ -1,0 +1,74 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  Do you want an aditional lump sum by giving up part of your pension? - Claim your NHS Pension
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  {% include "includes/phase_banner_beta.html" %}
+  {% include "includes/back.html" %}
+
+  <div class="grid-row">
+
+    <div class="column-two-thirds">
+
+      <div class="heading-group">
+        <p>Claim your NHS Pension<p>
+        <h1 class="heading-large">
+        You are already entitled to a lump sum. Do you want to increase your lump sum by giving up part of your 1995 pension?</h1>
+      </div>
+    <p>If you have 1995 Section membership, you’re already entitled to a lump sum. If your membership is from on or after 1 April 2008, you can choose to increase this lump sum.</p>
+
+
+      <details>
+
+  <summary><span class="summary">How increasing my lump sum affects my benefits</span></summary>
+
+  <div class="panel panel-border-narrow">
+
+    <p>For every £1 of pension exchanged you’ll receive £12 of lump sum.</p>
+
+<p> For example, if you exchange £100 of your pension, you’d get £1200 of lump sum.</p>
+
+  </div>
+
+</details>
+<br>
+
+      <form action="1995lumpsum-handler" method="post-address" class="form">
+
+        <div class="form-group">
+
+          <fieldset class="inline">
+            <legend></legend>
+
+            <div class="multiple-choice">
+              <input id="yes" type="radio" name="lumpsum" value="Yes">
+              <label for="yes">Yes</label>
+            </div>
+            <div class="multiple-choice">
+              <input id="no" type="radio" name="lumpsum" value="No">
+              <label for="no">No</label>
+            </div>
+        </fieldset>
+
+        </div>
+
+        <div class="form-group">
+          <input class="button" type="submit"  value="Next">
+        </div>
+        <div class="form-group">
+          <p>If you don’t have this information available, you can <a href="/awards/V6/AW8P">return to your application summary</a> and save your application for later.</p>
+        </div>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</main>
+
+{% endblock %}

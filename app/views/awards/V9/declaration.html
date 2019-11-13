@@ -1,0 +1,80 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+Application - Claim your NHS Pension
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  {% include "includes/phase_banner_beta.html" %}
+
+  <div class="grid-row">
+
+
+
+    <div class="column-two-thirds">
+
+      <div class="heading-group">
+        <p>Claim your NHS Pension</p>
+        <h1 class="heading-xlarge">Declaration</h1>
+      </div>
+
+        <p>I declare that:</p>
+        <ul class="list list-bullet">
+      <li> I have read the Retirement Guide for members of the NHS Pension Scheme and the application guidance notes attached to this form</li>
+
+      <li> The information I have given is correct and complete to the best of my knowledge and belief. If I become aware of any change in the information given on the form, or any further new information relevant to the form, after I have sent it I hereby agree to notify NHS Pensions of those changes and any further or new information at the earliest possible opportunity</li>
+
+       <li> I will notify NHS Pensions if I recycle my NHS Pension Commencement Lump Sum</li>
+
+      <li>I understand that I will have to repay any over payment of pension if necessary</li>
+
+      <li>If I have Enhanced, Primary, Fixed (2012 or 2014) or Individual Protection (2014) from HMRC I have enclosed a copy of the certificate
+</li>
+
+      <li> If I have Fixed or Individual Protection 2016 I have enclosed a copy of HMRC's notification confirming the reference and/or certificate number
+</li>
+
+      <li> If I have Fixed Protection 2012, 2014 or 2016 I declare I have checked for Benefit Accrual and have not had Benefit Accrual up to and including the date of my retirement
+</li>
+
+      <li>I understand that, if I have claimed my 1995 Section benefits on normal age grounds or voluntary early retirement with actuarial reduction, my pension may be suspended if I return to NHS employment (including a Direction Body) within one calendar month. Work in the NHS totalling 16 hours or less a week is ignored for this purpose</li>
+
+      <li> I understand that if I claim my benefits from the 1995 Section I will not be able to rejoin the Scheme
+</li>
+
+      <li> I am entitled to and apply for my retirement benefits from the NHS Pension Scheme
+</li>
+
+
+    </ul>
+<div class="form-group">
+    <div class="multiple-choice multiple-radio">
+      <input id="email" name="email" type="checkbox" value="true">
+      <label for="email">I understand</label>
+    </div>
+  </div>
+  <br>
+  <br>
+
+
+      <a href="file-upload/done" class="button" id="application" type="submit" value="Submit">
+        Submit</a>
+      <br>
+      <br>
+
+
+
+
+
+
+      </div>
+
+    </div>
+
+  </div>
+
+</main>
+
+{% endblock %}

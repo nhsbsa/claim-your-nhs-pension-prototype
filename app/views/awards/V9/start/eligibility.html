@@ -1,0 +1,87 @@
+{% extends "layout_bsa.html" %}
+
+
+{% block page_title %}
+Do you have any valid HMRC Lifetime Allowance protection? - Claim your NHS Pension
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  {% include "includes/phase_banner_beta.html" %}
+  {% include "includes/back.html" %}
+
+  <div class="grid-row">
+
+    <div class="column-two-thirds">
+
+      <div class="heading-group">
+        <p>Claim your NHS Pension<p>
+        <h1 class="heading-large">Check if you can claim your NHS pension online</h1>
+      </div>
+
+        <p>
+            If you have HM Revenue & Customs (HMRC) Lifetime Allowance protection for your NHS pension you cannot
+      claim your pension online.
+        </p>
+
+
+ <details>
+
+  <summary><span class="summary">What is lifetime allowance?</span></summary>
+
+  <div class="panel panel-border-narrow">
+    <p>The lifetime allowance is a limit on the value of payouts from your pension schemes.</p>
+
+      <p>Lifetime Allowance protection examples:</p>
+      <ul class="list list-bullet">
+        <li>Enhanced</li>
+        <li>Primary</li>
+        <li>Fixed (2012, 2014 or 2016)</li>
+        <li>Individual (2014 or 2016)</li>
+      </ul>
+
+  </div>
+
+</details>
+<br>
+
+<form class="form" action="eligibility-handler" method="get">
+  <div class="form-group">
+
+    <fieldset class="inline">
+      <legend class="heading-medium">Do you have HMRC Lifetime Allowance protection?</legend>
+
+      <div class="multiple-choice">
+        <input id="yes" type="radio" name="hasHMRCno" value="yes">
+        <label for="yes" class="single-line">Yes</label>
+      </div>
+
+      <div class="multiple-choice">
+        <input id="no" type="radio" name="hasHMRCno" value="no">
+        <label for="no" class="single-line">No</label>
+      </div>
+
+      {# <div class="multiple-choice">
+        <input id="idk" type="radio" name="hasHMRCno" value="idk">
+        <label for="idk" class="single-line">I don't know</label>
+      </div> #}
+
+    </div>
+  </fieldset>
+
+  <div class="form-group">
+    <button class="button" type="submit" value="Next">Next</button>
+  </div>
+
+</form>
+
+
+
+    </div>
+
+  </div>
+
+</main>
+
+{% endblock %}
