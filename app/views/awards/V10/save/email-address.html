@@ -1,0 +1,35 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+    What email address should we send link to? - Claim your NHS Pension - NHSBSA
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+    {% include "includes/phase_banner_beta.html" %}
+    {% include "includes/back.html" %}
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
+            <!-- <p class="navigation"><a class="back-to-previous">Back</a></p> -->
+            <div class="heading-group">
+                <p>Claim your NHS Pension</p>
+                <h1 class="heading-large">What email address should we send the link to?</h1>
+            </div>
+            <form action="" method="get" class="form">
+                <p class="form-hint">We'll send a link to the email address you provide. This will allow you to save and return to your application within 7 days, if you choose to.</p>
+                <p class="form-hint">This email may go to your junk mail folder. If you do not get an email, <a href="https://www.nhsbsa.nhs.uk/employee-section/contact-us" target="_blank">contact us</a>.</p>
+                <p class="form-hint">Your data is held securely. We'll use this data to confirm your identity when you return to the application.</p>
+                <div class="form-group">
+                    <input class="form-control" id="email-address" name="email-address" type="email" autocomplete="off" />
+                </div>
+                <div class="form-group">
+                    <a href="done" class="button" type="submit" value="Next">Next</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</main>
+
+{% endblock %}

@@ -1,0 +1,77 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+Do you have any valid HMRC Lifetime Allowance protection? - Claim your NHS Pension
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  {% include "includes/phase_banner_beta.html" %}
+  {% include "includes/back.html" %}
+
+  <div class="grid-row">
+
+    <div class="column-two-thirds">
+
+      <div class="heading-group">
+        <p>Claim your NHS Pension<p>
+        <h1 class="heading-large">Do you have HMRC Lifetime Allowance protection? </h1>
+      </div>
+      <p>For example:</p>
+      <ul class="list list-bullet">
+        <li>Enhanced</li>
+        <li>Primary</li>
+        <li>Fixed (2012, 2014 or 2016)</li>
+        <li>Individual (2014 or 2016)</li>
+      </ul>
+        <p>If so, you must send the paper certificate(s) or a copy of HMRC's notification, confirming the 2016 protection reference number, or your benefits may be delayed.</p>
+        <p>Your pensions  office will send a copy to HMRC.</p>
+
+
+  <div class="form-group">
+
+    <fieldset class="inline">
+      <legend class="visually-hidden">
+            Do you have HMRC Lifetime Allowance protection?
+            </legend>
+
+
+      <div class="multiple-choice" data-target="getnhsno">
+        <input id="yes" type="radio" name="hasnhsno" value="Yes">
+        <label for="yes">Yes</label>
+      </div>
+
+      <div class="multiple-choice">
+        <input id="no" type="radio" name="hasnhsno" value="No">
+        <label for="no">No</label>
+      </div>
+
+
+    <div class="panel panel-border-narrow js-hidden" id="getnhsno">
+        <div class="form-group ">
+                  <label class="form-label" for="employer-contributions" id="employer-contributions-label">
+                      <span>Certificates or reference number</span>
+                  </label>
+                  <input class="form-control form-control-1-3 validate-numeric" id="employer-contributions" name="employer-contributions" type="number" aria-label="Enter amount in pounds" required="" aria-required="true"></input>
+              </div>
+      </div>
+    </div>
+  </fieldset>
+
+  <div class="form-group">
+    <a href="checkyouranswers" class="button" type="submit"  value="Next">Next</a>
+  </div>
+  <div class="form-group">
+    <p>If you don’t have this information available, you can <a href="/awards/V6/AW8P">return to your application summary</a> and save your application for later.</p>
+  </div>
+
+</form>
+
+    </div>
+
+  </div>
+
+</main>
+
+{% endblock %}

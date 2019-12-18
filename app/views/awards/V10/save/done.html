@@ -1,0 +1,39 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+    Application Saved - Claim Your NHS Pension - NHSBSA
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+    {% include "includes/phase_banner_beta.html" %}
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
+            <div class="done-panel">
+                <h1 class="heading-large">
+                    <span id="done-tick"> </span>
+                    Application saved
+                </h1>
+            </div>
+            <div class="form-group">
+                <p>A link to your application has been sent to [email address].</p>
+                <details>
+                    <summary>
+                        <span class="summary">If you've made a mistake entering your email address</span>
+                    </summary>
+                    <div class="panel panel-border-narrow">
+                        <p>Continue your application as normal. You can save it again and enter an amended email address.</p>
+                        <p>The email we send contains no personal data. We have internal checks in place to make sure it's you continuing your application.</p>
+                    </div>
+                </details>
+            </div>
+            <div class="form-item-wrapper">
+                <a class="button" href="/awards/V6/resume/outlook">Continue</a>
+            </div>
+        </div>
+    </div>
+</main>
+
+{% endblock %}

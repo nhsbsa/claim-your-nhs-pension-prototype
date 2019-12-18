@@ -623,3 +623,25 @@ router.get(/fulltime-parttime-handler/, function (req, res) {
 		res.redirect('reasion-for-retirement');
 	}
 });
+
+router.get(/confirm-address-handler/, function (req, res) {
+	if (req.query.confirmAddress === 'thisAddress') {
+		res.redirect('checkyouranswers');
+	} else if (req.query.confirmAddress === 'diffUKAddress') {
+		res.redirect('post-address');
+	} else {
+		res.redirect('international-address');
+	}
+});
+
+router.get(/gender-v10-handler/, function (req, res) {
+	res.redirect('confirm-address');
+});
+
+router.get(/address-v10-handler/, function (req, res) {
+	res.redirect('checkyouranswers');
+});
+
+router.get(/international-address-v10-handler/, function (req, res) {
+	res.redirect('checkyouranswers');
+});

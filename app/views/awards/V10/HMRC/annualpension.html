@@ -1,0 +1,65 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+Will your annual pension be more than £30,000? - Claim your NHS Pension
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  {% include "includes/phase_banner_beta.html" %}
+  {% include "includes/back.html" %}
+
+  <div class="grid-row">
+
+    <div class="column-two-thirds">
+
+      <div class="heading-group">
+        <p>Claim your NHS Pension<p>
+        <h1 class="heading-large">Do any of these apply?</h1>
+      </div>
+      <ul class="list list-bullet">
+        <li>your pension plus any other pension benefits is more than £30,000 per year</li>
+        <li>you’ve accessed your benefits with another pension scheme using pension flexibilities</li>
+      </ul>
+
+      <form action="flex-handler" method="post-address" class="form">
+
+        <div class="form-group">
+
+          <fieldset>
+            <legend></legend>
+
+            <div class="multiple-choice">
+              <input id="yes" type="radio" name="flex" value="Yes">
+              <label for="yes">Yes</label>
+            </div>
+            <div class="multiple-choice">
+              <input id="no" type="radio" name="flex" value="No">
+              <label for="no">No</label>
+            </div>
+
+            <div class="multiple-choice">
+              <input id="yes" type="radio" name="flex" value="Yes">
+              <label for="yes">Not sure</label>
+            </div>
+        </fieldset>
+
+        </div>
+
+        <div class="form-group">
+          <input class="button" type="submit"  value="Next">
+        </div>
+        <div class="form-group">
+          <p>If you don’t have this information available, you can <a href="/awards/V6/AW8P">return to your application summary</a> and save your application for later.</p>
+        </div>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</main>
+
+{% endblock %}

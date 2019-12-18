@@ -1,0 +1,99 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+    Resume your application - Claim your NHS Pension - NHSBSA
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+    {% include "includes/phase_banner_beta.html" %}
+    {% include "includes/back.html" %}
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
+            <!-- errors and validation -->
+            <div id="validation" class="error-summary visually-hidden" role="group" aria-labelledby="error-summary-heading" tabindex="-1">
+                <h1 class="heading-medium error-summary-heading" id="error-summary-heading">Your form contains errors</h1>
+                <p>Check your answer:</p>
+                <ul class="error-summary-list">
+                    <li><a href="#resumeApplication">Enter a valid National Insurance number and date of birth combination.</a></li>
+                </ul>
+            </div>
+
+            <div class="heading-group">
+                <p>Claim your NHS Pension</p>
+                <h1 class="heading-large">Resume your application</h1>
+            </div>
+            <form action="resume-application-handler" method="get" class="form">
+                <p>We’ll use these details to find your application. You’ll be able to continue your application from where you left off.</p>
+                <fieldset id="resumeApplication">
+                    <legend class="visuallyhidden">
+                        Resume your application
+                    </legend>
+                    <div id="resume-memorableWord" class="form-group">
+                        <label class="form-label-bold" for="memorableWord">
+                            What is your memorable word?
+                            <span class="form-hint">
+                                You provided this when you saved your application.
+                            </span>
+                        </label>
+                        <input class="form-control" id="memorableWord" name="memorableWord" type="text" autocomplete="off" />
+                    </div>
+                    <div id="resume-nino" class="form-group">
+                        <label class="form-label-bold" for="nino">
+                            What is your National Insurance number?
+                            <span class="form-hint">
+                                For example, 'QQ 12 34 56 C'
+                            </span>
+                        </label>
+                        <input class="form-control" id="nino" name="nino" type="text" autocomplete="off" />
+                    </div>
+
+                    <div id="resume-dob" class="form-group">
+                        <fieldset id="dob">
+                            <legend>
+                                <span class="form-label-bold">
+                                    What is your date of birth?
+                                </span>
+                                <span class="form-hint" id="dob-hint">For example, 31 03 1980</span>
+                            </legend>
+                            <div class="form-date">
+                                <div class="form-group form-group-day">
+                                    <label class="form-label" for="dob-day">Day</label>
+                                    <input class="form-control" id="dob-day" name="dobDay" type="number" pattern="[0-9]*" min="0" max="31" autocomplete="off" aria-describedby="dob-hint">
+                                </div>
+                                <div class="form-group form-group-month">
+                                    <label class="form-label" for="dob-month">Month</label>
+                                    <input class="form-control" id="dob-month" name="dobMonth" type="number" pattern="[0-9]*" min="0" max="12" autocomplete="off">
+                                </div>
+                                <div class="form-group form-group-year">
+                                    <label class="form-label" for="dob-year">Year</label>
+                                    <input class="form-control" id="dob-year" name="dobYear" type="number" pattern="[0-9]*" autocomplete="off">
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                </fieldset>
+                <div class="form-item-wrapper">
+                    <div class="form-group">
+                        <!-- <a href="dob" class="button" type="submit" value="Submit">Next</a> -->
+                        <input class="button" id="resume-application" type="submit" value="Next" />
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</main>
+
+<!-- scripts -->
+<script src="/../../../../public/javascripts/jquery-1.11.3.js"></script>
+<script>
+    if (document.location.href.includes("#1") || document.location.href.includes("#2") || document.location.href.includes("#3")) {
+        $("#validation").removeClass("visually-hidden");
+    } else {
+        $("#validation").addClass("visually-hidden");
+    }
+</script>
+
+{% endblock %}
