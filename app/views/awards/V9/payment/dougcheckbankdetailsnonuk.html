@@ -1,0 +1,74 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+    Check your bank details - Claim your NHS Pension
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  {% include "includes/phase_banner_beta.html" %}
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+  <div class="text">
+
+    <div class="heading-group">
+      <p>Claim your NHS Pension</p>
+      <h1 class="heading-large">
+        Check your bank details
+      </h1>
+    </div>
+    <table id="review-table-two" class="check-table">
+        <tr id="check-uk-bank">
+          <td>Where do you want your pension paid?</td>
+          <td>To a non-UK bank account</td>
+
+          <td><a href="ddpay#holdername">Change <span class="visually-hidden">if you have a UK bank account.</span></a></td>
+        </tr>
+
+        <!--
+      <tr>
+        <td class="strong">Your account details</td>
+        <td></td>
+        <td></td>
+      </tr>
+
+
+      <tr id="account-holder-name">
+        <td>Account holder's name</td>
+        <td>Allan McNish</td>
+
+        <td><a href="ddpay#holdername">Change <span class="visually-hidden">if you have a UK bank account.</span></a></td>
+      </tr>
+      <tr id="if-iban">
+        <td>Account number</td>
+        <td>987654321</td>
+        <td><a href="ddpay#cardnumber">Change <span class="visually-hidden">if you have a UK bank account.</span></a></td>
+      </tr>
+
+      <tr id="non-uk">
+        <td>Sort code</td>
+        <td>01 01 01</td>
+        <td><a href="ddpay#exmonth">Change <span class="visually-hidden">if you have a UK bank account.</span></a></td>
+      </tr>
+-->
+    </table>
+
+    <br>
+    <form action="dd-dec" method="get" class="form">
+      <div class="form-item-wrapper">
+        <div class="form-group">
+          <a href="../dougAW8P" class="button" type="submit" value="Continue">Continue</a>
+        </div>
+    </div>
+    </form>
+
+   </div>
+  </div>
+</div>
+
+</main>
+
+{% endblock %}

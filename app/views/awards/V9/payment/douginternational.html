@@ -1,0 +1,61 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  Why are you claiming your deferred benefits? - Claim your NHS Pension
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  {% include "includes/phase_banner_beta.html" %}
+  {% include "includes/back.html" %}
+
+  <div class="grid-row">
+
+    <div class="column-two-thirds">
+
+      <div class="heading-group">
+        <p>Claim your NHS Pension</p>
+        <h1 class="heading-large">
+          Where should we pay your pension?
+        </h1>
+      </div>
+
+      <form class="form" action="uk-ukbank" method="get">
+        <div class="form-group">
+
+            <div class="multiple-choice " data-target="ukbank">
+              <input id="uk" type="radio" name="doug123" value="uk">
+              <label class="single-line" for="uk">To a UK bank account</label>
+            </div>
+
+            <div class="multiple-choice  " data-target="nonukbank">
+              <input id="nonuk" type="radio" name="doug123" value="nonuk">
+              <label class="single-line" for="nonuk">To a bank account outside the UK</label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="notice">
+                <i class="icon icon-important">
+                    <span class="visually-hidden">Warning</span>
+                </i>
+                <strong class="bold-small">
+                    When you have completed this application, you'll find a link to download an overseas payment mandate form. We cannot pay your pension until you have completed and returned this form.
+                </strong>
+            </div>
+        </div>
+
+        <div class="form-group">
+          <input class="button" type="submit" value="Next">
+        </div>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</main>
+
+{% endblock %}

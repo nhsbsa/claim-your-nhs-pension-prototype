@@ -1,0 +1,54 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  Why are you claiming your deferred benefits? - Claim your NHS Pension
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  {% include "includes/phase_banner_beta.html" %}
+  {% include "includes/back.html" %}
+
+  <div class="grid-row">
+
+    <div class="column-two-quarters">
+
+      <div class="heading-group">
+        <p>Claim your NHS Pension</p>
+        <h1 class="heading-large">
+          Do you want to claim commuted early payment on your pension benefits because of ill health?
+        </h1>
+      </div>
+
+      <form class="form" action="2015-handler" method="get">
+        <div class="form-group">
+
+            <div class="multiple-choice " data-target="ill-health">
+              <input id="ill" type="radio" name="benefit" value="ill">
+              <label class="single-line" for="ill">Yes</label>
+            </div>
+
+            <div class="multiple-choice  " data-target="commutedill">
+              <input id="commuted" type="radio" name="benefit" value="commuted">
+              <label class="single-line" for="commuted">No</label>
+            </div>
+
+        </div>
+
+        <div class="form-group">
+          <input class="button" type="submit" value="Next">
+        </div>
+        <div class="form-group">
+          <p>If you don’t have this information available, you can <a href="/awards/V6/AW8P">return to your application summary</a> and save your application for later.</p>
+        </div>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</main>
+
+{% endblock %}

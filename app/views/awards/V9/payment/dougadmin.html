@@ -1,0 +1,154 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+    Check your bank details - Claim your NHS Pension
+{% endblock %}
+
+{% block content%}
+
+<style>
+  /* Admin homepage cards */
+.admin-cards {
+  padding-bottom: 0;
+}
+.admin-card {
+  float:left;
+  width: 32%;
+  margin: 5px;
+  padding: 0;
+  display: inline-block;
+  vertical-align: top;
+}
+.admin-card:nth-child(3n+1) {
+  margin-right: 0;
+}
+.card-content {
+  background: #F8F8F8;
+  border: 1px solid #BFC1C3;
+  box-sizing: border-box;
+  display: block;
+  height: 100%;
+  margin: 0;
+  padding: 0.75em 0.75em 0.6em 0.75em;
+  text-decoration: none;
+  align-content: flex-start;
+  align-items: stretch;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+.admin-card .card-content h2 {
+  margin-top: 0;
+}
+.card-content h2, .card-content p {
+  color: #333333;
+  width: 100%;
+}
+.card-content p:nth-of-type(1) {
+  margin-bottom: 30px;
+}
+a.card-link {
+  display: block;
+  margin: auto 0 0 0;
+  bottom: 0;
+}
+#service-header.change-password {
+text-align: right;
+margin-top: 5
+/* End cards */
+</style>
+
+<main id="content" role="main">
+
+  <h1 style="font-size:30px;">FIC Admin</h1>
+  <h1 style="font-family:verdana;color:lightslategray;font-size:20px;">by Douglas Caven</h1>
+<br>
+
+<!--  phase tag -->
+
+    <div class="phase-banner">
+      <p>
+      <strong class="phase-tag">BETA</strong>
+      This is a new service
+      <span> - your <a target="" href="">feedback</a> will help us to improve it.</span>
+      </p>
+    </div>
+
+<!--END-->
+
+<!-- Logout link-->
+
+    <div class="service-header change-password" id="service-header">
+      <ul>
+        <li><a class="log-out-link" id="logout-link" href="/employer-service/fic/logout">Logout</a></li>
+        <li><a class="log-out-link" id="change-password-link" href="/employer-service/fic/change-password">Change your password</a></li>
+      </ul>
+    </div>
+
+<!--END-->
+
+  <br>
+
+<!-- page heading -->
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <h1 class="heading-xlarge">
+              <span class="heading-secondary">Make payments to the NHS Pension Scheme</span>
+              <span> Admin Home</span>
+      </h1>
+
+    </div>
+
+<!--END-->
+
+        <!-- hidden -->
+
+    <div class="column-full">
+      <div class="admin-home">
+        <ul class="admin-cards">
+
+          <li class="admin-card" id="create-an-organisation">
+            <div class="card-content">
+              <h2 class="heading-small">Create an organisation</h2>
+              <p>Create a new organisation and a principle user</p>
+              <a class="card-link" href="/employer-service/fic/create-admin-user">Create an organisation</a>
+            </div>
+          </li>
+          <li class="admin-card" id="search-card">
+            <div class="card-content">
+              <h2 class="heading-small">Search</h2>
+              <p>Search for organisation, EA or user</p>
+              <a class="card-link" aria-label="Search for an organisation, ea or user" href="dougsearch">Search</a>
+            </div>
+          </li>
+          <li class="admin-card" id="single-ea-bulk-upload">
+            <div class="card-content">
+              <h2 class="heading-small">Single EA bulk upload</h2>
+              <p>Create new EAs who manage their own payments</p>
+              <a class="card-link" href="/employer-service/fic/bulk-user-upload">Upload new EAs</a>
+            </div>
+          </li>
+          <li class="admin-card" id="service-reports">
+            <div class="card-content">
+              <h2 class="heading-small">Service reports</h2>
+              <p>Usage reports for the MCP service</p>
+              <a class="card-link" aria-label="View service reports" href="/employer-service/fic/admin-reports">View reports</a>
+            </div>
+          </li>
+          <li class="admin-card" id="service-reports">
+            <div class="card-content">
+              <h2 class="heading-small">Link an EA</h2>
+              <p>Link a new or existing EA to an Organisation</p>
+              <a class="card-link" aria-label="Link an EA" href="/fic/dougcheckea">Link EA</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+{% endblock %}
