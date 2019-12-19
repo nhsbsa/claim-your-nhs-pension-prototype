@@ -24,40 +24,32 @@
       <form action="international-address-v10-handler" method="get" class="form">
 
         <div class="form-group">
-          <label class="form-label" for="country">Country</label>
-          <select id="choose-country">
-            <option value="">Select your country</option>
-            <option value="ir">Ireland</option>
-            <option value="fr">France</option>
-            <option value="de">Germany</option>
-            <option value="gb">United Kingdom</option>
-          </select>
-
-          {# <label class="form-label" for="country">
-            Country
-          </label>
-          <input class="form-control" id="country" name="country" type="text"> #}
+          <label for="my-autocomplete" id="autocomplete-customTemplates" class="form-label">Select your country</label>
+          <div id="tt-customTemplates"></div>
         </div>
 
         <div class="form-group">
-          <label class="form-label" for="lineone">Address <span class="visually-hidden">line 1</span></label>
+          <label class="form-label" for="lineone">Address line 1</label>
           <input class="form-control" id="lineone" name="lineone" type="text">
         </div>
 
         <div class="form-group">
-          <label class="form-label visually-hidden" for="linetwo">Address line 2</label>
+          <label class="form-label" for="linetwo">Address line 2 (optional)</label>
           <input class="form-control" id="linetwo" name="linetwo" type="text">
         </div>
 
         <div class="form-group">
-          <label class="form-label visually-hidden" for="linethree">Address line 3</label>
+          <label class="form-label" for="linethree">Address line 3 (optional)</label>
           <input class="form-control" id="linethree" name="linethree" type="text">
         </div>
         <div class="form-group">
-          <label class="form-label visually-hidden" for="linefour">Address line 4</label>
+          <label class="form-label" for="linefour">Address line 4 (optional)</label>
           <input class="form-control" name="linefour" id="linefour" value="" type="text">
         </div>
-
+        <div class="form-group">
+          <label class="form-label" for="postcode">Post code (optional)</label>
+          <input class="form-control" name="postcode" id="postcode" value="" type="text">
+        </div>
         
         <div class="form-group">
           <input class="button" type="submit"  value="Next">
@@ -73,11 +65,43 @@
 
 <script type="text/javascript" src="/public/javascripts/accessible-autocomplete.min.js"></script>
 <script type="text/javascript">
-accessibleAutocomplete.enhanceSelectElement({
-  selectElement: document.querySelector('#choose-country'),
-  defaultValue: '',
-  placeholder: ''
+function customSuggest (query, syncResults) {
+  var results = [
+    { endonymLang: 'fr', endonym: 'République Française', name: 'France' },
+    { endonymLang: 'de', endonym: 'Deutschland', name: 'Germany' },
+    { endonymLang: 'es', endonym: 'España', name: 'Spain' }
+  ]
+  syncResults(query
+    ? results.filter(function (result) {
+        var resultContains = result.name.toLowerCase().indexOf(query.toLowerCase()) !== -1
+        var endonymContains = result.endonym.toLowerCase().indexOf(query.toLowerCase()) !== -1
+        return resultContains || endonymContains
+      })
+    : []
+  )
+}
+
+function inputValueTemplate (result) {
+  return result && result.name
+}
+
+function suggestionTemplate (result) {
+  return result && '<strong class="bold">' + result.name + '</strong>' +
+    ' (<span lang=' + result.endonymLang + '>' + result.endonym + '</span>)'
+}
+
+element = document.querySelector('#tt-customTemplates')
+id = 'autocomplete-customTemplates'
+accessibleAutocomplete({
+  element: element,
+  id: id,
+  source: customSuggest,
+  templates: {
+    inputValue: inputValueTemplate,
+    suggestion: suggestionTemplate
+  }
 })
+  
 </script>
 
 {% endblock %}
