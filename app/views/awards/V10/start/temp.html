@@ -1,0 +1,90 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  Claim your NHS Pension
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  {% include "includes/phase_banner_beta.html" %}
+
+  <div class="grid-row">
+
+    <div class="column-full">
+      <div class="heading-group">
+        <h1 class="heading-xlarge">Claim your NHS Pension</h1>
+      </div>
+    </div>
+
+    <div class="column-two-thirds">
+       <p>This service is for deferred members and should take approximately 20 minutes to complete.</p>
+
+
+
+      <div class="notice">
+  <i class="icon icon-important">
+    <span class="visually-hidden">Important</span>
+  </i>
+  <p><strong class="bold-small">
+    You cannot use this online service if you have HM Revenue & Customs Lifetime Allowance protection. You will need to <a href="https://www.nhsbsa.nhs.uk/member-hub/applying-your-pension#jumplink4">Download and complete the paper form</a>.
+  </strong></p>
+ </div>
+<br>
+<p>Before you start your claim, read the <a href="https://bsa2468.atlassian.net/secure/attachment/26342/AW8P-AccompanyingNotefromTCT.docx">guidance notes</a> and our <a href="#">fair processing notice</a>.</p>
+
+    <h2 class="heading-medium">To make your claim, you will need:</h2>
+    <ul class="list list-bullet">
+       <li>your UK bank account details</li>
+       <li>details of any other pensions you have</li>
+    </ul>
+
+    <h2 class="heading-medium">If they apply to you, you will also need:</h2>
+    <ul class="list list-bullet">
+    <li>the date of your marriage or civil partnership</li>
+    <li>the date of birth and National Insurance number of your spouse or civil partner</li>
+    <li>the date of birth for any dependant child</li>
+    <li>details of any other pensions</li>
+  </ul>
+
+  <h2 class="heading-medium">You will find the following documents helpful if you have them:</h2>
+   <ul class="list list-bullet">
+   <li>your recent estimate, if you have one</li>
+   <li>a printer to print confirmation of your application</li>
+   </ul>
+
+  <br>
+    <div class="panel panel-border-wide">
+    <p><strong class="bold-small">
+    This form should not be submitted until 3 months before your expected retirement date.
+    </strong></p>
+    </div>
+
+<br>
+    <p>
+      <a class="button button-get-started" href="eligibility" id="next">
+        Start now
+      </a>
+    </p>
+    
+
+
+<!--
+      <p>
+        You will be asked if you know your NHS number. It's optional to provide this. Not having it to hand will not affect your ability to buy.
+      </p>
+-->
+<!--
+        <h3 class="heading-medium">Existing prepayments</h3>
+
+        <p>If you already have prepaid you can <a class="" href="../return/return_start" id="next">view, print or change the details</a>.</p> -->
+
+      </div>
+
+    </div>
+
+  </div>
+
+</main>
+
+{% endblock %}

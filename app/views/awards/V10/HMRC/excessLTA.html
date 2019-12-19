@@ -1,0 +1,63 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  Do you want to be contact about your pension by text and email? - Claim your NHS Pension
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  {% include "includes/phase_banner_beta.html" %}
+  {% include "includes/back.html" %}
+
+  <div class="grid-row">
+
+    <div class="column-two-thirds">
+
+      <div class="heading-group">
+        <p>Claim your NHS Pension<p>
+          <h1 class="heading-large">We’ll only be able to process your application if we treat your NHS Pension Scheme benefits in excess of the Lifetime Allowance.</h1>
+        </div>
+        <p>The Scheme pays 55% of your lump sum and 25% of your pension directly to HMRC. This is unless you instruct NHS Pensions to defer payment of your benefits</p>
+
+      <form action="LTA-handler" method="post-address" class="form">
+
+        <div class="form-group">
+
+          <fieldset class="inline">
+            <legend>Would you like us to do this?</legend>
+            <br>
+
+            <div class="multiple-choice">
+              <input id="yes" type="radio" name="excesslta" value="Yes">
+              <label for="yes">Yes</label>
+            </div>
+
+            <div class="multiple-choice"  data-target="LTA">
+              <input id="no" type="radio" name="excesslta">
+              <label for="no">No</label>
+            </div>
+          </fieldset>
+        </div>
+
+
+       <div class="panel panel-border-narrow js-hidden" id="LTA">
+        <p>If you have benefits elsewhere and aren’t able to provide details about them, you can submit your claim at a later date, once you’ve got the information.</p>
+        </div>
+
+        <div class="form-group">
+          <input class="button" type="submit"  value="Next">
+        </div>
+        <div class="form-group">
+          <p>If you don’t have this information available, you can <a href="/awards/V6/AW8P">return to your application summary</a> and save your application for later.</p>
+        </div>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</main>
+
+{% endblock %}

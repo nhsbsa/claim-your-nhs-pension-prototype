@@ -1,5 +1,7 @@
 @import 'unbranded';
 
+@import 'patterns/accessible-autocomplete';
+
 //body {
 //  color: #555;
 //}
@@ -243,11 +245,10 @@ table {
       width: 35%;
       border: none;
       display: table-cell;
-      vertical-align: inherit;
+      vertical-align: top;
       padding: 2rem 3rem 0 0;
       &:nth-child(2) {
         width: 40%;
-        font-weight: 700;
         padding-right :0;
       }
       &:nth-child(3) {

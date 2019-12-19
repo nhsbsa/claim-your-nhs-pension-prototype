@@ -1,0 +1,59 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  Check address - Claim your NHS Pension
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  {% include "includes/phase_banner_beta.html" %}
+  {% include "includes/back.html" %}
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+        <div class="heading-group">
+          <p>Claim your NHS Pension</p>
+          <h1 class="heading-large">Confirm your address</h1>
+        </div>
+        <p class="form-hint">This is the address we send your pension confirmation letter to, it is the most recently updated address we have for you in our records.</p>
+        <h2 class="heading-medium" style="margin-top: 0;">Address:</h2>
+        <ul class="list">
+          <li>10 Madeup Road,</li>
+          <li>Madeupistown,</li>
+          <li>Madeupville.</li>
+          <li>MDE 0UP.</li>
+        </ul>
+        <hr>
+      <form class="form" action="confirm-address-handler" method="get">
+        <div class="form-group">
+          <fieldset>
+            <legend class="heading-medium">Do you want to use this address?</legend>
+            <div class="multiple-choice">
+              <input id="this-address" type="radio" name="confirmAddress" value="thisAddress">
+              <label class="single-line" for="this-address">Yes, I want to use this address</label>
+            </div>
+            <div class="multiple-choice">
+              <input id="diff-uk-address" type="radio" name="confirmAddress" value="diffUKAddress">
+              <label class="single-line" for="diff-uk-address">No, I want to use a UK address</label>
+            </div>
+            <div class="multiple-choice">
+              <input id="diff-non-uk-address" type="radio" name="confirmAddress" value="diffNonUKAddress">
+              <label class="single-line" for="diff-non-uk-address">No, I want to use an overseas address</label>
+            </div>
+          </fieldset>
+        </div>
+        <div class="form-group">
+          <input class="button" type="submit" value="Next">
+        </div>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</main>
+
+{% endblock %}
