@@ -263,13 +263,13 @@ $(document).ready(function() {
         // #1 pension details - about your pension //
         if (document.location.href.includes("/moreinfo", true)) {
             var trivialCommutation = $("input[name=moreInfo]:checked")[0];
-            
+
             // do you want to apply for trivial commutation?
             if (trivialCommutation !== undefined) {
                 sessionStorage.trivComm = trivialCommutation.value;
             }
         }
-        
+
         if (document.location.href.includes("/whichscheme", true)) {
             var schemeChecked = $("input[class=scheme]:checked");
             var whichScheme = {};
@@ -297,7 +297,7 @@ $(document).ready(function() {
                 whyBenefits1995[k] = benefitsChecked1995[k].value;
             }
 
-            sessionStorage.whyBenefits1995 = toTitleCase(Object.keys(whyBenefits1995).map(function(l){return whyBenefits1995[l]}).join(", "));
+            sessionStorage.whyBenefits1995 = Object.keys(whyBenefits1995).map(function(l){return whyBenefits1995[l]}).join(", ");
         }
 
         if (document.location.href.includes("/why2008", true)) {
@@ -309,7 +309,7 @@ $(document).ready(function() {
                 whyBenefits2008[l] = benefitsChecked2008[l].value;
             }
 
-            sessionStorage.whyBenefits2008 = toTitleCase(Object.keys(whyBenefits2008).map(function(l){return whyBenefits2008[l]}).join(", "));
+            sessionStorage.whyBenefits2008 = Object.keys(whyBenefits2008).map(function(l){return whyBenefits2008[l]}).join(", ");
         }
 
         if (document.location.href.includes("/why2015", true)) {
@@ -321,7 +321,7 @@ $(document).ready(function() {
                 whyBenefits2015[m] = benefitsChecked2015[m].value;
             }
 
-            sessionStorage.whyBenefits2015 = toTitleCase(Object.keys(whyBenefits2015).map(function(l){return whyBenefits2015[l]}).join(", "));
+            sessionStorage.whyBenefits2015 = Object.keys(whyBenefits2015).map(function(l){return whyBenefits2015[l]}).join(", ");
         }
 
         if (document.location.href.includes("/lumpsum1995", true)) {
@@ -688,7 +688,7 @@ $(document).ready(function() {
             sessionStorage.iban = document.querySelector('input[name="iban-code"]').value;
             sessionStorage.swift = document.querySelector('input[name="swift-code"]').value;
         })
-        // Store user input into sessionStorage to populate checkyouranswers with correct data 
+        // Store user input into sessionStorage to populate checkyouranswers with correct data
         $('input[name="hasnhsno"]').change(function(){
             var ibanSwiftKnown = document.querySelector('input[name="hasnhsno"]:checked').value;
             sessionStorage.ibanSwiftKnown = ibanSwiftKnown;

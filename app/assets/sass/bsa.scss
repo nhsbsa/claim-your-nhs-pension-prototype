@@ -320,8 +320,8 @@ table {
     height: 24px;
   }
   [type=radio] + label::after {
-    left: 17px;
-    top: 17px;
+    left: 29px;
+    top: 25px;
     border: 7px solid;
   }
   label {
@@ -567,4 +567,30 @@ table {
   @include media(tablet) {
     font-size: 16px;
   }
+}
+
+// checkboxes
+.multiple-choice label {
+    padding: 8px 10px 9px 12px;
+}
+
+.multiple-choice [type=checkbox] + label::before {
+    background: #fff;
+    width: 28px;
+    height: 28px;
+    top: 10px;
+    left: 10px;
+}
+
+.multiple-choice [type=checkbox] + label::after {
+    background: #fff;
+    width: 13px;
+    height: 5px;
+    top: 19px;
+    left: 17px;
+}
+// end checkboxes
+
+.form-group {
+    float: none;
 }

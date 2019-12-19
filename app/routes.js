@@ -165,7 +165,7 @@ router.get(/nino-handler/, function (req, res) {
 });
 
 router.get(/AW8P-handler/, function (req, res) {
-	res.redirect('declaration');
+	res.redirect('dougdeclaration');
 });
 
 router.get(/AW8P-save-handler/, function (req, res) {
@@ -621,6 +621,14 @@ router.get(/fulltime-parttime-handler/, function (req, res) {
 		res.redirect('national-wholetime');
 	} else {
 		res.redirect('reasion-for-retirement');
+	}
+});
+
+router.get(/uk-ukbank/, function (req, res) {
+	if (req.query.doug123 == 'uk') {
+		res.redirect('dougddroll');
+	} else {
+		res.redirect('dougcheckbankdetailsnonuk');
 	}
 });
 
